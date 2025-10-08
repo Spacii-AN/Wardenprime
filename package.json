@@ -1,0 +1,57 @@
+{
+  "name": "korptair",
+  "version": "1.0.0",
+  "description": "A scalable Discord bot built with TypeScript",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "ts-node src/dev.ts",
+    "watch": "tsc -w",
+    "build": "tsc && npm run copy-js",
+    "copy-js": "npx copyfiles -u 1 \"src/**/*.js\" dist",
+    "dev:unix": "DEV=true ts-node src/index.ts",
+    "dev:win": "SET DEV=true && ts-node src/index.ts",
+    "deploy:commands": "ts-node src/scripts/deploy-commands.ts",
+    "deploy:instant": "ts-node src/scripts/refresh-commands.ts",
+    "verify:commands": "ts-node src/scripts/verify-commands.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "riven-maps": "ts-node src/scripts/generateWeaponMap.ts",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:reload": "pm2 reload ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:dev": "pm2 start ecosystem.config.js --env development",
+    "pm2:logs": "pm2 logs korptair-bot",
+    "pm2:monit": "pm2 monit",
+    "migrate:permissions": "ts-node src/services/migrations/runPermissionMigration.ts"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "typescript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^2.2.0",
+    "@types/node": "^20.11.5",
+    "@types/pg": "^8.11.11",
+    "axios": "^1.8.4",
+    "canvas": "^3.1.0",
+    "discord-api-types": "^0.37.67",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "form-data": "^4.0.2",
+    "gif-encoder-2": "^1.0.5",
+    "pg": "^8.14.1",
+    "sharp": "^0.34.1",
+    "tesseract.js": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^10.0.0",
+    "copyfiles": "^2.4.1",
+    "pm2": "^6.0.5"
+  }
+}

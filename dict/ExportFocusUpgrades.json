@@ -1,0 +1,2376 @@
+{
+    "/Lotus/Upgrades/Focus/Attack/Active/AttackEfficiencyFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackEfficiencyName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon132.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "10"
+            },
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackEfficiencyDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/BlastChargeFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackBlastChargeName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon120.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "50"
+            },
+            {
+                "PERCENT": "100"
+            },
+            {
+                "PERCENT": "150"
+            },
+            {
+                "PERCENT": "200"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackBlastChargeDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/BlastFireballFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackBlastFireballName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon121.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "100",
+                "DURATION": "0.10000000149011612"
+            },
+            {
+                "DAMAGE": "150",
+                "DURATION": "0.15000000596046448"
+            },
+            {
+                "DAMAGE": "200",
+                "DURATION": "0.30000001192092896"
+            },
+            {
+                "DAMAGE": "250",
+                "DURATION": "0.6000000238418579"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackBlastFireballDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/CloakAttackChargeFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackCloakAttackChargeName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon04.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "5",
+                "DAMAGE": "4",
+                "COOLDOWN": "70"
+            },
+            {
+                "DURATION": "6",
+                "DAMAGE": "6",
+                "COOLDOWN": "60"
+            },
+            {
+                "DURATION": "7",
+                "DAMAGE": "8",
+                "COOLDOWN": "50"
+            },
+            {
+                "DURATION": "8",
+                "DAMAGE": "10",
+                "COOLDOWN": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackCloakAttackChargeDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/CloakBlindFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackCloakBlindName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon132.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "ENERGY": "25",
+                "RADIUS": "4",
+                "DURATION": "2"
+            },
+            {
+                "ENERGY": "30",
+                "RADIUS": "6",
+                "DURATION": "3"
+            },
+            {
+                "ENERGY": "45",
+                "RADIUS": "8",
+                "DURATION": "4"
+            },
+            {
+                "ENERGY": "50",
+                "RADIUS": "10",
+                "DURATION": "5"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackCloakBlindDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/ConsecutiveEfficienyUpgrade": {
+        "name": "/Lotus/Language/Focus/ConsecutiveEfficiencyName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon121.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/ConsecutiveEfficiencyDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/ConsecutivePowerUpgrade": {
+        "name": "/Lotus/Language/Focus/ConsecutivePowerName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon120.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "10",
+                "DURATION": "5"
+            },
+            {
+                "PERCENT": "20",
+                "DURATION": "10"
+            },
+            {
+                "PERCENT": "30",
+                "DURATION": "15"
+            },
+            {
+                "PERCENT": "40",
+                "DURATION": "20"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/ConsecutivePowerDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/DashDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackDashDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon117.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "100"
+            },
+            {
+                "DAMAGE": "200"
+            },
+            {
+                "DAMAGE": "300"
+            },
+            {
+                "DAMAGE": "400"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackDashDamageDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/DashFireFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackDashFireName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon116.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "100",
+                "DURATION": "3"
+            },
+            {
+                "DAMAGE": "200",
+                "DURATION": "6"
+            },
+            {
+                "DAMAGE": "300",
+                "DURATION": "9"
+            },
+            {
+                "DAMAGE": "400",
+                "DURATION": "12"
+            },
+            {
+                "DAMAGE": "600",
+                "DURATION": "12"
+            },
+            {
+                "DAMAGE": "1000",
+                "DURATION": "14"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackDashFireDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/GhostWaveUpgrade": {
+        "name": "/Lotus/Language/Focus/GhostWaveName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon116.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "LIFETIME": "0.5",
+                "PERCENT": "20",
+                "DURATION": "5"
+            },
+            {
+                "LIFETIME": "1",
+                "PERCENT": "30",
+                "DURATION": "10"
+            },
+            {
+                "LIFETIME": "1.5",
+                "PERCENT": "40",
+                "DURATION": "15"
+            },
+            {
+                "LIFETIME": "2",
+                "PERCENT": "50",
+                "DURATION": "20"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/GhostWaveDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Active/GhostlyTouchUpgrade": {
+        "name": "/Lotus/Language/Focus/GhostlyTouchName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon117.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20",
+                "DURATION": "4",
+                "STACKS": "2"
+            },
+            {
+                "PERCENT": "30",
+                "DURATION": "6",
+                "STACKS": "2"
+            },
+            {
+                "PERCENT": "40",
+                "DURATION": "8",
+                "STACKS": "2"
+            },
+            {
+                "PERCENT": "50",
+                "DURATION": "10",
+                "STACKS": "2"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/GhostlyTouchDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Residual/ElementalDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackElementalDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon10.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {},
+            {},
+            {},
+            {}
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackElementalDamageDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Residual/PhysicalDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackPhysicalDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon12.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "5"
+            },
+            {
+                "PERCENT": "10"
+            },
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackPhysicalDamageDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Residual/PowerSnapFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackPowerSnapName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon102.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "CRIT_PERCENT": "45",
+                "CRIT_DURATION": "5",
+                "CAST_PERCENT": "20"
+            },
+            {
+                "CRIT_PERCENT": "60",
+                "CRIT_DURATION": "10",
+                "CAST_PERCENT": "30"
+            },
+            {
+                "CRIT_PERCENT": "75",
+                "CRIT_DURATION": "15",
+                "CAST_PERCENT": "40"
+            },
+            {
+                "CRIT_PERCENT": "100",
+                "CRIT_DURATION": "20",
+                "CAST_PERCENT": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackPowerSnapDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Stats/MoreAmmoFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackMoreAmmoName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon13.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "10"
+            },
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackMoreAmmoDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Attack/Stats/RegenAmmoFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusAttackRegenAmmoName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon14.png",
+        "polarity": "AP_ATTACK",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "45"
+            },
+            {
+                "PERCENT": "60"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusAttackRegenAmmoDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/BlastAllyShieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseBlastAllyShieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon15.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "ENERGY": "25",
+                "RADIUS": "5",
+                "SHIELD": "50"
+            },
+            {
+                "ENERGY": "25",
+                "RADIUS": "6",
+                "SHIELD": "80"
+            },
+            {
+                "ENERGY": "25",
+                "RADIUS": "7",
+                "SHIELD": "120"
+            },
+            {
+                "ENERGY": "25",
+                "RADIUS": "8",
+                "SHIELD": "160"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseBlastAllyShieldDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/BlastSelfShieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseBlastSelfShieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon16.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "AMOUNT": "150"
+            },
+            {
+                "AMOUNT": "200"
+            },
+            {
+                "AMOUNT": "250"
+            },
+            {
+                "AMOUNT": "300"
+            },
+            {
+                "AMOUNT": "350"
+            },
+            {
+                "AMOUNT": "400"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseBlastSelfShieldDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/CloakHealFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseCloakHealName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon98.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "HEAL": "4",
+                "ACCEL": "4",
+                "MAX": "20"
+            },
+            {
+                "HEAL": "6",
+                "ACCEL": "6",
+                "MAX": "30"
+            },
+            {
+                "HEAL": "8",
+                "ACCEL": "8",
+                "MAX": "40"
+            },
+            {
+                "HEAL": "10",
+                "ACCEL": "10",
+                "MAX": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseCloakHealDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/CloakHealOthersFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseCloakHealOthersName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon101.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "30"
+            },
+            {
+                "DURATION": "40"
+            },
+            {
+                "DURATION": "50"
+            },
+            {
+                "DURATION": "60"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseCloakHealOthersDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/CloakShieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseCloakShieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon18.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "5",
+                "DURATION": "5",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "8",
+                "DURATION": "5",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "10",
+                "DURATION": "5",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "12",
+                "DURATION": "5",
+                "ENERGY": "2"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseCloakShieldDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/DashImmunityFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/ProtectiveProjectionName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon29.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "INVULN": "2",
+                "PERCENT": "25",
+                "DURATION": "5",
+                "ENERGY": "10"
+            },
+            {
+                "INVULN": "3",
+                "PERCENT": "35",
+                "DURATION": "5",
+                "ENERGY": "10"
+            },
+            {
+                "INVULN": "4",
+                "PERCENT": "45",
+                "DURATION": "5",
+                "ENERGY": "10"
+            },
+            {
+                "INVULN": "5",
+                "PERCENT": "60",
+                "DURATION": "5",
+                "ENERGY": "10"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/ProtectiveProjectionDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/DashShockwaveFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseDashShockwaveName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon21.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "8",
+                "DISTANCE": "2"
+            },
+            {
+                "RADIUS": "10",
+                "DISTANCE": "4"
+            },
+            {
+                "RADIUS": "12",
+                "DISTANCE": "6"
+            },
+            {
+                "RADIUS": "14",
+                "DISTANCE": "8"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseDashShockwaveDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/DefenseShieldBreakFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseActiveDefenseShieldBreakName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon135.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "REGEN": "90",
+                "DELAY": "20",
+                "DURATION": "6"
+            },
+            {
+                "REGEN": "110",
+                "DELAY": "40",
+                "DURATION": "8"
+            },
+            {
+                "REGEN": "130",
+                "DELAY": "60",
+                "DURATION": "10"
+            },
+            {
+                "REGEN": "150",
+                "DELAY": "80",
+                "DURATION": "12"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseActiveDefenseShieldBreakDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/DefenseShieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseActiveDefenseShieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon133.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "HEALTH": "200"
+            },
+            {
+                "HEALTH": "300"
+            },
+            {
+                "HEALTH": "400"
+            },
+            {
+                "HEALTH": "500"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseActiveDefenseShieldDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Active/SonicDissipationUpgrade": {
+        "name": "/Lotus/Language/Focus/SonicDissipationName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon43.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "5",
+                "AMOUNT": "40"
+            },
+            {
+                "DURATION": "6",
+                "AMOUNT": "60"
+            },
+            {
+                "DURATION": "7",
+                "AMOUNT": "80"
+            },
+            {
+                "DURATION": "8",
+                "AMOUNT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/SonicDissipationDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Residual/InstantReviveFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseInstantReviveName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon22.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "COUNT": "1",
+                "PERCENT": "25"
+            },
+            {
+                "COUNT": "2",
+                "PERCENT": "50"
+            },
+            {
+                "COUNT": "3",
+                "PERCENT": "75"
+            },
+            {
+                "COUNT": "4",
+                "PERCENT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseInstantReviveDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Residual/RadialXpFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseRadialXpName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon30.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "10"
+            },
+            {
+                "RADIUS": "15"
+            },
+            {
+                "RADIUS": "20"
+            },
+            {
+                "RADIUS": "25"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseRadialXpDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Stats/HealthMaxFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseHealthMaxName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon31.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "50"
+            },
+            {
+                "PERCENT": "100"
+            },
+            {
+                "PERCENT": "150"
+            },
+            {
+                "PERCENT": "200"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseHealthMaxDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Defense/Stats/HealthRegenFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusDefenseHealthRegenName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon33.png",
+        "polarity": "AP_DEFENSE",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "INCREASE": "1.5"
+            },
+            {
+                "INCREASE": "3"
+            },
+            {
+                "INCREASE": "4.5"
+            },
+            {
+                "INCREASE": "6"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusDefenseHealthRegenDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/BlastBurstFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerBlastBurstName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon34.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "4",
+                "DAMAGE": "100"
+            },
+            {
+                "RADIUS": "6",
+                "DAMAGE": "125"
+            },
+            {
+                "RADIUS": "8",
+                "DAMAGE": "150"
+            },
+            {
+                "RADIUS": "10",
+                "DAMAGE": "200"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerBlastBurstDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/BlastSlowFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerBlastSlowName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon77.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "50",
+                "DURATION": "4"
+            },
+            {
+                "PERCENT": "60",
+                "DURATION": "6"
+            },
+            {
+                "PERCENT": "70",
+                "DURATION": "8"
+            },
+            {
+                "PERCENT": "80",
+                "DURATION": "10"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerBlastSlowDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/CloakPullFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerCloakPullName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon82.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "10",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "12",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "15",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "20",
+                "ENERGY": "2"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerCloakPullDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/CloakStaticFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerCloakStaticName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon77.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "200",
+                "RADIUS": "8",
+                "ENERGY": "2"
+            },
+            {
+                "DAMAGE": "300",
+                "RADIUS": "10",
+                "ENERGY": "2"
+            },
+            {
+                "DAMAGE": "400",
+                "RADIUS": "12",
+                "ENERGY": "2"
+            },
+            {
+                "DAMAGE": "500",
+                "RADIUS": "15",
+                "ENERGY": "1"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerCloakStaticDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/DashBubbleFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerDashBubbleName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon37.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "5",
+                "REGEN": "3",
+                "BUFFTIME": "20"
+            },
+            {
+                "DURATION": "5",
+                "REGEN": "4",
+                "BUFFTIME": "22"
+            },
+            {
+                "DURATION": "6",
+                "REGEN": "4",
+                "BUFFTIME": "25"
+            },
+            {
+                "DURATION": "8",
+                "REGEN": "5",
+                "BUFFTIME": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerDashBubbleDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/DashElectricityFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerDashElectricityName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon39.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "4",
+                "DAMAGE": "200",
+                "ENERGY": "10"
+            },
+            {
+                "RADIUS": "8",
+                "DAMAGE": "400",
+                "ENERGY": "10"
+            },
+            {
+                "RADIUS": "12",
+                "DAMAGE": "600",
+                "ENERGY": "10"
+            },
+            {
+                "RADIUS": "16",
+                "DAMAGE": "800",
+                "ENERGY": "10"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerDashElectricityDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/DisarmedEnergyUpgrade": {
+        "name": "/Lotus/Language/Focus/DisarmedEnergyName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon74.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "2",
+                "DURATION": "2.5",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "5",
+                "DURATION": "5",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "7",
+                "DURATION": "7.5",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "10",
+                "DURATION": "10",
+                "STACKS": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/DisarmedEnergyDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/DisarmingProjectionUpgrade": {
+        "name": "/Lotus/Language/Focus/DisarmingProjectionName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon78.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/DisarmingProjectionDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Power/Active/PowerFieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerPowerFieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon109.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "14",
+                "POWER": "12"
+            },
+            {
+                "DURATION": "16",
+                "POWER": "15"
+            },
+            {
+                "DURATION": "18",
+                "POWER": "18"
+            },
+            {
+                "DURATION": "20",
+                "POWER": "20"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerPowerFieldDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Power/Residual/EnergyOverTimeFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerEnergyOverTimeName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon44.png",
+        "polarity": "AP_POWER",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20",
+                "DURATION": "11"
+            },
+            {
+                "PERCENT": "30",
+                "DURATION": "9"
+            },
+            {
+                "PERCENT": "40",
+                "DURATION": "7"
+            },
+            {
+                "PERCENT": "50",
+                "DURATION": "5"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerEnergyOverTimeDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Power/Residual/FreeAbilityCastsFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusFreeAbilityCastsName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon89.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "COOLDOWN": "90"
+            },
+            {
+                "COOLDOWN": "80"
+            },
+            {
+                "COOLDOWN": "70"
+            },
+            {
+                "COOLDOWN": "60"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusFreeAbilityCastsDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Power/Residual/SlowHeadshotDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerSlowHeadshotDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon82.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "60"
+            },
+            {
+                "PERCENT": "80"
+            },
+            {
+                "PERCENT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerSlowHeadshotDamageDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Power/Stats/EnergyPoolFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerEnergyPoolName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon46.png",
+        "polarity": "AP_POWER",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "22"
+            },
+            {
+                "PERCENT": "45"
+            },
+            {
+                "PERCENT": "67"
+            },
+            {
+                "PERCENT": "90"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerEnergyPoolDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Power/Stats/EnergyRestoreFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusPowerEnergyRestoreName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon47.png",
+        "polarity": "AP_POWER",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "22"
+            },
+            {
+                "PERCENT": "45"
+            },
+            {
+                "PERCENT": "67"
+            },
+            {
+                "PERCENT": "90"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusPowerEnergyRestoreDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/BlastConfuseFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticBlastConfuseName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon50.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "CHANCE": "20",
+                "DURATION": "4"
+            },
+            {
+                "CHANCE": "30",
+                "DURATION": "8"
+            },
+            {
+                "CHANCE": "40",
+                "DURATION": "12"
+            },
+            {
+                "CHANCE": "50",
+                "DURATION": "16"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticBlastConfuseDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/BlastDisarmFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardBlastDisarmName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon52.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "CHANCE": "10"
+            },
+            {
+                "CHANCE": "15"
+            },
+            {
+                "CHANCE": "20"
+            },
+            {
+                "CHANCE": "25"
+            },
+            {
+                "CHANCE": "35"
+            },
+            {
+                "CHANCE": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardBlastDisarmDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/CloakMeleeCritFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticCloakMeleeCritName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon53.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "CRIT": "20",
+                "BUILDUP": "5",
+                "DEGRADE": "5",
+                "ENERGY": "1"
+            },
+            {
+                "CRIT": "30",
+                "BUILDUP": "5",
+                "DEGRADE": "10",
+                "ENERGY": "2"
+            },
+            {
+                "CRIT": "40",
+                "BUILDUP": "5",
+                "DEGRADE": "15",
+                "ENERGY": "3"
+            },
+            {
+                "CRIT": "50",
+                "BUILDUP": "5",
+                "DEGRADE": "20",
+                "ENERGY": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticCloakMeleeCritDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/CloakRevealFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticCloakRevealName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon55.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RANGE": "10",
+                "DEGRADE": "2",
+                "ENERGY": "2"
+            },
+            {
+                "RANGE": "12",
+                "DEGRADE": "3",
+                "ENERGY": "2"
+            },
+            {
+                "RANGE": "18",
+                "DEGRADE": "4",
+                "ENERGY": "1"
+            },
+            {
+                "RANGE": "25",
+                "DEGRADE": "5",
+                "ENERGY": "1"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticCloakRevealDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/ComboAmpDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticActiveComboAmpDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon45.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "THRESHOLD": "8",
+                "PERCENT": "40",
+                "DURATION": "10"
+            },
+            {
+                "THRESHOLD": "8",
+                "PERCENT": "60",
+                "DURATION": "20"
+            },
+            {
+                "THRESHOLD": "8",
+                "PERCENT": "80",
+                "DURATION": "30"
+            },
+            {
+                "THRESHOLD": "8",
+                "PERCENT": "100",
+                "DURATION": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticActiveComboAmpDamageDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/DashFinisherFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticDashFinisherName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon57.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "15"
+            },
+            {
+                "DAMAGE": "20"
+            },
+            {
+                "DAMAGE": "25"
+            },
+            {
+                "DAMAGE": "35"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticDashFinisherDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/DashWaveFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticDashWaveName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon58.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DAMAGE": "5",
+                "RADIUS": "2"
+            },
+            {
+                "DAMAGE": "10",
+                "RADIUS": "4"
+            },
+            {
+                "DAMAGE": "15",
+                "RADIUS": "6"
+            },
+            {
+                "DAMAGE": "20",
+                "RADIUS": "8"
+            },
+            {
+                "DAMAGE": "25",
+                "RADIUS": "10"
+            },
+            {
+                "DAMAGE": "30",
+                "RADIUS": "12"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticDashWaveDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/FinisherTransferenceUpgrade": {
+        "name": "/Lotus/Language/Focus/FinisherTransferenceName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon35.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20",
+                "DURATION": "10"
+            },
+            {
+                "PERCENT": "30",
+                "DURATION": "20"
+            },
+            {
+                "PERCENT": "40",
+                "DURATION": "30"
+            },
+            {
+                "PERCENT": "50",
+                "DURATION": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FinisherTransferenceDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/LiftHitDamageUpgrade": {
+        "name": "/Lotus/Language/Focus/LiftHitDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon56.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20",
+                "DURATION": "30",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "30",
+                "DURATION": "40",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "40",
+                "DURATION": "50",
+                "STACKS": "4"
+            },
+            {
+                "PERCENT": "50",
+                "DURATION": "60",
+                "STACKS": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/LiftHitDamageDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/LiftHitWaveUpgrade": {
+        "name": "/Lotus/Language/Focus/LiftHitWaveName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon48.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "WIDTH": "3",
+                "DURATION": "1"
+            },
+            {
+                "WIDTH": "4",
+                "DURATION": "2"
+            },
+            {
+                "WIDTH": "5",
+                "DURATION": "3"
+            },
+            {
+                "WIDTH": "6",
+                "DURATION": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/LiftHitWaveDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/ProjectionExecutionUpgrade": {
+        "name": "/Lotus/Language/Focus/ProjectionExecutionName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon28.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "50",
+                "DAMAGE": "15"
+            },
+            {
+                "RADIUS": "100",
+                "DAMAGE": "20"
+            },
+            {
+                "RADIUS": "150",
+                "DAMAGE": "25"
+            },
+            {
+                "RADIUS": "200",
+                "DAMAGE": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/ProjectionExecutionDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/ProjectionStretchUpgrade": {
+        "name": "/Lotus/Language/Focus/ProjectionStretchName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon07.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "7"
+            },
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "22"
+            },
+            {
+                "PERCENT": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/ProjectionStretchDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Active/SlamComboFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticActiveSlamComboName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon26.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "5"
+            },
+            {
+                "DURATION": "10"
+            },
+            {
+                "DURATION": "15"
+            },
+            {
+                "DURATION": "20"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticActiveSlamComboDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Residual/MeleeComboFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticMeleeComboName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon59.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "AMOUNT": "20"
+            },
+            {
+                "AMOUNT": "15"
+            },
+            {
+                "AMOUNT": "10"
+            },
+            {
+                "AMOUNT": "5"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticMeleeComboDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Residual/MeleeXpFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticMeleeXpName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon60.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "25"
+            },
+            {
+                "PERCENT": "35"
+            },
+            {
+                "PERCENT": "45"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticMeleeXpDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Stats/DashSpeedFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticDashSpeedName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon63.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "60"
+            },
+            {
+                "PERCENT": "80"
+            },
+            {
+                "PERCENT": "100"
+            },
+            {
+                "PERCENT": "120"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticDashSpeedDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Tactic/Stats/MoveSpeedFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusTacticMoveSpeedName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon64.png",
+        "polarity": "AP_TACTIC",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "7"
+            },
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "22"
+            },
+            {
+                "PERCENT": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusTacticMoveSpeedDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/BlastBulletAttractorFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardBlastBulletAttractorName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon61.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "4"
+            },
+            {
+                "DURATION": "6"
+            },
+            {
+                "DURATION": "8"
+            },
+            {
+                "DURATION": "10"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardBlastBulletAttractorDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/BlastDamagePickupFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardBlastDamagePickupName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon62.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "CHANCE": "25",
+                "DAMAGE": "20",
+                "DURATION": "3"
+            },
+            {
+                "CHANCE": "50",
+                "DAMAGE": "40",
+                "DURATION": "6"
+            },
+            {
+                "CHANCE": "75",
+                "DAMAGE": "60",
+                "DURATION": "9"
+            },
+            {
+                "CHANCE": "100",
+                "DAMAGE": "100",
+                "DURATION": "12"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardBlastDamagePickupDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/ClearStaticOnKillFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardActiveClearStaticOnKillName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon103.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PCT": "25"
+            },
+            {
+                "PCT": "50"
+            },
+            {
+                "PCT": "75"
+            },
+            {
+                "PCT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardActiveClearStaticOnKillDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/CloakAllyCloakFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardCloakAllyCloakName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon65.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "10",
+                "ENERGY": "1"
+            },
+            {
+                "RADIUS": "20",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "30",
+                "ENERGY": "3"
+            },
+            {
+                "RADIUS": "40",
+                "ENERGY": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardCloakAllyCloakDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/CloakReduceDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardCloakReduceDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon66.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "10",
+                "PERCENT": "20",
+                "ENERGY": "1"
+            },
+            {
+                "RADIUS": "15",
+                "PERCENT": "40",
+                "ENERGY": "2"
+            },
+            {
+                "RADIUS": "20",
+                "PERCENT": "60",
+                "ENERGY": "3"
+            },
+            {
+                "RADIUS": "25",
+                "PERCENT": "80",
+                "ENERGY": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardCloakReduceDamageDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/DashReduceArmourFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardDashReduceArmourName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon67.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "10"
+            },
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "50"
+            },
+            {
+                "PERCENT": "75"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardDashReduceArmourDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/DashReduceDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardDashReduceDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon69.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "20"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "40"
+            },
+            {
+                "PERCENT": "50"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardDashReduceDamageDesc",
+        "baseFocusPointCost": 80000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/InvulnerableReturnFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardActiveInvulnerableReturnName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon68.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "1"
+            },
+            {
+                "DURATION": "2"
+            },
+            {
+                "DURATION": "3"
+            },
+            {
+                "DURATION": "4"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardActiveInvulnerableReturnDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/KnockdownImmunityFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardActiveKnockdownImmunityName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon27.png",
+        "polarity": "AP_WARD",
+        "rarity": "COMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "10"
+            },
+            {
+                "DURATION": "20"
+            },
+            {
+                "DURATION": "30"
+            },
+            {
+                "DURATION": "40"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardActiveKnockdownImmunityDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/MagneticExtensionUpgrade": {
+        "name": "/Lotus/Language/Focus/MagneticExtensionName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon112.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "25"
+            },
+            {
+                "PERCENT": "50"
+            },
+            {
+                "PERCENT": "75"
+            },
+            {
+                "PERCENT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/MagneticExtensionDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/MagneticFieldFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardActiveMagneticFieldName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon111.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "5",
+                "DURATION": "12"
+            },
+            {
+                "RADIUS": "6",
+                "DURATION": "18"
+            },
+            {
+                "RADIUS": "7",
+                "DURATION": "24"
+            },
+            {
+                "RADIUS": "8",
+                "DURATION": "30"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardActiveMagneticFieldDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/SunderingDissipationUpgrade": {
+        "name": "/Lotus/Language/Focus/SunderingDissipationName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon40.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "RADIUS": "5",
+                "PERCENT": "40"
+            },
+            {
+                "RADIUS": "6",
+                "PERCENT": "60"
+            },
+            {
+                "RADIUS": "7",
+                "PERCENT": "80"
+            },
+            {
+                "RADIUS": "8",
+                "PERCENT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/SunderingDissipationDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Active/UnairuWispFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/UnairuWispName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon62.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "25",
+                "DAMAGE": "20",
+                "DURATION": "5"
+            },
+            {
+                "PERCENT": "50",
+                "DAMAGE": "40",
+                "DURATION": "10"
+            },
+            {
+                "PERCENT": "75",
+                "DAMAGE": "60",
+                "DURATION": "15"
+            },
+            {
+                "PERCENT": "100",
+                "DAMAGE": "100",
+                "DURATION": "20"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/UnairuWispDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Residual/ArmourBuffFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardArmourBuffName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon70.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "VALUE": "50"
+            },
+            {
+                "VALUE": "100"
+            },
+            {
+                "VALUE": "150"
+            },
+            {
+                "VALUE": "200"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardArmourBuffDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Residual/ReflectDamageFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardReflectDamageName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon73.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 5,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "5"
+            },
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "25"
+            },
+            {
+                "PERCENT": "50"
+            },
+            {
+                "PERCENT": "75"
+            },
+            {
+                "PERCENT": "100"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardReflectDamageDesc",
+        "baseFocusPointCost": 25000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Residual/SecondChanceDamageBuffFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardResidualSecondChanceDamageBuffName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon51.png",
+        "polarity": "AP_WARD",
+        "rarity": "RARE",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "BASE": "25",
+                "PCT": "10"
+            },
+            {
+                "BASE": "50",
+                "PCT": "15"
+            },
+            {
+                "BASE": "75",
+                "PCT": "20"
+            },
+            {
+                "BASE": "100",
+                "PCT": "25"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardResidualSecondChanceDamageBuffDesc",
+        "baseFocusPointCost": 95000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Residual/SecondChanceFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardResidualSecondChanceName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon24.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 6,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "DURATION": "9"
+            },
+            {
+                "DURATION": "11"
+            },
+            {
+                "DURATION": "13"
+            },
+            {
+                "DURATION": "15"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardResidualSecondChanceDesc",
+        "baseFocusPointCost": 60000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Stats/ArmourIncreaseFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardArmourIncreaseName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon76.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "INCREASE": "50"
+            },
+            {
+                "INCREASE": "100"
+            },
+            {
+                "INCREASE": "150"
+            },
+            {
+                "INCREASE": "200"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardArmourIncreaseDesc",
+        "baseFocusPointCost": 50000
+    },
+    "/Lotus/Upgrades/Focus/Ward/Stats/BlastRadiusFocusUpgrade": {
+        "name": "/Lotus/Language/Focus/FocusWardBlastRadiusName",
+        "icon": "/Lotus/Interface/Icons/FocusNodeIcons/FocusIcon76.png",
+        "polarity": "AP_WARD",
+        "rarity": "UNCOMMON",
+        "codexSecret": false,
+        "baseDrain": 4,
+        "fusionLimit": 3,
+        "excludeFromCodex": true,
+        "levelStats": [
+            {
+                "PERCENT": "15"
+            },
+            {
+                "PERCENT": "30"
+            },
+            {
+                "PERCENT": "45"
+            },
+            {
+                "PERCENT": "60"
+            }
+        ],
+        "description": "/Lotus/Language/Focus/FocusWardBlastRadiusDesc",
+        "baseFocusPointCost": 50000
+    }
+}

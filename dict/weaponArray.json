@@ -1,0 +1,5602 @@
+[
+  {
+    "name": "Mara Detron",
+    "internalPath": "/Lotus/Weapons/VoidTrader/VTDetron",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Prisma Skana",
+    "internalPath": "/Lotus/Weapons/VoidTrader/PrismaSkana",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Prisma Grakata",
+    "internalPath": "/Lotus/Weapons/VoidTrader/PrismaGrakata",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Trumna",
+    "internalPath": "/Lotus/Weapons/Thanotech/ThanoRifle/ThanotechRifle",
+    "category": "LongGuns",
+    "disposition": 0.85,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sepulcrum",
+    "internalPath": "/Lotus/Weapons/Thanotech/ThanoPistol/ThanotechPistol",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Onos",
+    "internalPath": "/Lotus/Weapons/Thanotech/EntratiWristGun/EntratiWristGunWeapon",
+    "category": "Pistols",
+    "disposition": 0.7,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ekhein",
+    "internalPath": "/Lotus/Weapons/Thanotech/EntSphereHammer/EntSphereHammer",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ruvox",
+    "internalPath": "/Lotus/Weapons/Thanotech/EntFistIncarnon/EntFistIncarnon",
+    "category": "Melee",
+    "disposition": 0.75,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Laetum",
+    "internalPath": "/Lotus/Weapons/Tenno/Zariman/Pistols/HeavyPistol/ZarimanHeavyPistol",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Praedos",
+    "internalPath": "/Lotus/Weapons/Tenno/Zariman/Melee/Tonfas/ZarimanTonfaWeapon",
+    "category": "Melee",
+    "disposition": 0.6,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Innodem",
+    "internalPath": "/Lotus/Weapons/Tenno/Zariman/Melee/Dagger/ZarimanDaggerWeapon",
+    "category": "Melee",
+    "disposition": 0.65,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Phenmor",
+    "internalPath": "/Lotus/Weapons/Tenno/Zariman/LongGuns/SemiAutoRifle/ZarimanSemiAutoRifle",
+    "category": "LongGuns",
+    "disposition": 0.6,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Felarx",
+    "internalPath": "/Lotus/Weapons/Tenno/Zariman/LongGuns/PumpShotgun/ZarimanPumpShotgun",
+    "category": "LongGuns",
+    "disposition": 0.6,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Hikou",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/TennoStars",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Despair",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/StalkerKunai",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kunai",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/Kunai",
+    "category": "Pistols",
+    "disposition": 1.51,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Talons",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/U18ThrowingKnives/U18throwingknives",
+    "category": "Pistols",
+    "disposition": 1.44,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cantare",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/TnChoirframeKunai/TnChoirframeKunai",
+    "category": "Pistols",
+    "disposition": 0.9,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Castanas",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/StickyBomb/StickyBombs",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hikou Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/PrimeThrowingStar/PrimeHikou",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Spira Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/PrimeLiDagger/PrimeLiDagger",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Spira",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/LiDagger/LiDagger",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Fusilai",
+    "internalPath": "/Lotus/Weapons/Tenno/ThrowingWeapons/GlassKunai/GlassKunaiWeapon",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Strun Wraith",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/ShotgunVandal",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Strun",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/Shotgun",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Hek",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/QuadShotgun",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Boar Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/PrimeBoar",
+    "category": "LongGuns",
+    "disposition": 1.34,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Boar",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/FullAutoShotgun",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Sobek",
+    "internalPath": "/Lotus/Weapons/Tenno/Shotgun/DoubleBarrelShotgun",
+    "category": "LongGuns",
+    "disposition": 1.33,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Snipetron Vandal",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/VandalSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Braton Vandal",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/VIPRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Vectis",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/TennoSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Soma",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/TennoAR",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "MK1-Braton",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/StartingRifle",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Snipetron",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/SniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Latron",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/SemiAutoRifle",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Braton",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/Rifle",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Latron Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/LatronPrime",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Gorgon",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/HeavyRifle",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Burston",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/BurstRifle",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Braton Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/BratonPrime",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Boltor",
+    "internalPath": "/Lotus/Weapons/Tenno/Rifle/BoltoRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kompressa",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnYareliPistol/TnYareliPistolWeapon",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Epitaph",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnWraitheSidearm/TnWraitheSidearmWeapon",
+    "category": "Pistols",
+    "disposition": 0.6,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Knell",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnPriestPistolScope/TnPriestPistolWeapon",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Velox",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnOdaliskSmg/TnOdaliskSmgPistol",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Athodai",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnJetTurbine/TnJetTurbinePistolWeapon",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zakti",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnGuandoPistol/TnGuandoPistolGun",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pandero",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TnBardPistol/TnBardPistolGun",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akjagara",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TigrisRedeemerSetPistol/TnoBladedPistols",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akstiletto",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/TennoUzi/TennoUzi",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Azima",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/SundialGun/SundialPistol",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aksomati",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/SomaSidearm/AkimboSomaPistols",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pyrana",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/SawnOffShotgun/TennoHandShotgun",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akarius",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/SapientPistol/SapientPistol",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hystrix",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/QuillDartgun/QuillDartGunWeapon",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zylok Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeZylok/ZylokPrimePistol",
+    "category": "Pistols",
+    "disposition": 0.8,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zakti Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeZakti/PrimeZaktiPistol",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Velox Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeVelox/PrimeVeloxPistol",
+    "category": "Pistols",
+    "disposition": 0.8,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vasto Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeVasto/PrimeVastoPistol",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akvasto Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeVasto/AkPrimeVasto/AkPrimeVastoPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sicarus Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeSicarus/PrimeSicarusPistol",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pyrana Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimePyrana/PrimePyranaPistol",
+    "category": "Pistols",
+    "disposition": 0.65,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pandero Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimePandero/PanderoPrimeWeapon",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Magnus Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeMagnus/PrimeMagnusWeapon",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lex Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeLex/PrimeLex",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Knell Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeKnell/PrimeKnellWeapon",
+    "category": "Pistols",
+    "disposition": 0.8,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hystrix Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeHystrix/PrimeHystrixWeapon",
+    "category": "Pistols",
+    "disposition": 0.9,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Epitaph Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeEpitaph/PrimeEpitaphSidearmWeapon",
+    "category": "Pistols",
+    "disposition": 0.55,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ballistica Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeBallistica/PrimeBallistica",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akstiletto Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAkstiletto/PrimeAkstiletto",
+    "category": "Pistols",
+    "disposition": 0.85,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aksomati Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAksomati/PrimeAksomati",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akjagara Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAkjagara/AkJagaraPrime",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akbolto Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAkbolto/PrimeAkBoltoWeapon",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akarius Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAkarius/PrimeAkariusWeapon",
+    "category": "Pistols",
+    "disposition": 0.65,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Afuris Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/PrimeAfuris/PrimeAFurisWeapon",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Magnus",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/Magnum/Magnum",
+    "category": "Pistols",
+    "disposition": 1.53,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akzani",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/HarlequinGun/HarlequinPistols",
+    "category": "Pistols",
+    "disposition": 1.52,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dex Furis",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/DexFuris/DexFuris",
+    "category": "Pistols",
+    "disposition": 1.39,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zylok",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/ConclaveLeverPistol/ConclaveLeverPistol",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ballistica",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/AutomaticHandCrossbow/AutoCrossBow",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Euphona Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/AllNew1hSG/AllNew1hSG",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Riot-848",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistols/1999EntHybridPistolWeapon/1999EntHybridPistolWeapon",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vasto",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/RevolverPistol",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lato",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/Pistol",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lato Vandal",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/LatoVandal",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lato Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/LatoPrime",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lex",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/HeavyPistol",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bronco",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/HandShotGun",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bolto",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/CrossBow",
+    "category": "Pistols",
+    "disposition": 1.51,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sicarus",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/BurstPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bronco Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/BroncoPrime",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Furis",
+    "internalPath": "/Lotus/Weapons/Tenno/Pistol/AutoPistol",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gunsen",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Warfan/WarfanWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vericres",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Warfan/TnMoonWarfan/MoonWarfanWeapon",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Quassus",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Warfan/TnBrokenFrameWarfan/TnBrokenFrameWarfanWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Quassus Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Warfan/PrimeQuassus/PrimeQuassusWeapon",
+    "category": "Melee",
+    "disposition": 0.65,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Gunsen Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Warfan/PrimeGunsen/PrimeGunsenWeapon",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kronen Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Tonfa/TonfaContestWinnerPrime/TonfaContestWinnerPrimeWeapon",
+    "category": "Melee",
+    "disposition": 0.6,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kronen",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Tonfa/TonfaContestWinner/TennoTonfa",
+    "category": "Melee",
+    "disposition": 1.43,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Boltace",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Tonfa/Boltonfa/Boltonfa",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Argo & Vel",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/DaxDuviriMaceShieldWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sigma & Octantis",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/SundialSwordBoard/SundialBoardSword",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cobra & Crane Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/PrimeCobraAndCrane/PrimeCobraAndCraneWeapon",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cobra & Crane",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/PacifistShieldAndSword/PacifistShieldSword",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tak & Lug",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/MortiforShieldAndSword/MortiforShieldAndSword",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Silva & Aegis",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SwordsAndBoards/MeleeContestWinnerOne/TennoSwordShield",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Skiajati",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/UmbraKatana/UmbraKatana",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Destreza",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TnoRapier/TnoRapier",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tatsu",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TnTwoHandedKatana/TnTwoHandedKatana",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pennant",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TnRailjackGreatKatana/TnRailJackGreatKatanaWeapon",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dorrclave",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TnDagathBladeWhip/TnDagathBladeWhip",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Masseter",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TnChiselKanabo/TnChiselKanabo",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Endura",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/ThreeLeaf/ThreeLeaf",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Okina",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/TennoSai/TennoSais",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Broken War",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/StalkerTwo/StalkerTwoSmallSword",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "War",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/StalkerTwo/StalkerTwoGreatSword",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Lacera",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/StalkerMios/StalkerMios",
+    "category": "Melee",
+    "disposition": 1.31,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ceti Lacera",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/StalkerMios/OperationsLacera",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Keres",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/QuillSword/QuillDualSwords",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tatsu Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeTatsu/PrimeTatsuWeapon",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pangolin Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimePangolinSword/PrimePangolinSword",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Okina Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeOkina/PrimeOkina",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nami Skyla Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeNamiSkyla/PrimeNamiSkyla",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Masseter Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeMasseter/PrimeMasseter",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nikana Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeKatana/PrimeNikana",
+    "category": "Melee",
+    "disposition": 0.6,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Karyst Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeKaryst/PrimeKrisDagger",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Gram Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeGram/PrimeGram",
+    "category": "Melee",
+    "disposition": 0.75,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Galatine Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeGalatine/PrimeGalatine",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Keres Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PrimeDualKeres/PrimeDualKeresWeapon",
+    "category": "Melee",
+    "disposition": 0.75,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Plasma Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PlasmaSword/PlasmaLongSword",
+    "category": "Melee",
+    "disposition": 1.48,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pangolin Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PangolinSword/PangolinLongSword",
+    "category": "Melee",
+    "disposition": 1.47,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Destreza Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/PRapier/DestrezaPrime",
+    "category": "Melee",
+    "disposition": 1.14,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vitrica",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/NWIIIOrokinSword/NWOrokinSword",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Karyst",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/KrisDagger/KrisDagger",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dragon Nikana",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/KatanaAndWakizashi/LowKatana",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nikana",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/KatanaAndWakizashi/Katana",
+    "category": "Melee",
+    "disposition": 0.95,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dex Nikana",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/KatanaAndWakizashi/Dex2023Nikana/Dex2023Nikana",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Jaw Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/JawSword/JawLongSword",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Heat Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/HeatSword/HeatLongSword",
+    "category": "Melee",
+    "disposition": 1.48,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Galatine",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/GreatSword/TennoGreatSword",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dex Dakra",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/DexTheSecond/DexTheSecond",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Azothane",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/DaxDuviriTwoHandedKatana/DaxDuviriTwoHandedKatanaWeapon",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Syam",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/DaxDuviriKatana/DaxDuviriKatanaWeapon",
+    "category": "Melee",
+    "disposition": 0.75,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dark Split-Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/DarkSword/DarkSwordDaggerHybridWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dark Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/DarkSword/DarkLongSword",
+    "category": "Melee",
+    "disposition": 1.48,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nami Solo",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/CutlassAndPoignard/TennoCutlass",
+    "category": "Melee",
+    "disposition": 1.43,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nami Skyla",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/CutlassAndPoignard/CutlassPoignardSwords",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tenet Exec",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Swords/CrpBigSlash/CrpBigSlash",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Zenistar",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/SunDialAxe/SundialAxeWeapon",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Bo",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/Staff",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cadus",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/SingleStaff",
+    "category": "Melee",
+    "disposition": 1.29,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Amphis",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/GrnStaff",
+    "category": "Melee",
+    "disposition": 1.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tipedo Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/TipedoPrime/TipedoPrimeWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Bo Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/PrimeBo/PrimeBoWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tipedo",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Staff/MonkSpade/TnoMonkStaff",
+    "category": "Melee",
+    "disposition": 1.31,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Raza",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Soma/SomaDualKamas",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Hate",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Scythe/StalkerScytheWeapon",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Reaper Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Scythe/ReaperWeapon",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ether Reaper",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Scythe/EtherScytheWeapon",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Harmony",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Scythe/TnChoirScythe/TnChoirScythe",
+    "category": "Melee",
+    "disposition": 0.55,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Anku",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Scythe/ParisScythe/ParisScythe",
+    "category": "Melee",
+    "disposition": 1.46,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Volnus Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeVolnus/VolnusPrimeWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Venka Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeVenKa/PrimeVenkaClaws",
+    "category": "Melee",
+    "disposition": 0.85,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tekko Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeTekko/PrimeTekko",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Silva & Aegis Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeSilvaAegis/PrimeSilvaAegis",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ninkondi Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeNinkondi/PrimeNikondi",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kogake Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeKogake/KogakePrimeKnuckles",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Fragor Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeFragor/PrimeFragor",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Kamas Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PrimeDualKamas/PrimeDualKamas",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Orthos Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/PrimePolearmWeapon",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Orthos",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/PolearmWeapon",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cassowar",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/TnHalberdPolearm/TnHalberdPolearmWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Guandao",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/TnGuandaoPolearm/TnGuandaoPolearmWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Guandao Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/PrimeGuandao/PrimeGuandaoWeapon",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Amanata",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/Naginata/ShrineMaidenNaginataWeapon",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tonbo",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/FlowerPowerPolearm/FlowerPowerPolearmWep",
+    "category": "Melee",
+    "disposition": 1.38,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Edun",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Polearms/DaxDuviriPolearm/DaxDuviriPolearmWeapon",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Gazal Machete",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/PersianMachete/DjinnMachete",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Shaku",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Nunchaku/TnoNunchaku/TnoNunchaku",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ninkondi",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Nunchaku/Nunchaku/Nunchaku",
+    "category": "Melee",
+    "disposition": 1.41,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Magistar",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Maces/PaladinMace/PaladinMaceWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Skana Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/LongSword/SkanaPrime",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Skana",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/LongSword/LongSword",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ether Sword",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/LongSword/EtherSword",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Hespar",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/HeavyScythe/DuviriScythe/DuviriHeavyScytheWeapon",
+    "category": "Melee",
+    "disposition": 0.95,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Wolf Sledge",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Hammer/ThrowingHammer",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Fragor",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Hammer/HammerWeapon",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sibear",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Hammer/IceHammer/IceHammer",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Volnus",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Hammer/GlassHammer/GlassHammer",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sampotes",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Hammer/DaxDuviriHammer/DaxDuviriHammerWeapon",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Redeemer",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gunblade/TnoGunblade",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Redeemer Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gunblade/RedeemerPrime/RedeemerPrimeWep",
+    "category": "Melee",
+    "disposition": 0.65,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sarpa",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gunblade/GunbladeAutomatic/TnoGunbladeAutomatic",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Gram",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/GreatSword/GreatSword",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Orvius",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Glaives/TeshinGlaive/TnTeshinGlaiveWep",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Glaive Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Glaives/PrimeGlaive/PrimeGlaiveWeapon",
+    "category": "Melee",
+    "disposition": 0.7,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Glaive",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Glaives/LightGlaive/LightGlaiveWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kestrel",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Glaives/Boomerang/BoomerangWeapon",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ankyros",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gauntlet/Gauntlet",
+    "category": "Melee",
+    "disposition": 1.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ankyros Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gauntlet/PrimeAnkyros/PrimeAnkyros",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tekko",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Gauntlet/BrawlerKnuckles/BrawlerKnuckles",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Furax Wraith",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Fist/FuraxWraith",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Furax",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Fist/Fist",
+    "category": "Melee",
+    "disposition": 1.38,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Skana",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualShortSword/DualShortSword",
+    "category": "Melee",
+    "disposition": 1.48,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Heat Swords",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualShortSword/DualHeatSwords",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Ether",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualShortSword/DualEtherSword",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kama",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualKamas/SingleKama",
+    "category": "Melee",
+    "disposition": 1.47,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Kamas",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualKamas/DualKamas",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Fang Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualDagger/FangPrimeDagger",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ether Daggers",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualDagger/DualEtherDagger",
+    "category": "Melee",
+    "disposition": 1.49,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Fang",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/DualDagger/DualDagger",
+    "category": "Melee",
+    "disposition": 1.36,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dark Dagger",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Dagger/DarkDagger",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Heat Dagger",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Dagger/Dagger",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ceramic Dagger",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Dagger/CeramicDagger",
+    "category": "Melee",
+    "disposition": 1.43,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dakra Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/CronusSword/PrimeCronusLongSword",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cronus",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/CronusSword/CronusLongSword",
+    "category": "Melee",
+    "disposition": 1.48,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Venka",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Claws/TennoClaws",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kogake",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/BrassKnuckles/BrassKnuckles",
+    "category": "Melee",
+    "disposition": 1.46,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sarofang",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/WolfFrameAxeWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Ichor",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/DualInfestedAxesWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Zoren",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/DualAxeWeapon",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Scindo",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/AxeWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Zoren Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/PrimeZoren/PrimeZorenAxeWeapon",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Scindo Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Melee/Axe/PrimeScindo/PrimeScindoWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Latron Wraith",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/WraithLatron/WraithLatron",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Attica",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnoPrmryXbow/TnoPrmryXbowWeapon",
+    "category": "LongGuns",
+    "disposition": 1.42,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Steflos",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnoLotusPodShotgun/TnoLotusPodShotgun",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sybaris",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnoLeverAction/TnoLeverActionRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Fulmin",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnWispRifle/TnWispRifle",
+    "category": "LongGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Baza",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnSMG/TnSMGWeapon",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Aeolak",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnRifleErsatz/TnRifleErsatzWeapon",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Veldt",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnRevolverRifle/TnRevolverRifleGun",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Quellor",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnRailjackRifle/RailjackRifleGun",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Perigale",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnQuadSniper/TnQuadSniper",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Scourge",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnPriestSpear/TnPriestSpearGun",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Afentis",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnHopliteSpear/TnHopliteSpearGunWeapon",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Corinth",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnHeavyShotgun/TnHeavyShotgunGun",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Astilla",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnGlassShotgun/TnGlassShotgunGun",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Reconifex",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnBeltFedRifle/TnBeltFedRifleWeapon",
+    "category": "LongGuns",
+    "disposition": 0.6,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenora",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnBardRifle/TnBardRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Cedo",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TnAlchemistShotgun/TnAlchemistShotgun",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Stradavar",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/TennoTommyGun/TennoTommyGunRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Acceltra",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/SapientPrimary/SapientPrimaryWeapon",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Rubico Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/RubicoPrime/RubicoPrimeWeapon",
+    "category": "LongGuns",
+    "disposition": 0.7,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Phantasma",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/RevenantShotgun/RevenantShotgun",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Zhuge",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/RepeatingCrossbow/RepeatingCrossbow",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Zhuge Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeZhuge/PrimeZhugeCrossbow",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Vectis Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeVectis/PrimeVectisRifle",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Trumna Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeTrumna/PrimeTrumnaWeapon",
+    "category": "LongGuns",
+    "disposition": 0.6,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tigris Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeTigris/PrimeTigris",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Tiberon Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeTiberon/PrimeTiberonRifle",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenora Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeTenora/TenoraPrimeWeapon",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sybaris Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeSybaris/PrimeSybarisRifle",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Strun Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeStrun/PrimeStrunWeapon",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Stradavar Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeStradavar/PrimeStradavarGun",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Soma Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeSoma/PrimeSomaRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Scourge Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeScourge/PrimeScourgeWeapon",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Phantasma Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimePhantasma/PhantasmaPrimeShotgun",
+    "category": "LongGuns",
+    "disposition": 0.75,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Panthera Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimePanthera/PrimePanthera",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Nagantaka Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeNagantaka/PrimeNagantakaWeapon",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Fulmin Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeFulmin/PrimeFulmin",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Corinth Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeCorinth/PrimeCorinth",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Cedo Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeCedo/PrimeCedoWeapon",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Burston Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeBurston/PrimeBurston",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Boltor Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeBoltor/PrimeBoltor",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Baza Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeBaza/PrimeBazaGun",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Astilla Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeAstilla/AstillaPrimeWeapon",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Acceltra Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PrimeAcceltra/PrimeAcceltraWeapon",
+    "category": "LongGuns",
+    "disposition": 0.55,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Rauta",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/PaxDuviricusShotgun/PaxDuviricusShotgun",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Panthera",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/Miter/TnoMiter",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Zenith",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/LoginPrimary/SundialRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Alternox",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/GyreRifle/GyreRifleWeapon",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Higasa",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/Gunbrella/ShrineMaidenGunbrellaWeapon",
+    "category": "LongGuns",
+    "disposition": 0.8,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Nagantaka",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/GarudaCrossbow/GarudaCrossbow",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Rubico",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/FiveShotSniper/FiveShotSniper",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tiberon",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/DrakeRifle/DrakeRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tigris",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/DoubleBarrelShotgun/TennoDoubleBarrelShotgun",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Dex Sybaris",
+    "internalPath": "/Lotus/Weapons/Tenno/LongGuns/DexTheThird/DexTheThird",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Grimoire",
+    "internalPath": "/Lotus/Weapons/Tenno/Grimoire/TnGrimoire",
+    "category": "Pistols",
+    "disposition": 0.6,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dread",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/StalkerBow",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Paris Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/PrimeHuntingBow",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Paris",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/HuntingBow",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Evensong",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/TnChoirBow/TnChoirBow",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Proboscis Cernos",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/PrimeDerelictCernos/DerelictCernos",
+    "category": "LongGuns",
+    "disposition": 0.85,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Cernos Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/PrimeCernos/PrimeCernos",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Nataruk",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/Omicrus/OmicrusPlayerWep",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Cinta",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/DaxDuviriAsymetricalBow/DaxDuviriAsymmetricalLongBowPlayerWeapon",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Daikyu",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/AsymetricalBow/AsymetricalBow",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Cernos",
+    "internalPath": "/Lotus/Weapons/Tenno/Bows/AntlerBow/AntlerBow",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Larkspur",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/TnShieldframeArchGun/TnShieldFrameArchGun",
+    "category": "SpaceGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Mandonel",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/TnConcreteArchgun/TnConcreteArchgunWeapon",
+    "category": "SpaceGuns",
+    "disposition": 1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Morgha",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechGrenadeLaunch/ThanoTechGrenadeLauncher",
+    "category": "SpaceGuns",
+    "disposition": 1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Mausolon",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechArchLongGun/ThanoTechLongGun",
+    "category": "SpaceGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Cortege",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ThanoTechArchGun/ThanoTechArchGun",
+    "category": "SpaceGuns",
+    "disposition": 1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Fluctus",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/RocketArtillery/ArchRocketCrossbow",
+    "category": "SpaceGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Grattler",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/RepurposedGrineerAntiAircraftGun/ArchGRNAAGun",
+    "category": "SpaceGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Velocitus",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/Railgun/ArchRailgun",
+    "category": "SpaceGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Larkspur Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/PrimeLarkspur/PrimeLarkspurWeapon",
+    "category": "SpaceGuns",
+    "disposition": 0.75,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Corvas Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/PrimeCorvas/PrimeCorvasWeapon",
+    "category": "SpaceGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Corvas",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/LaunchGrenade/ArchCannon",
+    "category": "SpaceGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Imperator Vandal",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/FoldingMachineGun/ArchMachineGunVandal",
+    "category": "SpaceGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Imperator",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/FoldingMachineGun/ArchMachineGun",
+    "category": "SpaceGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Dual Decurion",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ArchwingHeavyPistols/ArchHeavyPistols",
+    "category": "SpaceGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Prisma Dual Decurions",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ArchwingHeavyPistols/Prisma/PrismaArchHeavyPistols",
+    "category": "SpaceGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Phaedra",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ArchLongRifle/ArchLongRifle",
+    "category": "SpaceGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Cyngas",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Primary/ArchBurstGun/ArchBurstGun",
+    "category": "SpaceGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Prisma Veritux",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/VoidTraderArchsword/VTArchSwordWeapon",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Knux",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/GrnArchHand/GrnArchHandWeapon",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Corufell",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/ExaltedArchScythe/ExaltedAWScytheWeapon",
+    "category": "Melee",
+    "disposition": 0.85,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Centaur",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/Archswordandshield/ArchSwordShield",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Veritux",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/Archsword/ArchSwordWeapon",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Onorix",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/Archaxe/ArchAxeWeapon",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Agkuza",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/ArchSwordHook/ArchHookSwordWeapon",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Kaszas",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/ArchScythe/ArchScythe",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "<ARCHWING> Rathbone",
+    "internalPath": "/Lotus/Weapons/Tenno/Archwing/Melee/ArchHammer/ArchHammer",
+    "category": "SpaceMelee",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Akbronco Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/PrimeAkimboShotGun",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akvasto",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/DualVastos",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akmagnus Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/DualMagnusPrime",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akmagnus",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/DualMagnus",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Vipers",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkimboViperPistols",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akbronco",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkimboShotGun",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aklato",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkimboPistol",
+    "category": "Pistols",
+    "disposition": 1.52,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Akbolto",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkimboBolto",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Afuris",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkimboAutoPistols",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aklex Prime",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkLexPrimePistols",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aklex",
+    "internalPath": "/Lotus/Weapons/Tenno/Akimbo/AkLexPistols",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vaykor Marelok",
+    "internalPath": "/Lotus/Weapons/Syndicates/SteelMeridian/Pistols/SMMarelok",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vaykor Sydon",
+    "internalPath": "/Lotus/Weapons/Syndicates/SteelMeridian/Melee/SMSydon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vaykor Hek",
+    "internalPath": "/Lotus/Weapons/Syndicates/SteelMeridian/LongGuns/SMHek",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Rakta Ballistica",
+    "internalPath": "/Lotus/Weapons/Syndicates/RedVeil/Pistols/RVBallistica",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Rakta Dark Dagger",
+    "internalPath": "/Lotus/Weapons/Syndicates/RedVeil/Melee/RVDarkDagger",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Rakta Cernos",
+    "internalPath": "/Lotus/Weapons/Syndicates/RedVeil/Bows/RVCernos",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Secura Dual Cestra",
+    "internalPath": "/Lotus/Weapons/Syndicates/PerrinSequence/Pistols/PSDualCestra",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Secura Lecta",
+    "internalPath": "/Lotus/Weapons/Syndicates/PerrinSequence/Melee/PSLecta",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Secura Penta",
+    "internalPath": "/Lotus/Weapons/Syndicates/PerrinSequence/LongGuns/PSPenta",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sancti Castanas",
+    "internalPath": "/Lotus/Weapons/Syndicates/NewLoka/Pistols/NLCastanas",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sancti Magistar",
+    "internalPath": "/Lotus/Weapons/Syndicates/NewLoka/Melee/NLMagistar",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sancti Tigris",
+    "internalPath": "/Lotus/Weapons/Syndicates/NewLoka/LongGuns/NLTigris",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Synoid Gammacor",
+    "internalPath": "/Lotus/Weapons/Syndicates/CephalonSuda/Pistols/CSSynoidGammacor",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gammacor",
+    "internalPath": "/Lotus/Weapons/Syndicates/CephalonSuda/Pistols/CSDroidArray",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Synoid Heliocor",
+    "internalPath": "/Lotus/Weapons/Syndicates/CephalonSuda/Melee/CSHeliocor",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Synoid Simulor",
+    "internalPath": "/Lotus/Weapons/Syndicates/CephalonSuda/LongGuns/CSSimulor",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Telos Akbolto",
+    "internalPath": "/Lotus/Weapons/Syndicates/ArbitersOfHexis/Pistols/AHAkbolto",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Telos Boltace",
+    "internalPath": "/Lotus/Weapons/Syndicates/ArbitersOfHexis/Melee/AHBoltace",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Telos Boltor",
+    "internalPath": "/Lotus/Weapons/Syndicates/ArbitersOfHexis/LongGuns/AHBoltor",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Shedu",
+    "internalPath": "/Lotus/Weapons/Sentients/Shedu/SheduHeavyWeapon",
+    "category": "LongGuns",
+    "disposition": 0.75,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Basmu",
+    "internalPath": "/Lotus/Weapons/Sentients/SentRifleNewWar/SentRifleNewWarGun",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Venato",
+    "internalPath": "/Lotus/Weapons/Sentients/SentJointedScythe/SentJointedScytheWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Paracesis",
+    "internalPath": "/Lotus/Weapons/Orokin/BallasSword/BallasSwordWeapon",
+    "category": "Melee",
+    "disposition": 0.6,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sirocco",
+    "internalPath": "/Lotus/Weapons/Operator/Pistols/DrifterPistol/DrifterPistolPlayerWeapon",
+    "category": "OperatorAmps",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Rumblejack",
+    "internalPath": "/Lotus/Weapons/Operator/Melee/DrifterTazer/DrifterTazerPlayerWep",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "MK1-Strun",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Strun",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "MK1-Paris",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Paris",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "MK1-Kunai",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Kunai",
+    "category": "Pistols",
+    "disposition": 1.51,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "MK1-Furis",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Furis",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "MK1-Furax",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Furax",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "MK1-Bo",
+    "internalPath": "/Lotus/Weapons/MK1Series/MK1Bo",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vesper 77",
+    "internalPath": "/Lotus/Weapons/Lasria/LasSilencedPistol/LasSilencedPistolWeapon",
+    "category": "Pistols",
+    "disposition": 0.55,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Purgator 1",
+    "internalPath": "/Lotus/Weapons/Lasria/LasGrenadeLauncher/LasrianNoxPlayerWeapon",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Dual Viciss",
+    "internalPath": "/Lotus/Weapons/Lasria/LasGooSickle/LasGooSicklePlayerWeapon",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "EFV-8 Mars",
+    "internalPath": "/Lotus/Weapons/Lasria/LasGooPistol/LasGooPistolPlayerWeapon",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "EFV-5 Jupiter",
+    "internalPath": "/Lotus/Weapons/Lasria/LasGooAK/LasGooAKPlayerWeapon",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "AX-52",
+    "internalPath": "/Lotus/Weapons/Lasria/AK47/TC2024AK47Weapon",
+    "category": "LongGuns",
+    "disposition": 0.75,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Embolist",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfestedPistol",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tysis",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfestedDartPistol/InfestedDartPistol",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dual Toxocyst",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfVomitGun/InfVomitGunWep",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zymos",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfUzi/InfUziWeapon",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pox",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfProximityStars/InfProximityStars",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Catabolyst",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfBeamPistol/InfBeamPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Scoliac",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Whip/InfestedWhip/InfestedWhipWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Lesion",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/TipedoStaff/InfTipedoStaff",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Mire",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Swords/Mire/MireSword",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Mios",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Swords/Mios/Mios",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pupacyst",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Staff/InfStaff/InfStaff",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pulmonars",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Nunchaku/InfNunchuck/InfNunchuck",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Arum Spinosa",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/InfWarfan/InfWarfanWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Hirudo",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/InfWFAccompanyingSparring/InfestedKogake",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Keratinos",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/InfTransformClaw/InfTransformClawsWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Caustacyst",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/InfEmbolistScythe/InfestedScythe",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Pathocyst",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/InfBoomerang/InfBoomerangWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Cerata",
+    "internalPath": "/Lotus/Weapons/Infested/Melee/Glaives/PunctureGlaive/PunctureGlaiveWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Synapse",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/InfestedRifle",
+    "category": "LongGuns",
+    "disposition": 1.31,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Phage",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/Tentacluster/InfestedShotgun",
+    "category": "LongGuns",
+    "disposition": 1.46,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Paracyst",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/QuantaFullyInfested/InfQuantaRifle",
+    "category": "LongGuns",
+    "disposition": 1.31,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Hema",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/InfWFAccompanyingPri/InfestedBurstRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sporothrix",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/InfSniperRifle/InfSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Mutalist Quanta",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/InfCrpShockSwarm/InfCrpShockSwarmRifle",
+    "category": "LongGuns",
+    "disposition": 1.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Bubonico",
+    "internalPath": "/Lotus/Weapons/Infested/LongGuns/InfArmCannon/InfArmCannon",
+    "category": "LongGuns",
+    "disposition": 0.75,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Coda Tysis",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Pistols/CodaTysis",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Coda Pox",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Pistols/CodaPox",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Coda Catabolyst",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Pistols/CodaCatabolyst",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dual Coda Torxica",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Pistols/1999InfSporePistol/1999InfSporePistolWeapon",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Coda Mire",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Melee/CodaMire",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Coda Hirudo",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Melee/CodaHirudo",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Coda Motovore",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Melee/InfestedHammer/InfLichHammerWeapon",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Coda Pathocyst",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Melee/CodaPathocyst/CodaPathocyst",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Coda Caustacyst",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/Melee/CodaCaustacyst/CodaCaustacyst",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Coda Synapse",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/LongGuns/CodaSynapse",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Coda Sporothrix",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/LongGuns/CodaSporothrix",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Coda Hema",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/LongGuns/CodaHema",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Coda Bassocyst",
+    "internalPath": "/Lotus/Weapons/Infested/InfestedLich/LongGuns/1999InfShotgun/1999InfShotgunWeapon",
+    "category": "LongGuns",
+    "disposition": 0.5,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Mutalist Cernos",
+    "internalPath": "/Lotus/Weapons/Infested/Bow/InfCernosBow/InfCernos",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Aegrit",
+    "internalPath": "/Lotus/Weapons/Grineer/ThrowingWeapons/GrnVorStickyBomb/GrnVorStickyBomb",
+    "category": "Pistols",
+    "disposition": 0.9,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Vipers Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/WraithTwinVipers/WraithTwinVipers",
+    "category": "Pistols",
+    "disposition": 1.41,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Viper Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/WraithSingleViper/WraithSingleViper",
+    "category": "Pistols",
+    "disposition": 1.4,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Atomos",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/HeatGun/GrnHeatGun",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Stubba",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnUzi/GrnUziWeapon",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kulstar",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnTorpedoPistol/GrnTorpedoPistol",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Rogga",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnQueenGuardDualPistol/GrnQueenGuardDualPistols",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kohmak",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnKohmPistol/GrnKohmPistol",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Kohmak",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnDWUniques/GrnTwinKohmaks",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Quatz",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrnAmphisPistol/GrnAmphisPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Nukor",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrineerMicrowavegun/GrnMicrowavePistol",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Marelok",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrineerLeverActionPistol/GLAPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Brakk",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrineerHandShotgun/GrineerHandCannon",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Stug",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrineerCrossbow/GrineerGooGun",
+    "category": "Pistols",
+    "disposition": 1.48,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Prisma Twin Gremlins",
+    "internalPath": "/Lotus/Weapons/Grineer/Pistols/GrineerBulbousSMG/Prisma/PrismaTwinGremlinsWeapon",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tonkkatt",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/Tonfa/GrnChainSawTonfa/GrnChainSawTonfaWeapon",
+    "category": "Melee",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vastilok",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GunBlade/GrnGunBlade/GrnGunblade",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sydon",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnTrident/GrnTridentWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Korrudo",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnSparring/GrnSpiderSparring/GrnSpiderSparring",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Slaytra",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnSharbola/GrnSharbolaWeapon",
+    "category": "Melee",
+    "disposition": 1.05,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Broken Scepter",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnQueenSceptre/GrnQueenSceptreWeapon",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kuva Shildeg",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnKuvaLichScythe/GrnKuvaLichScytheWeapon",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Jat Kusar",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnKusarigama/GrnKusarigamaWeapon",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ghoulsaw",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnGhoulSaw/GrnGhoulSawPlayer",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Krohkur",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnEgyptSwd/GrnEgyptSwdWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Twin Krohkur",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnEgyptSwd/DualGrnEgyptSwdWeapon",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Twin Basolk",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnDualFireAxe/GrnDualFireAxe",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Halikar Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnBoomerang/HalikarWraithWeapon",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Halikar",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrnBoomerang/GrnBoomerang",
+    "category": "Melee",
+    "disposition": 1.44,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Atterax",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerWhip/GrineerWhip",
+    "category": "Melee",
+    "disposition": 1.15,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ack & Brunt",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerTylAxeAndBoar/RegorAxeShield",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Machete Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/WraithMacheteWeapon",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Prisma Machete",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/PrismaMachete",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Prisma Dual Cleavers",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/PrismaDualCleavers",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Machete",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/Machete",
+    "category": "Melee",
+    "disposition": 1.45,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dual Cleavers",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerMachetteAndCleaver/DualCleaverWeapon",
+    "category": "Melee",
+    "disposition": 1.2,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Jat Kittag",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerJetPoweredPolearm/GrineerJetPolearm",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kesheg",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerHalberd/GrnHalberd",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sheev",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerCombatKnife/GrineerCombatKnife",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ripkas",
+    "internalPath": "/Lotus/Weapons/Grineer/Melee/GrineerClaws/GrnClaws",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Gorgon Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/WraithGorgon/WraithGorgon",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prisma Gorgon",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/VoidTraderGorgon/VTGorgon",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Argonak",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/LaserAimRifle/LaserAimRifle",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kohm",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnSpark/GrnSparkRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Gotva Prime",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnOrokinRifle/GrnOrokinRifleWeapon",
+    "category": "LongGuns",
+    "disposition": 0.7,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Chakkhurr",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnKuvaLichRifle/GrnKuvaLichRifleWeapon",
+    "category": "LongGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Harpak",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnHarpoonGun/GrnHarpoonGun",
+    "category": "LongGuns",
+    "disposition": 1.55,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tonkor",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnGrenadeLauncher/GrnGrenadeLauncher",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Buzlok",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnGorgSniperRifle/GrnGorgSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Quartakk",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnFourBarrelRifle/GrnFourBarrelRifleWeapon",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Javlok",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnFlameSpear/GrnFlameSpear",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Zarr",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrnCannon/GrnCannonWeapon",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Vulkar Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerSniperRifle/VulkarWraith",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Vulkar",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerSniperRifle/GrnSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Miter",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerSawbladeGun/SawBladeGun",
+    "category": "LongGuns",
+    "disposition": 1.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Karak Wraith",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerM16Homage/KarakWraith",
+    "category": "LongGuns",
+    "disposition": 1.28,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Karak",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerM16Homage/GrineerM16Rifle",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prisma Grinlok",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerLeverActionRifle/PrismaGrinlokWeapon",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Grinlok",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerLeverActionRifle/GLARifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Drakgoon",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerFlakCannon/FlakCannon",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Twin Grakatas",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerAssaultRifle/TwinGrakatas",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Grakata",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/GrineerAssaultRifle/GrnAssaultRifle",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Hind",
+    "internalPath": "/Lotus/Weapons/Grineer/LongGuns/BurstRifle/GrnBurstRifle",
+    "category": "LongGuns",
+    "disposition": 1.42,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Twin Stubbas",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/Secondaries/Stubba/KuvaStubba",
+    "category": "Pistols",
+    "disposition": 0.85,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Seer",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/Secondaries/Seer/KuvaSeer",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Nukor",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/Secondaries/Nukor/KuvaNukor",
+    "category": "Pistols",
+    "disposition": 0.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Kraken",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/Secondaries/Kraken/KuvaKraken",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Brakk",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/Secondaries/Brakk/KuvaBrakk",
+    "category": "Pistols",
+    "disposition": 0.85,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Zarr",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Zarr/KuvaZarr",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Tonkor",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Tonkor/KuvaTonkor",
+    "category": "LongGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Sobek",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Sobek/KuvaSobek",
+    "category": "LongGuns",
+    "disposition": 0.8,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Kuva Quartakk",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Quartakk/KuvaQuartakk",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Ogris",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Ogris/KuvaOgris",
+    "category": "LongGuns",
+    "disposition": 0.7,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Kohm",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Kohm/KuvaKohm",
+    "category": "LongGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Kuva Karak",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Karak/KuvaKarak",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Hind",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Hind/KuvaHind",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Hek",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Hek/KuvaHekWeapon",
+    "category": "LongGuns",
+    "disposition": 0.9,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Kuva Drakgoon",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/LongGuns/Drakgoon/KuvaDrakgoon",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Kuva Grattler",
+    "internalPath": "/Lotus/Weapons/Grineer/KuvaLich/HeavyWeapons/Grattler/KuvaGrattler",
+    "category": "SpaceGuns",
+    "disposition": 0.7,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Kuva Ayanga",
+    "internalPath": "/Lotus/Weapons/Grineer/HeavyWeapons/GrnHeavyGrenadeLauncher",
+    "category": "SpaceGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusArchgunRandomModRare"
+  },
+  {
+    "name": "Seer",
+    "internalPath": "/Lotus/Weapons/Grineer/GrineerPistol/GrnScopedPistolPlayer",
+    "category": "Pistols",
+    "disposition": 1.5,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kraken",
+    "internalPath": "/Lotus/Weapons/Grineer/GrineerPistol/GrnHeavyPistol",
+    "category": "Pistols",
+    "disposition": 1.53,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Viper",
+    "internalPath": "/Lotus/Weapons/Grineer/GrineerPistol/GrineerLightPistol",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Gremlins",
+    "internalPath": "/Lotus/Weapons/Grineer/GrineerPistol/GrineerAkimboPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Kuva Bramma",
+    "internalPath": "/Lotus/Weapons/Grineer/Bows/GrnBow/GrnBowWeapon",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Arca Scisco",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/SniperPistol/CrpScopeGun",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Plinx",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpSonificBlastor/CrpBlastorWeapon",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ocucor",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpSentExperimentPistol/CrpSentExperimentPistol",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cyanex",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpSentAmalgPistol/CrpSentAmalgPistol",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tenet Spirex",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpIgniterPistol/CrpIgniterPistol",
+    "category": "Pistols",
+    "disposition": 1.05,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Prisma Angstrum",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpHandRL/PrismaAngstrum",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Angstrum",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpHandRL/CorpusHandRocketLauncher",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Staticor",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpElectroMag/CrpElectroMag",
+    "category": "Pistols",
+    "disposition": 0.9,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cycron",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpChargeGun/CrpChargeGun",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tenet Diplos",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpBriefcaseAkimbo/CrpBriefcaseAkimboPistol",
+    "category": "Pistols",
+    "disposition": 0.75,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sonicor",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CrpAirPistol/CrpAirPistolArray",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Spectra Vandal",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CorpusModularPistol/Vandal/CrpLaserPistolVandal",
+    "category": "Pistols",
+    "disposition": 1.45,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dual Cestra",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CorpusMinigun/DualCorpusMinigun",
+    "category": "Pistols",
+    "disposition": 1.35,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cestra",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CorpusMinigun/CorpusMinigun",
+    "category": "Pistols",
+    "disposition": 1.52,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Detron",
+    "internalPath": "/Lotus/Weapons/Corpus/Pistols/CorpusHandShotgun/CorpusHandCannon",
+    "category": "Pistols",
+    "disposition": 1.15,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Galvacord",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Whips/CrpShockGrip/CrpShockGripWhipWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Lecta",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Whip/CorpusWhipWeapon",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tenet Agendus",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/ShieldAndSword/CrpHammerShield/CrpHammerShield",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Serro",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Polearm/CorpusPolearm01/CorpusPolearmWeapon",
+    "category": "Melee",
+    "disposition": 1.38,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Prisma Obex",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/KickAndPunch/PrismaObex",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Obex",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/KickAndPunch/KickPunchWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Arca Titron",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Hammer/CorpusHammerWeapon",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Stropha",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Gunblade/CrpGunBlade/CrpGunbladeWeapon",
+    "category": "Melee",
+    "disposition": 0.6,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Falcor",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Glaive/CrpGlaive/CrpGlaive",
+    "category": "Melee",
+    "disposition": 1.3,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Xoris",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/Glaive/CrpGhostCatcherGlaive/CrpGhostCatcherGlaive",
+    "category": "Melee",
+    "disposition": 0.65,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Kreska",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/CrpVenusHatchet/CrpVenusHatchet",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ohma",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/CrpTonfa/CrpTonfa",
+    "category": "Melee",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Prisma Ohma",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/CrpTonfa/CrpPrismaTonfa",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tenet Grigori",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/CrpBriefcaseScythe/CrpBriefcaseScythe",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Tenet Livia",
+    "internalPath": "/Lotus/Weapons/Corpus/Melee/CrpBriefcase2HKatana/CrpBriefcase2HKatana",
+    "category": "Melee",
+    "disposition": 0.9,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Ferrox",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/Spears/Railgun/CorpusRailgun",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Supra Vandal",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/Machinegun/SupraVandal",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Penta",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/GrenadeLauncher/GrenadeLauncher",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Carmine Penta",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/GrenadeLauncher/CarminePenta",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Convectrix",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpSplitLaser/CrpSplitLaser",
+    "category": "LongGuns",
+    "disposition": 1.46,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Arca Plasmor",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpShotgun/CrpShotgun",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Quanta Vandal",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpShockRifle/QuantaVandal",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Quanta",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpShockRifle/CrpShockRifle",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Exergis",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpShapeBlast/CrpShapeBlastShotgun",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Battacor",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpSentExperimentRifle/CrpSentExperimentRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Komorex",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpSentAmlgSniper/CrpSentAmlgSniper",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Stahlta",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpRubanRifle/CrpRubanRifle",
+    "category": "LongGuns",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Glaxion",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpFreezeRay/CrpFreezeRayRifle",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Glaxion Vandal",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpFreezeRay/Vandal/CrpFreezeRayVandalRifle",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Envoy",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpBriefcaseLauncher/CrpBriefcaseLauncher",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Opticor",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpBFG/CrpBFG",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Opticor Vandal",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpBFG/Vandal/VandalCrpBFG",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Ambassador",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CrpArSniper/CrpArSniperRifle",
+    "category": "LongGuns",
+    "disposition": 1.15,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prisma Tetra",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CorpusUMP/PrismaCorpusUMP",
+    "category": "LongGuns",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tetra",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/CorpusUMP/CorpusUMP",
+    "category": "LongGuns",
+    "disposition": 1.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Amprex",
+    "internalPath": "/Lotus/Weapons/Corpus/LongGuns/ChainLightningGun/ChainLightningRifle",
+    "category": "LongGuns",
+    "disposition": 0.85,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Lenz",
+    "internalPath": "/Lotus/Weapons/Corpus/Bow/Longbow/CrpBow",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prisma Lenz",
+    "internalPath": "/Lotus/Weapons/Corpus/Bow/Longbow/PrismaLenz/PrismaLenzWeapon",
+    "category": "LongGuns",
+    "disposition": 0.95,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Plinx",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Secondary/CrpBEPlinx/CrpBEPlinxWeapon",
+    "category": "Pistols",
+    "disposition": 0.7,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tenet Detron",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Secondary/CrpBEDetron/CrpBEDetron",
+    "category": "Pistols",
+    "disposition": 0.85,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tenet Cycron",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Secondary/CrpBECycron/CrpBECycron",
+    "category": "Pistols",
+    "disposition": 0.7,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tenet Tetra",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Primary/CrpBETetra/CrpBETetra",
+    "category": "LongGuns",
+    "disposition": 1.2,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Glaxion",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Primary/CrpBEGlaxion/CrpBEGlaxion",
+    "category": "LongGuns",
+    "disposition": 0.65,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Flux Rifle",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Primary/CrpBEFluxRifle/CrpBEFluxRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Ferrox",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Primary/CrpBEFerrox/CrpBEFerrox",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tenet Arca Plasmor",
+    "internalPath": "/Lotus/Weapons/Corpus/BoardExec/Primary/CrpBEArcaPlasmor/CrpBEArcaPlasmor",
+    "category": "LongGuns",
+    "disposition": 0.55,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Prova Vandal",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/VandalElectroProd",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Lanka",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/Railgun",
+    "category": "LongGuns",
+    "disposition": 1.05,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Dera",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/EnergyRifle",
+    "category": "LongGuns",
+    "disposition": 1.4,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prova",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/ElectroProd",
+    "category": "Melee",
+    "disposition": 1.4,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dera Vandal",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/DeraVandal",
+    "category": "LongGuns",
+    "disposition": 1.35,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Flux Rifle",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/CrpLaserRifle",
+    "category": "LongGuns",
+    "disposition": 1.55,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Spectra",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/CrpLaserPistol",
+    "category": "Pistols",
+    "disposition": 1.49,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Supra",
+    "internalPath": "/Lotus/Weapons/ClanTech/Energy/CrpHeavyRifle",
+    "category": "LongGuns",
+    "disposition": 1.1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Ogris",
+    "internalPath": "/Lotus/Weapons/ClanTech/Chemical/RocketLauncher",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Ignis Wraith",
+    "internalPath": "/Lotus/Weapons/ClanTech/Chemical/FlameThrowerWraith",
+    "category": "LongGuns",
+    "disposition": 0.55,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Ignis",
+    "internalPath": "/Lotus/Weapons/ClanTech/Chemical/FlameThrower",
+    "category": "LongGuns",
+    "disposition": 0.6,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Torid",
+    "internalPath": "/Lotus/Weapons/ClanTech/Bio/BioWeapon",
+    "category": "LongGuns",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Acrid",
+    "internalPath": "/Lotus/Weapons/ClanTech/Bio/AcidDartPistol",
+    "category": "Pistols",
+    "disposition": 1.33,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Simulor",
+    "internalPath": "/Lotus/Weapons/Cephalon/Primary/CephPrimary/CephPrimary",
+    "category": "LongGuns",
+    "disposition": 1.25,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Heliocor",
+    "internalPath": "/Lotus/Weapons/Cephalon/Melee/Hammer/CephHammerWeapon",
+    "category": "Melee",
+    "disposition": 1.35,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Verdilac",
+    "internalPath": "/Lotus/Weapons/Archon/Melee/Whip/ArchonWhipPlayerWep",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Korumm",
+    "internalPath": "/Lotus/Weapons/Archon/Melee/Trident/ArchonTridentPlayerWep",
+    "category": "Melee",
+    "disposition": 1.1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Nepheri",
+    "internalPath": "/Lotus/Weapons/Archon/Melee/DualDaggers/ArchonDualDaggersPlayerWep",
+    "category": "Melee",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sun & Moon",
+    "internalPath": "/Lotus/Types/Friendly/PlayerControllable/Weapons/DuviriDualSwordsWeapon",
+    "category": "Melee",
+    "disposition": 0.8,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Verglas",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentinelFreezeRayRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Verglas Prime",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentinelFreezeRayPrimeRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sweeper",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentShotgun",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Deconstructor",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentGlaiveWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vulklok",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentElecRailgun",
+    "category": "SentinelWeapons",
+    "disposition": 1.245,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Stinger",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/SentBioWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1.315,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Prisma Burst Laser",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/PrismaBurstLaserPistol",
+    "category": "SentinelWeapons",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Sweeper Prime",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/PrimeSentShotgun",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusShotgunRandomModRare"
+  },
+  {
+    "name": "Prime Laser Rifle",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/PrimeLaserRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.21,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Deth Machine Rifle Prime",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/PrimeDethMachineRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.455,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Burst Laser Prime",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/PrimeBurstLaserPistol",
+    "category": "SentinelWeapons",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Laser Rifle",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/LaserRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.21,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Artax",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/Gremlin",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Deth Machine Rifle",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/DethMachineRifle",
+    "category": "SentinelWeapons",
+    "disposition": 1.455,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Burst Laser",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/BurstLaserPistol",
+    "category": "SentinelWeapons",
+    "disposition": 1.45,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Deconstructor Prime",
+    "internalPath": "/Lotus/Types/Sentinels/SentinelWeapons/DeconstructorPrime/PrimeHeliosGlaiveWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1.25,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Vulcax",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetComponents/ThermocorMoaWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Tazicor",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetComponents/TazronWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Helstrum",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetComponents/SwarmerWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Multron",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetComponents/HextraWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Cryotra",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetComponents/CryoxionWeapon",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Shadow Claws",
+    "internalPath": "/Lotus/Powersuits/Wraith/ReaperMeleeWeapon",
+    "category": "SpecialItems",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Shadow Claws Prime",
+    "internalPath": "/Lotus/Powersuits/Wraith/SevagothShadowPrimeClawsWeapon",
+    "category": "SpecialItems",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Artemis Bow",
+    "internalPath": "/Lotus/Powersuits/Ranger/ExaltedBow",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Artemis Bow Prime",
+    "internalPath": "/Lotus/Powersuits/Ranger/PrimeExaltedBow",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Noctua",
+    "internalPath": "/Lotus/Powersuits/Pagemaster/ExaltedBook",
+    "category": "SpecialItems",
+    "disposition": 0.6,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Desert Wind",
+    "internalPath": "/Lotus/Powersuits/Pacifist/PacifistFist",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Desert Wind Prime",
+    "internalPath": "/Lotus/Powersuits/Pacifist/PacifistFistPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Shadow Clones",
+    "internalPath": "/Lotus/Powersuits/Ninja/NinjaStormWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Shadow Clones Prime",
+    "internalPath": "/Lotus/Powersuits/Ninja/NinjaStormWeaponPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Iron Staff Prime",
+    "internalPath": "/Lotus/Powersuits/MonkeyKing/WukongPrimeStaff",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Iron Staff",
+    "internalPath": "/Lotus/Powersuits/MonkeyKing/MonkeyKingStaff",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Whipclaw Prime",
+    "internalPath": "/Lotus/Powersuits/Khora/KhoraWhipclawWeaponPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Whipclaw",
+    "internalPath": "/Lotus/Powersuits/Khora/KhoraWhipclawWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Balefire Charger Prime",
+    "internalPath": "/Lotus/Powersuits/IronFrame/BlastWeaponPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Balefire Charger",
+    "internalPath": "/Lotus/Powersuits/IronFrame/BlastWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Shattered Lash",
+    "internalPath": "/Lotus/Powersuits/Glass/GaraShankWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Shattered Lash Prime",
+    "internalPath": "/Lotus/Powersuits/Glass/GaraShankWeaponPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Garuda Prime Talons",
+    "internalPath": "/Lotus/Powersuits/Garuda/GarudaPrimeClaws",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Garuda Talons",
+    "internalPath": "/Lotus/Powersuits/Garuda/GarudaClaws",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Neutralizer",
+    "internalPath": "/Lotus/Powersuits/Frumentarius/ExaltedSniper",
+    "category": "SpecialItems",
+    "disposition": 1.3,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Dex Pixia Prime",
+    "internalPath": "/Lotus/Powersuits/Fairy/PrimeFlightPistols",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Diwata Prime",
+    "internalPath": "/Lotus/Powersuits/Fairy/PrimeFlightSword",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Dex Pixia",
+    "internalPath": "/Lotus/Powersuits/Fairy/FlightPistols",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Diwata",
+    "internalPath": "/Lotus/Powersuits/Fairy/FlightSword",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Exalted Umbra Blade",
+    "internalPath": "/Lotus/Powersuits/Excalibur/DoomSwordUmbra",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Exalted Prime Blade",
+    "internalPath": "/Lotus/Powersuits/Excalibur/DoomSwordPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Exalted Blade",
+    "internalPath": "/Lotus/Powersuits/Excalibur/DoomSword",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Regulators Prime",
+    "internalPath": "/Lotus/Powersuits/Cowgirl/PrimeSlingerPistols",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Regulators",
+    "internalPath": "/Lotus/Powersuits/Cowgirl/SlingerPistols",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Glory",
+    "internalPath": "/Lotus/Powersuits/Choir/ChoirEruptWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Landslide Fists",
+    "internalPath": "/Lotus/Powersuits/Brawler/AtlasPunchWeapon",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Landslide Fists Prime",
+    "internalPath": "/Lotus/Powersuits/Brawler/AtlasPunchWeaponPrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Valkyr Prime Talons",
+    "internalPath": "/Lotus/Powersuits/Berserker/BerserkerMeleePrime",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Valkyr Talons",
+    "internalPath": "/Lotus/Powersuits/Berserker/BerserkerMelee",
+    "category": "SpecialItems",
+    "disposition": 1,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Arquebex",
+    "internalPath": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/ExaltedArtilleryWeapon",
+    "category": "SpecialItems",
+    "disposition": 0.5,
+    "rivenType": "LotusRifleRandomModRare"
+  },
+  {
+    "name": "Ironbride",
+    "internalPath": "/Lotus/Types/Enemies/Orokin/Entrati/EntratiTech/NechroTech/AbilitySword/NechroTechSwordWeapon",
+    "category": "SpecialItems",
+    "disposition": 0.5,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "VIROX ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterAntigenA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "DESUS ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterAntigenB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "PLAGEN ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterAntigenC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "POXI ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterAntigenD",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "ADRA MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterMutagenA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "ELSA MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterMutagenB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "ZARIM MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterMutagenC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "PHIJAR MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedCritterMutagenD",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "ELASMUN ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorAntigenA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "IRANON ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorAntigenB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "IBEXAN ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorAntigenC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "TETHRON ANTIGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorAntigenD",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "LEPTOSAM MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorMutagenA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "CHITEN MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorMutagenB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "ARIOLI MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorMutagenC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "MONACHOD MUTAGEN",
+    "internalPath": "/Lotus/Types/Friendly/Pets/CreaturePets/CreaturePetParts/Deimos/InfestedPredatorMutagenD",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lehan Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MeleeMoaPetEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tyli Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MeleeMoaPetPayload",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Alcrom Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetEngineArcotek",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Krisys Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetEngineKrisys",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Drex Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetEngineThricore",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lambeo Moa",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetHeadLambeo",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Nychus Moa",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetHeadMelee",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Oloro Moa",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetHeadOloro",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Para Moa",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetHeadPara",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Drimper Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetLegA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tian Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetLegB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Jonsin Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetLegC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gauth Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetLegD",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hona Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetLegMelee",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Aegron Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadAegron",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Trux Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadCryoxion",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Harpen Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadDarta",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hextra Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadHextra",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Munit Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadMunitron",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Phazor Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadTazron",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Atheca Gyro",
+    "internalPath": "/Lotus/Types/Friendly/Pets/MoaPets/MoaPetParts/MoaPetPayloadThermocor",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Adlet Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartBodyA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Garmr Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartBodyB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Raiju Core",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartBodyC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dorma Hound",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartHeadA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bhaira Hound",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartHeadB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hec Hound",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartHeadC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cela Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartLegsA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Urga Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartLegsB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zubb Bracket",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartLegsC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Wanz Stabilizer",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartTailA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hinta Stabilizer",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartTailB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Frak Stabilizer",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetParts/ZanukaPetPartTailC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Batoten",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetMeleeWeaponIP",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Lacerten",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetMeleeWeaponIS",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Akaten",
+    "internalPath": "/Lotus/Types/Friendly/Pets/ZanukaPets/ZanukaPetMeleeWeaponPS",
+    "category": "SentinelWeapons",
+    "disposition": 1,
+    "rivenType": "PlayerMeleeWeaponRandomModRare"
+  },
+  {
+    "name": "Sly Vulpaphyla",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedCritterCommonRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Panzer Vulpaphyla",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedCritterRareRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Crescent Vulpaphyla",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedCritterUncommonRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vizier Predasite",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedPredatorCommonRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Medjay Predasite",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedPredatorRareRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pharaoh Predasite",
+    "internalPath": "/Lotus/Types/Items/Deimos/WoundedInfestedPredatorUncommonRewardItem",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Flatbelly",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusA/HoverboardCorpusADeck",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Arc Twelve",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusA/HoverboardCorpusAEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Wingnut",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusA/HoverboardCorpusAFront",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Step Tens",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusA/HoverboardCorpusAJet",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Needlenose",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusB/HoverboardCorpusBDeck",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Hothead",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusB/HoverboardCorpusBEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dink-A-Donk",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusB/HoverboardCorpusBFront",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Fatboys",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusB/HoverboardCorpusBJet",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Runway",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusC/HoverboardCorpusCDeck",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Highbrow",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusC/HoverboardCorpusCEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Two-Sloops",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusC/HoverboardCorpusCFront",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Thugs",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardCorpusC/HoverboardCorpusCJet",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Feverspine",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardInfestedB/HoverboardInfestedBDeck",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gristlebuck",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardInfestedB/HoverboardInfestedBEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Nodulite",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardInfestedB/HoverboardInfestedBFront",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Steeba",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardInfestedB/HoverboardInfestedBJet",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bad Baby",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardSolarisA/HoverboardSolarisADeck",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Coldfusor",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardSolarisA/HoverboardSolarisAEngine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Beaky",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardSolarisA/HoverboardSolarisAFront",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Twin Kavats",
+    "internalPath": "/Lotus/Types/Vehicles/Hoverboard/HoverboardParts/PartComponents/HoverboardSolarisA/HoverboardSolarisAJet",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Cantic Prism",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lega Prism",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Klamora Prism",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Barrel/CorpAmpSet1BarrelPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Exard Scaffold",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Chassis/CorpAmpSet1ChassisPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Dissic Scaffold",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Chassis/CorpAmpSet1ChassisPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Propa Scaffold",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Chassis/CorpAmpSet1ChassisPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Suo Brace",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Plaga Brace",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Certus Brace",
+    "internalPath": "/Lotus/Weapons/Corpus/OperatorAmplifiers/Set1/Grip/CorpAmpSet1GripPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Vermisplicer",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Barrels/InfBarrelBeam/InfModularBarrelBeamPart",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sporelacer",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Barrels/InfBarrelEgg/InfModularBarrelEggPart",
+    "category": "Pistols",
+    "disposition": 0.55,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Macro Thymoid",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Clips/InfClipBig/InfModularClipBigCritStatPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Macro Arcroid",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Clips/InfClipBig/InfModularClipBigPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Arcroid",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Clips/InfSmallClip/InfModularClipSmallCritStatPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Thymoid",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Clips/InfSmallClip/InfModularClipSmallPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Palmaris",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Handles/InfPrimaryHandle/InfModularPrimaryHandlePart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ulnaris",
+    "internalPath": "/Lotus/Weapons/Infested/Pistols/InfKitGun/Handles/InfSecondaryHandle/InfModularSecondaryHandlePart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ruhang",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet Ruhang",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageICritI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet II Ruhang",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageICritII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ruhang II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet Ruhang II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageIICritI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana Ruhang II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageIIStatusI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana Ruhang",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageIStatusI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana II Ruhang",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceDamageIStatusII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Jai",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet Jai",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedICritI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet II Jai",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedICritII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Jai II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Vargeet Jai II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedIICritI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana Jai II",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedIIStatusI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana Jai",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedIStatusI",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ekwana II Jai",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Balance/BalanceSpeedIStatusII",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Jayap",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleFive",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Seekalla",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleFour",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Peye",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleOne",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Kroostra",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleSix",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Kwath",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleThree",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Laka",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Handle/HandleTwo",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Dehtat",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipFive",
+    "category": "Pistols",
+    "disposition": 1.2,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Cyath",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipFour",
+    "category": "Pistols",
+    "disposition": 0.95,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Balla",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipOne",
+    "category": "Pistols",
+    "disposition": 0.8,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Kronsh",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipSix",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Mewan",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipThree",
+    "category": "Pistols",
+    "disposition": 1.1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Ooltha",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee01/Tip/PvPVariantTipTwo",
+    "category": "Pistols",
+    "disposition": 1.25,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Korb",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee02/Handle/HandleNine",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Shtung",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee02/Handle/HandleTen",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Dokrahm",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee02/Tip/TipEleven",
+    "category": "Pistols",
+    "disposition": 0.75,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Sepfahn",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee02/Tip/TipNine",
+    "category": "Pistols",
+    "disposition": 0.7,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Rabvee",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMelee02/Tip/TipTen",
+    "category": "Pistols",
+    "disposition": 1.3,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Plague Akwin",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMeleeInfested/Handles/InfestedHandleOne",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Plague Bokwin",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMeleeInfested/Handles/InfestedHandleTwo",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Plague Kripath",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMeleeInfested/Tips/InfestedTipOne",
+    "category": "Pistols",
+    "disposition": 0.6,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Plague Keewar",
+    "internalPath": "/Lotus/Weapons/Ostron/Melee/ModularMeleeInfested/Tips/InfestedTipTwo",
+    "category": "Pistols",
+    "disposition": 0.75,
+    "rivenType": "LotusModularMeleeRandomModRare"
+  },
+  {
+    "name": "Mote Prism",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/SentTrainingAmplifier/SentAmpTrainingBarrel",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Mote Scaffold",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/SentTrainingAmplifier/SentAmpTrainingChassis",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Mote Brace",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/SentTrainingAmplifier/SentAmpTrainingGrip",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Raplak Prism",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Barrel/SentAmpSet1BarrelPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Shwaak Prism",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Barrel/SentAmpSet1BarrelPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Granmu Prism",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Barrel/SentAmpSet1BarrelPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Pencha Scaffold",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Shraksun Scaffold",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Klebrik Scaffold",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Chassis/SentAmpSet1ChassisPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Clapkra Brace",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Grip/SentAmpSet1GripPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Juttni Brace",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Grip/SentAmpSet1GripPartB",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lohrin Brace",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set1/Grip/SentAmpSet1GripPartC",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Rahn Prism",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set2/Barrel/SentAmpSet2BarrelPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Phahd Scaffold",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set2/Chassis/SentAmpSet2ChassisPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Anspatha Brace",
+    "internalPath": "/Lotus/Weapons/Sentients/OperatorAmplifiers/Set2/Grip/SentAmpSet2GripPartA",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Brash",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Primary/SUModularPrimarySet1/Handles/SUModularPrimaryHandleAPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Shrewd",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Primary/SUModularPrimarySet1/Handles/SUModularPrimaryHandleBPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Steadyslam",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Primary/SUModularPrimarySet1/Handles/SUModularPrimaryHandleCPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tremor",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Primary/SUModularPrimarySet1/Handles/SUModularPrimaryHandleDPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Catchmoon",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelAPart",
+    "category": "Pistols",
+    "disposition": 0.65,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Tombfinger",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelBPart",
+    "category": "Pistols",
+    "disposition": 0.7,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Rattleguts",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelCPart",
+    "category": "Pistols",
+    "disposition": 0.85,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gaze",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Barrel/SUModularSecondaryBarrelDPart",
+    "category": "Pistols",
+    "disposition": 0.9,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Deepbreath",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCapIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bellows",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCapIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Bashrack",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritICapIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Stitch",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritICapIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Splat",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIICapIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Killstream",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIIReloadIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Slapneedle",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIReloadIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zipneedle",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularCritIReloadIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Slap",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularReloadIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zip",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularReloadIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Sparkfire",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatICapIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Thunderdrum",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatICapIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ramflare",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatIICapIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Flutterfire",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatIIReloadIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Swiftfire",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatIReloadIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Zipfire",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Clip/SUModularStatIReloadIIClipPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Ramble",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleAPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Lovetap",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleBPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Haymaker",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleCPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  },
+  {
+    "name": "Gibber",
+    "internalPath": "/Lotus/Weapons/SolarisUnited/Secondary/SUModularSecondarySet1/Handle/SUModularSecondaryHandleDPart",
+    "category": "Pistols",
+    "disposition": 1,
+    "rivenType": "LotusPistolRandomModRare"
+  }
+]

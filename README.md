@@ -1,6 +1,6 @@
-# Korptair Discord Bot Documentation
+#WardenPrime Discord Bot Documentation
 
-This document provides an overview of the available slash commands for the Korptair Discord bot.
+This document provides an overview of the available slash commands for the WardenPrime Discord bot.
 
 # Universal Discord Bot
 

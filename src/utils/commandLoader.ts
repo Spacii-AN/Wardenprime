@@ -36,7 +36,9 @@ export async function loadCommands(client: Client): Promise<number> {
       
       // Get all command files in the category
       const commandFiles = fs.readdirSync(categoryPath)
-        .filter(file => (file.endsWith('.ts') || file.endsWith('.js')) && !file.startsWith('_'));
+        .filter(file => (file.endsWith('.ts') || file.endsWith('.js')) && !file.startsWith('_'))
+        // Exclude archived/disabled commands explicitly
+        .filter(file => !['autograde.ts', 'rivengrade.ts'].includes(file));
       
       // Process each command file
       for (const file of commandFiles) {

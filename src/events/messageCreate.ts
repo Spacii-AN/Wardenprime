@@ -12,9 +12,7 @@ import * as util from 'util';
 import * as stream from 'stream';
 import sharp from 'sharp';
 import FormData from 'form-data';
-const autogradeModule = require('../commands/utility/autograde');
 import { formatDuration } from '../utils/formatDuration';
-import { tryDetectAndCropRiven } from '../utils/rivenImageProcessor';
 
 // Define interface for weapon entries from the autograde module
 interface WeaponMapEntry {
@@ -150,11 +148,6 @@ export const execute: Event<typeof Events.MessageCreate>['execute'] = async (mes
     // Check if this is a reply with + in an LFG thread
     if (message.channel.isThread() && message.content.trim().startsWith('+')) {
       await handlePlusMessage(message.client, message);
-    }
-
-    // Check if this is a message starting with a/g and has image attachment
-    if (message.content.trim().toLowerCase().startsWith('a/g')) {
-      await handleAutogradeAlias(message);
     }
   } catch (error) {
     logger.error(`Error handling message: ${error instanceof Error ? error.message : String(error)}`);
@@ -578,7 +571,7 @@ async function handlePlusMessage(client: Client, message: Message): Promise<bool
           logger.warn(`No bot messages found in thread ${thread.id}`);
         }
       } catch (embedError) {
-        logger.error(`Error updating embed: ${embedError instanceof Error ? embedError.message : String(embedError)}`);
+        logger.error(`Error updating embed: ${embedError instanceof Error ? error.message : String(error)}`);
       }
       
       // Second priority: Update the database if available
@@ -649,67 +642,4 @@ async function handlePlusMessage(client: Client, message: Message): Promise<bool
   }
   
   return false;
-}
-
-/**
- * Handles messages starting with a/g for autograding rivens from attachments
- */
-async function handleAutogradeAlias(message: Message) {
-  if (!message.attachments.size) return; // Only proceed if there are attachments
-
-  const attachment = message.attachments.first();
-  if (!attachment || !attachment.contentType?.startsWith('image/')) return; // Need an image
-
-  logger.info(`Processing autograde alias request from ${message.author.tag}`);
-  
-  // Store the reply message reference
-  let replyMessage: Message | null = null;
-  
-  try {
-    // Create a fake interaction object that conforms to the interface expected by the autograde command
-    const fakeInteraction = {
-      deferReply: async () => {
-        // Store the reply message when we send it
-        replyMessage = await message.reply({
-          embeds: [createEmbed({ type: 'info', title: 'Auto-Grading Riven', description: 'Processing your riven image...' })]
-        });
-        return replyMessage;
-      },
-      editReply: async (options: any) => {
-        // Use the stored replyMessage instead of trying to fetch it
-        if (replyMessage) {
-          return await replyMessage.edit(options);
-        }
-        return null;
-      },
-      options: {
-        getAttachment: () => attachment
-      },
-      user: message.author,
-      channel: message.channel,
-      guild: message.guild
-    };
-    
-    // Call the autograde command's execute function directly
-    await autogradeModule.execute(fakeInteraction);
-    
-  } catch (error) {
-    logger.error(`Error in handleAutogradeAlias:`, error);
-    
-    // Enhanced final error logging
-    if (error instanceof Error) {
-      logger.error(`[Alias] Final error type: ${error.name}`);
-      logger.error(`[Alias] Final error message: ${error.message}`);
-      logger.error(`[Alias] Final error stack: ${error.stack}`);
-    }
-    
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    await message.reply({ 
-      embeds: [createEmbed({ 
-        type: 'error', 
-        title: 'Error', 
-        description: `An unexpected error occurred: ${errorMessage}` 
-      })]
-    }).catch(e => logger.error('Failed to reply on error', e));
-  }
 }

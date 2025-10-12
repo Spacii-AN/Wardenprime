@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Form Management - Warden Prime Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .form-builder {
+            background: #2c2f33;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .form-field {
+            background: #36393f;
+            border: 1px solid #40444b;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .form-field-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-field-controls {
+            display: flex;
+            gap: 10px;
+        }
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .field-input {
+            width: 100%;
+            padding: 8px;
+            background: #40444b;
+            border: 1px solid #5865f2;
+            border-radius: 4px;
+            color: #ffffff;
+            margin: 5px 0;
+        }
+        .field-input:focus {
+            outline: none;
+            border-color: #5865f2;
+            box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+        }
+        .add-field-btn {
+            background: #5865f2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .add-field-btn:hover {
+            background: #4752c4;
+        }
+        .config-section {
+            background: #2c2f33;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .config-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .config-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .config-item label {
+            color: #b9bbbe;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .submissions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .submissions-table th,
+        .submissions-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #40444b;
+        }
+        .submissions-table th {
+            background: #36393f;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .submissions-table td {
+            color: #b9bbbe;
+        }
+        .status-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .status-pending {
+            background: #faa61a;
+            color: #000000;
+        }
+        .status-approved {
+            background: #43b581;
+            color: #ffffff;
+        }
+        .status-denied {
+            background: #f04747;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Join Form Management</h1>
+            <nav>
+                <a href="/dashboard">← Back to Dashboard</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <!-- Configuration Section -->
+            <div class="config-section">
+                <h2>📋 Join Form Configuration</h2>
+                <div class="config-grid">
+                    <div class="config-item">
+                        <label for="enabled">Enable Join Form</label>
+                        <select id="enabled" class="field-input">
+                            <option value="false">Disabled</option>
+                            <option value="true">Enabled</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <label for="buttonChannel">Button Channel</label>
+                        <select id="buttonChannel" class="field-input">
+                            <option value="">Select Channel</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <label for="notificationChannel">Notification Channel</label>
+                        <select id="notificationChannel" class="field-input">
+                            <option value="">Select Channel</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <label for="approvedRole">Approved Role</label>
+                        <select id="approvedRole" class="field-input">
+                            <option value="">Select Role</option>
+                        </select>
+                    </div>
+                    <div class="config-item">
+                        <label for="buttonText">Button Text</label>
+                        <input type="text" id="buttonText" class="field-input" placeholder="Complete Join Form">
+                    </div>
+                    <div class="config-item">
+                        <label for="buttonEmoji">Button Emoji</label>
+                        <input type="text" id="buttonEmoji" class="field-input" placeholder="📋">
+                    </div>
+                </div>
+                <button onclick="saveConfig()" class="btn-primary">Save Configuration</button>
+            </div>
+
+            <!-- Form Builder Section -->
+            <div class="form-builder">
+                <h2>🔧 Form Builder</h2>
+                <p>Customize the fields that appear in your join form.</p>
+                
+                <div id="formFields">
+                    <!-- Form fields will be dynamically added here -->
+                </div>
+                
+                <button onclick="addFormField()" class="add-field-btn">+ Add Field</button>
+                <button onclick="saveFormFields()" class="btn-primary">Save Form Fields</button>
+            </div>
+
+            <!-- Submissions Section -->
+            <div class="config-section">
+                <h2>📊 Form Submissions</h2>
+                <div class="filter-controls">
+                    <select id="statusFilter" class="field-input" onchange="loadSubmissions()">
+                        <option value="">All Submissions</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="denied">Denied</option>
+                    </select>
+                </div>
+                
+                <table class="submissions-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Status</th>
+                            <th>Submitted</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="submissionsTable">
+                        <!-- Submissions will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentGuildId = null;
+        let channels = [];
+        let roles = [];
+
+        // Load initial data
+        async function loadInitialData() {
+            try {
+                // Get current guild (you'll need to implement this)
+                currentGuildId = 'YOUR_GUILD_ID'; // Replace with actual guild ID
+                
+                // Load channels and roles
+                await loadChannels();
+                await loadRoles();
+                
+                // Load current configuration
+                await loadConfig();
+                
+                // Load form fields
+                await loadFormFields();
+                
+                // Load submissions
+                await loadSubmissions();
+            } catch (error) {
+                console.error('Error loading initial data:', error);
+            }
+        }
+
+        async function loadChannels() {
+            try {
+                const response = await fetch(`/api/bot/guild/${currentGuildId}/channels`);
+                const data = await response.json();
+                if (data.success) {
+                    channels = data.data;
+                    updateChannelSelects();
+                }
+            } catch (error) {
+                console.error('Error loading channels:', error);
+            }
+        }
+
+        async function loadRoles() {
+            try {
+                // You'll need to implement a roles endpoint
+                const response = await fetch(`/api/bot/guild/${currentGuildId}/roles`);
+                const data = await response.json();
+                if (data.success) {
+                    roles = data.data;
+                    updateRoleSelect();
+                }
+            } catch (error) {
+                console.error('Error loading roles:', error);
+            }
+        }
+
+        function updateChannelSelects() {
+            const buttonChannelSelect = document.getElementById('buttonChannel');
+            const notificationChannelSelect = document.getElementById('notificationChannel');
+            
+            [buttonChannelSelect, notificationChannelSelect].forEach(select => {
+                select.innerHTML = '<option value="">Select Channel</option>';
+                channels.forEach(channel => {
+                    const option = document.createElement('option');
+                    option.value = channel.id;
+                    option.textContent = `#${channel.name}`;
+                    select.appendChild(option);
+                });
+            });
+        }
+
+        function updateRoleSelect() {
+            const roleSelect = document.getElementById('approvedRole');
+            roleSelect.innerHTML = '<option value="">Select Role</option>';
+            roles.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role.id;
+                option.textContent = role.name;
+                roleSelect.appendChild(option);
+            });
+        }
+
+        async function loadConfig() {
+            try {
+                const response = await fetch(`/api/bot/joinform/config/${currentGuildId}`);
+                const data = await response.json();
+                if (data.success && data.data) {
+                    const config = data.data;
+                    document.getElementById('enabled').value = config.enabled ? 'true' : 'false';
+                    document.getElementById('buttonChannel').value = config.button_channel_id || '';
+                    document.getElementById('notificationChannel').value = config.notification_channel_id || '';
+                    document.getElementById('approvedRole').value = config.approved_role_id || '';
+                    document.getElementById('buttonText').value = config.button_text || 'Complete Join Form';
+                    document.getElementById('buttonEmoji').value = config.button_emoji || '📋';
+                }
+            } catch (error) {
+                console.error('Error loading config:', error);
+            }
+        }
+
+        async function saveConfig() {
+            try {
+                const config = {
+                    enabled: document.getElementById('enabled').value === 'true',
+                    buttonChannelId: document.getElementById('buttonChannel').value,
+                    notificationChannelId: document.getElementById('notificationChannel').value,
+                    approvedRoleId: document.getElementById('approvedRole').value,
+                    buttonText: document.getElementById('buttonText').value,
+                    buttonEmoji: document.getElementById('buttonEmoji').value
+                };
+
+                const response = await fetch(`/api/bot/joinform/config/${currentGuildId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(config)
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert('Configuration saved successfully!');
+                } else {
+                    alert('Error saving configuration: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Error saving config:', error);
+                alert('Error saving configuration');
+            }
+        }
+
+        async function loadFormFields() {
+            try {
+                const response = await fetch(`/api/bot/joinform/config/${currentGuildId}`);
+                const data = await response.json();
+                if (data.success && data.data && data.data.form_fields) {
+                    displayFormFields(data.data.form_fields);
+                } else {
+                    displayFormFields(getDefaultFormFields());
+                }
+            } catch (error) {
+                console.error('Error loading form fields:', error);
+                displayFormFields(getDefaultFormFields());
+            }
+        }
+
+        function getDefaultFormFields() {
+            return [
+                {
+                    id: 'ign_input',
+                    label: 'In-Game Name',
+                    placeholder: 'Your in-game name such as "User#000"',
+                    required: true,
+                    style: 'short',
+                    maxLength: 50
+                },
+                {
+                    id: 'preferred_name_input',
+                    label: 'Preferred Name',
+                    placeholder: 'What you prefer to be called by',
+                    required: false,
+                    style: 'short',
+                    maxLength: 30
+                },
+                {
+                    id: 'platform_input',
+                    label: 'Platform',
+                    placeholder: 'PC, PlayStation, Xbox, Nintendo Switch',
+                    required: true,
+                    style: 'short',
+                    maxLength: 20
+                },
+                {
+                    id: 'age_confirm_input',
+                    label: 'Age Confirmation',
+                    placeholder: 'Type "yes" to confirm you are over 16',
+                    required: true,
+                    style: 'short',
+                    maxLength: 10
+                }
+            ];
+        }
+
+        function displayFormFields(fields) {
+            const container = document.getElementById('formFields');
+            container.innerHTML = '';
+            
+            fields.forEach((field, index) => {
+                const fieldDiv = document.createElement('div');
+                fieldDiv.className = 'form-field';
+                fieldDiv.innerHTML = `
+                    <div class="form-field-header">
+                        <h4>${field.label}</h4>
+                        <div class="form-field-controls">
+                            <button onclick="moveFieldUp(${index})" class="btn-small">↑</button>
+                            <button onclick="moveFieldDown(${index})" class="btn-small">↓</button>
+                            <button onclick="removeField(${index})" class="btn-small btn-danger">×</button>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Field ID" value="${field.id}" onchange="updateFieldProperty(${index}, 'id', this.value)">
+                    <input type="text" placeholder="Field Label" value="${field.label}" onchange="updateFieldProperty(${index}, 'label', this.value)">
+                    <input type="text" placeholder="Placeholder" value="${field.placeholder}" onchange="updateFieldProperty(${index}, 'placeholder', this.value)">
+                    <select onchange="updateFieldProperty(${index}, 'style', this.value)">
+                        <option value="short" ${field.style === 'short' ? 'selected' : ''}>Short Text</option>
+                        <option value="paragraph" ${field.style === 'paragraph' ? 'selected' : ''}>Paragraph</option>
+                    </select>
+                    <label>
+                        <input type="checkbox" ${field.required ? 'checked' : ''} onchange="updateFieldProperty(${index}, 'required', this.checked)">
+                        Required
+                    </label>
+                    <input type="number" placeholder="Max Length" value="${field.maxLength || ''}" onchange="updateFieldProperty(${index}, 'maxLength', parseInt(this.value))">
+                `;
+                container.appendChild(fieldDiv);
+            });
+        }
+
+        function addFormField() {
+            const newField = {
+                id: 'new_field_' + Date.now(),
+                label: 'New Field',
+                placeholder: 'Enter text here',
+                required: false,
+                style: 'short',
+                maxLength: 100
+            };
+            
+            const currentFields = getCurrentFormFields();
+            currentFields.push(newField);
+            displayFormFields(currentFields);
+        }
+
+        function getCurrentFormFields() {
+            const fields = [];
+            const fieldDivs = document.querySelectorAll('.form-field');
+            
+            fieldDivs.forEach(fieldDiv => {
+                const inputs = fieldDiv.querySelectorAll('input, select');
+                const field = {
+                    id: inputs[0].value,
+                    label: inputs[1].value,
+                    placeholder: inputs[2].value,
+                    style: inputs[3].value,
+                    required: inputs[4].checked,
+                    maxLength: parseInt(inputs[5].value) || 100
+                };
+                fields.push(field);
+            });
+            
+            return fields;
+        }
+
+        function updateFieldProperty(index, property, value) {
+            const fields = getCurrentFormFields();
+            fields[index][property] = value;
+            displayFormFields(fields);
+        }
+
+        function moveFieldUp(index) {
+            if (index > 0) {
+                const fields = getCurrentFormFields();
+                [fields[index], fields[index - 1]] = [fields[index - 1], fields[index]];
+                displayFormFields(fields);
+            }
+        }
+
+        function moveFieldDown(index) {
+            const fields = getCurrentFormFields();
+            if (index < fields.length - 1) {
+                [fields[index], fields[index + 1]] = [fields[index + 1], fields[index]];
+                displayFormFields(fields);
+            }
+        }
+
+        function removeField(index) {
+            const fields = getCurrentFormFields();
+            fields.splice(index, 1);
+            displayFormFields(fields);
+        }
+
+        async function saveFormFields() {
+            try {
+                const fields = getCurrentFormFields();
+                
+                const response = await fetch(`/api/bot/joinform/config/${currentGuildId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ formFields: fields })
+                });
+
+                const data = await response.json();
+                if (data.success) {
+                    alert('Form fields saved successfully!');
+                } else {
+                    alert('Error saving form fields: ' + data.error);
+                }
+            } catch (error) {
+                console.error('Error saving form fields:', error);
+                alert('Error saving form fields');
+            }
+        }
+
+        async function loadSubmissions() {
+            try {
+                const statusFilter = document.getElementById('statusFilter').value;
+                const url = statusFilter ? 
+                    `/api/bot/joinform/submissions/${currentGuildId}?status=${statusFilter}` :
+                    `/api/bot/joinform/submissions/${currentGuildId}`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.success) {
+                    displaySubmissions(data.data);
+                }
+            } catch (error) {
+                console.error('Error loading submissions:', error);
+            }
+        }
+
+        function displaySubmissions(submissions) {
+            const tbody = document.getElementById('submissionsTable');
+            tbody.innerHTML = '';
+            
+            submissions.forEach(submission => {
+                const row = document.createElement('tr');
+                const formData = JSON.parse(submission.form_data || '{}');
+                
+                row.innerHTML = `
+                    <td>${submission.username || 'Unknown'}</td>
+                    <td><span class="status-badge status-${submission.status}">${submission.status}</span></td>
+                    <td>${new Date(submission.submitted_at).toLocaleDateString()}</td>
+                    <td>
+                        <button onclick="viewSubmission('${submission.id}')" class="btn-small">View</button>
+                        ${submission.status === 'pending' ? `
+                            <button onclick="approveSubmission('${submission.id}')" class="btn-small btn-success">Approve</button>
+                            <button onclick="denySubmission('${submission.id}')" class="btn-small btn-danger">Deny</button>
+                        ` : ''}
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function viewSubmission(submissionId) {
+            // Implement submission viewing
+            alert('View submission: ' + submissionId);
+        }
+
+        function approveSubmission(submissionId) {
+            // Implement submission approval
+            alert('Approve submission: ' + submissionId);
+        }
+
+        function denySubmission(submissionId) {
+            // Implement submission denial
+            alert('Deny submission: ' + submissionId);
+        }
+
+        // Load data when page loads
+        document.addEventListener('DOMContentLoaded', loadInitialData);
+    </script>
+</body>
+</html>

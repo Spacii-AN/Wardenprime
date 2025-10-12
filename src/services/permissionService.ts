@@ -84,6 +84,10 @@ export async function isAdmin(member: GuildMember): Promise<boolean> {
  */
 export async function getGuildPermissionRoles(guildId: string): Promise<GuildPermissionRoles> {
   try {
+    if (!pgdb) {
+      throw new Error('Database not available');
+    }
+    
     // Try to get existing permission roles from database
     const query = 'SELECT * FROM guild_permission_roles WHERE guild_id = $1';
     const result = await pgdb.query<{guild_id: string, roles: any, updated_at: Date}>(query, [guildId]);
@@ -105,6 +109,10 @@ export async function getGuildPermissionRoles(guildId: string): Promise<GuildPer
     };
     
     // Add default entry to database
+    if (!pgdb) {
+      throw new Error('Database not available');
+    }
+    
     await pgdb.query(
       'INSERT INTO guild_permission_roles (guild_id, roles, created_at, updated_at) VALUES ($1, $2, $3, $3)',
       [guildId, defaultPerms.roles, new Date()]
@@ -153,6 +161,10 @@ export async function addPermissionRole(
     const now = new Date();
     
     // Check if the record exists and update or insert accordingly
+    if (!pgdb) {
+      throw new Error('Database not available');
+    }
+    
     const checkQuery = 'SELECT 1 FROM guild_permission_roles WHERE guild_id = $1';
     const checkResult = await pgdb.query(checkQuery, [guildId]);
     
@@ -205,6 +217,10 @@ export async function removePermissionRole(
     guildPerms.updatedAt = new Date().toISOString();
     const now = new Date();
     
+    if (!pgdb) {
+      throw new Error('Database not available');
+    }
+    
     await pgdb.query(
       'UPDATE guild_permission_roles SET roles = $1, updated_at = $2 WHERE guild_id = $3',
       [guildPerms.roles, now, guildId]
@@ -239,6 +255,10 @@ export async function setPermissionRoles(
     // Update in database
     guildPerms.updatedAt = new Date().toISOString();
     const now = new Date();
+    
+    if (!pgdb) {
+      throw new Error('Database not available');
+    }
     
     await pgdb.query(
       'UPDATE guild_permission_roles SET roles = $1, updated_at = $2 WHERE guild_id = $3',

@@ -313,6 +313,11 @@ export type PostgresClient = {
   updateIncarnonNotification(id: string, channelId: string, roleId: string | null): Promise<boolean>;
   updateIncarnonMessageId(id: string, messageId: string): Promise<boolean>;
   removeIncarnonNotification(guildId: string): Promise<boolean>;
+
+  // Join Form Configuration methods
+  getJoinFormConfig(guildId: string): Promise<any>;
+  updateJoinFormConfig(guildId: string, config: any): Promise<any>;
+  getJoinFormSubmissions(guildId: string, status?: string): Promise<any[]>;
 };
 
 /**
@@ -320,7 +325,7 @@ export type PostgresClient = {
  * Improved with better connection handling and retry logic
  */
 class PostgresDatabase {
-  private pool: Pool;
+  private pool!: Pool;
   private isConnected: boolean = false;
   private static instance: PostgresDatabase;
   private connectionRetries: number = 0;
@@ -3037,6 +3042,119 @@ class PostgresDatabase {
     } catch (error) {
       logger.error(`Error removing Incarnon notification for guild ${guildId}:`, error);
       return false;
+    }
+  }
+
+  // Join Form Configuration methods
+  async getJoinFormConfig(guildId: string): Promise<any> {
+    try {
+      const result = await this.query(
+        `SELECT * FROM join_form_config WHERE guild_id = $1`,
+        [guildId]
+      );
+      return result.length > 0 ? result[0] : null;
+    } catch (error) {
+      logger.error('Error getting join form config:', error);
+      return null;
+    }
+  }
+
+  async updateJoinFormConfig(
+    guildId: string,
+    config: {
+      enabled?: boolean;
+      buttonChannelId?: string;
+      buttonMessageId?: string;
+      notificationChannelId?: string;
+      approvedRoleId?: string;
+      formFields?: any;
+      welcomeMessage?: string;
+      buttonText?: string;
+      buttonEmoji?: string;
+    }
+  ): Promise<any> {
+    try {
+      const updateFields = [];
+      const values = [];
+      let paramCount = 1;
+
+      if (config.enabled !== undefined) {
+        updateFields.push(`enabled = $${paramCount++}`);
+        values.push(config.enabled);
+      }
+      if (config.buttonChannelId !== undefined) {
+        updateFields.push(`button_channel_id = $${paramCount++}`);
+        values.push(config.buttonChannelId);
+      }
+      if (config.buttonMessageId !== undefined) {
+        updateFields.push(`button_message_id = $${paramCount++}`);
+        values.push(config.buttonMessageId);
+      }
+      if (config.notificationChannelId !== undefined) {
+        updateFields.push(`notification_channel_id = $${paramCount++}`);
+        values.push(config.notificationChannelId);
+      }
+      if (config.approvedRoleId !== undefined) {
+        updateFields.push(`approved_role_id = $${paramCount++}`);
+        values.push(config.approvedRoleId);
+      }
+      if (config.formFields !== undefined) {
+        updateFields.push(`form_fields = $${paramCount++}`);
+        values.push(JSON.stringify(config.formFields));
+      }
+      if (config.welcomeMessage !== undefined) {
+        updateFields.push(`welcome_message = $${paramCount++}`);
+        values.push(config.welcomeMessage);
+      }
+      if (config.buttonText !== undefined) {
+        updateFields.push(`button_text = $${paramCount++}`);
+        values.push(config.buttonText);
+      }
+      if (config.buttonEmoji !== undefined) {
+        updateFields.push(`button_emoji = $${paramCount++}`);
+        values.push(config.buttonEmoji);
+      }
+
+      updateFields.push(`updated_at = NOW()`);
+      values.push(guildId);
+
+      const result = await this.query(
+        `INSERT INTO join_form_config (guild_id, ${Object.keys(config).join(', ')}, updated_at)
+         VALUES ($1, ${values.slice(0, -1).map((_, i) => `$${i + 2}`).join(', ')}, NOW())
+         ON CONFLICT (guild_id) 
+         DO UPDATE SET ${updateFields.join(', ')}
+         RETURNING *`,
+        [guildId, ...values.slice(0, -1)]
+      );
+
+      return result.length > 0 ? result[0] : null;
+    } catch (error) {
+      logger.error('Error updating join form config:', error);
+      throw error;
+    }
+  }
+
+  async getJoinFormSubmissions(guildId: string, status?: string): Promise<any[]> {
+    try {
+      let query = `SELECT jf.*, u.username, u.global_name 
+                   FROM join_forms jf 
+                   LEFT JOIN users u ON jf.user_id = u.id 
+                   WHERE jf.user_id IN (
+                     SELECT user_id FROM user_stats WHERE guild_id = $1
+                   )`;
+      const values = [guildId];
+
+      if (status) {
+        query += ` AND jf.status = $2`;
+        values.push(status);
+      }
+
+      query += ` ORDER BY jf.submitted_at DESC`;
+
+      return await this.query(query, values);
+    } catch (error) {
+      logger.error('Error getting join form submissions:', error);
+      return [];
     }
   }
 }

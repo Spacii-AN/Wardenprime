@@ -273,6 +273,16 @@ export function startDashboard() {
     }
   });
 
+  // Join Form routes
+  app.get('/joinform', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      res.render('joinform/index', { user: req.user });
+    } catch (error) {
+      logger.error('Error loading join form page:', error);
+      res.render('error', { user: req.user, error: 'Failed to load join form page' });
+    }
+  });
+
   const port = config.DASHBOARD_PORT || 3080;
   app.listen(port, () => logger.info(`Dashboard listening on :${port}`));
 }

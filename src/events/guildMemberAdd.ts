@@ -1,4 +1,4 @@
-import { Events, GuildMember, EmbedBuilder, TextChannel } from 'discord.js';
+import { Events, GuildMember, EmbedBuilder, TextChannel, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder } from 'discord.js';
 import { Event } from '../types/discord';
 import { logger } from '../utils/logger';
 import { pgdb } from '../services/postgresDatabase';
@@ -16,8 +16,15 @@ export const execute: Event<typeof Events.GuildMemberAdd>['execute'] = async (me
       return;
     }
     
-    // Get the welcome channel ID from guild settings
+    // Get the guild settings
     const guildSettings = await pgdb.getGuildSettings(member.guild.id);
+    
+    // Check if join form is enabled
+    const joinFormConfig = await pgdb.getJoinFormConfig(member.guild.id);
+    if (joinFormConfig?.enabled) {
+      await handleJoinFormWelcome(member, joinFormConfig);
+      return; // Skip welcome message if join form is enabled
+    }
     
     let welcomeChannel: TextChannel | null = null;
     
@@ -82,4 +89,56 @@ export const execute: Event<typeof Events.GuildMemberAdd>['execute'] = async (me
   } catch (error) {
     logger.error(`Error in guildMemberAdd event: ${error instanceof Error ? error.message : String(error)}`);
   }
-}; 
+};
+
+async function handleJoinFormWelcome(member: GuildMember, joinFormConfig: any) {
+  try {
+    // Send welcome message with join form button instructions
+    const welcomeEmbed = new EmbedBuilder()
+      .setColor('#5865F2')
+      .setTitle(`Welcome to ${member.guild.name}!`)
+      .setDescription(`Hello ${member.user.username}! Welcome to our Warframe community!`)
+      .addFields(
+        { name: '🔐 Server Access Required', value: 'To gain full access to our server, you need to complete a join form.', inline: false },
+        { name: '📋 How to Join', value: `Look for the "${joinFormConfig.button_text || 'Complete Join Form'}" button in the server to get started!`, inline: false },
+        { name: '⏱️ Processing Time', value: 'Your form will be reviewed by our staff within 24 hours.', inline: false }
+      )
+      .setFooter({ text: 'Click the join form button to access all server features' })
+      .setTimestamp();
+
+    // Try to send DM, but don't fail if DMs are disabled
+    try {
+      const dmChannel = await member.user.createDM();
+      await dmChannel.send({
+        content: `Welcome to ${member.guild.name}!`,
+        embeds: [welcomeEmbed]
+      });
+    } catch (dmError) {
+      logger.warn(`Could not send DM to ${member.user.tag}:`, dmError);
+    }
+
+    // Notify staff about new member requiring join form
+    if (joinFormConfig.notification_channel_id) {
+      const notificationChannel = member.guild.channels.cache.get(joinFormConfig.notification_channel_id);
+      if (notificationChannel?.isTextBased()) {
+        const notificationEmbed = new EmbedBuilder()
+          .setTitle('🆕 New Member - Join Form Required')
+          .setDescription(`A new member has joined and needs to complete the join form.`)
+          .addFields(
+            { name: 'User', value: `${member.user} (${member.user.tag})`, inline: true },
+            { name: 'User ID', value: member.user.id, inline: true },
+            { name: 'Joined', value: `<t:${Math.floor(Date.now() / 1000)}:R>`, inline: true }
+          )
+          .setColor(0xFFA500)
+          .setTimestamp();
+
+        await (notificationChannel as TextChannel).send({ embeds: [notificationEmbed] });
+      }
+    }
+
+    logger.info(`Join form welcome sent to new member ${member.user.tag} (${member.user.id})`);
+
+  } catch (error) {
+    logger.error(`Error sending join form welcome to ${member.user.tag}:`, error);
+  }
+} 

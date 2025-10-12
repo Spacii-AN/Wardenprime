@@ -118,6 +118,9 @@ export async function initDatabase(): Promise<void> {
         welcome_message TEXT,
         farewell_message TEXT,
         lfg_channel_id VARCHAR(255),
+        join_form_enabled BOOLEAN DEFAULT FALSE,
+        join_form_channel_id VARCHAR(255),
+        join_form_role_id VARCHAR(255),
         created_at TIMESTAMP NOT NULL DEFAULT NOW(),
         updated_at TIMESTAMP NOT NULL DEFAULT NOW()
         `
@@ -442,6 +445,45 @@ export async function initDatabase(): Promise<void> {
         `
       );
       logger.info('Ensured table guild_permission_roles exists');
+      
+      // Create join forms table
+      await pgdb.createTableIfNotExists(
+        'join_forms',
+        `
+        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+        user_id VARCHAR(255) NOT NULL,
+        form_data JSONB NOT NULL DEFAULT '{}'::JSONB,
+        status VARCHAR(50) NOT NULL DEFAULT 'pending',
+        submitted_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        reviewed_at TIMESTAMP,
+        reviewed_by VARCHAR(255),
+        notes TEXT,
+        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+        `
+      );
+      logger.info('Ensured table join_forms exists');
+      
+      // Create join form configuration table
+      await pgdb.createTableIfNotExists(
+        'join_form_config',
+        `
+        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+        guild_id VARCHAR(255) NOT NULL UNIQUE,
+        enabled BOOLEAN DEFAULT FALSE,
+        button_channel_id VARCHAR(255),
+        button_message_id VARCHAR(255),
+        notification_channel_id VARCHAR(255),
+        approved_role_id VARCHAR(255),
+        form_fields JSONB NOT NULL DEFAULT '{}'::JSONB,
+        welcome_message TEXT,
+        button_text VARCHAR(255) DEFAULT 'Complete Join Form',
+        button_emoji VARCHAR(255) DEFAULT '📋',
+        created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+        `
+      );
+      logger.info('Ensured table join_form_config exists');
       
       // Verify all expected tables exist
       logger.info('Verifying all tables...');

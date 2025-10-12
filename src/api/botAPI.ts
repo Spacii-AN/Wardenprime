@@ -199,6 +199,42 @@ export function createBotAPI(client: Client) {
     res.status(500).json({ success: false, error: 'Internal server error' });
   });
 
+  // Join Form Configuration Endpoints
+  app.get('/api/bot/joinform/config/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      const config = await pgdb.getJoinFormConfig(guildId);
+      res.json({ success: true, data: config });
+    } catch (error) {
+      logger.error('Error getting join form config:', error);
+      res.status(500).json({ success: false, error: 'Failed to get join form config' });
+    }
+  });
+
+  app.post('/api/bot/joinform/config/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      const config = req.body;
+      const result = await pgdb.updateJoinFormConfig(guildId, config);
+      res.json({ success: true, data: result });
+    } catch (error) {
+      logger.error('Error updating join form config:', error);
+      res.status(500).json({ success: false, error: 'Failed to update join form config' });
+    }
+  });
+
+  app.get('/api/bot/joinform/submissions/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      const { status } = req.query;
+      const submissions = await pgdb.getJoinFormSubmissions(guildId, status as string);
+      res.json({ success: true, data: submissions });
+    } catch (error) {
+      logger.error('Error getting join form submissions:', error);
+      res.status(500).json({ success: false, error: 'Failed to get join form submissions' });
+    }
+  });
+
   return app;
 }
 

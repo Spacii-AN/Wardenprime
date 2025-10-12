@@ -227,7 +227,7 @@ export async function fetchArbitrationData(): Promise<ArbitrationEntry[] | null>
     const response = await axios.get('https://browse.wf/arbys.txt', {
       timeout: 10000,
       headers: {
-        'User-Agent': 'KorptairBot/1.0.0'
+        'User-Agent': 'WardenPrimeBot/1.0.0'
       }
     });
     

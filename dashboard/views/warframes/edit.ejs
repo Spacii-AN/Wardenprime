@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= item ? 'Edit' : 'New' %> Warframe</title>
+    <style> body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; margin: 24px; background: #0f1115; color: #e5e7eb; } label{display:block;margin:12px 0 4px;} input, textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #374151;background:#111827;color:#e5e7eb;} .btn{display:inline-block;padding:8px 12px;background:#2563eb;color:white;border-radius:8px;text-decoration:none;border:0;cursor:pointer;margin-top:12px;} a { color: #60a5fa; } </style>
+  </head>
+  <body>
+    <h1><%= item ? 'Edit' : 'New' %> Warframe</h1>
+    <form method="post" action="/warframes<%= item ? '/' + item.id : '' %>">
+      <label>Name</label>
+      <input name="name" value="<%= item ? item.name : '' %>" required />
+      <label>Credits Cost</label>
+      <input type="number" name="crafting_cost" value="<%= item ? item.crafting_cost : '' %>" />
+      <label>Resources (JSON)</label>
+      <textarea name="resources" rows="8"><%= item ? JSON.stringify(item.resources || {}, null, 2) : '{}' %></textarea>
+      <button class="btn" type="submit">Save</button>
+    </form>
+  </body>
+  </html>
+
+

@@ -203,7 +203,7 @@ export async function fetchAyaBountyData(): Promise<AyaBountyData> {
     const locationBountiesResponse = await axios.get('https://oracle.browse.wf/location-bounties', {
       timeout: 10000,
       headers: {
-        'User-Agent': 'KorptairBot/1.0.0'
+        'User-Agent': 'WardenPrimeBot/1.0.0'
       }
     });
     
@@ -228,7 +228,7 @@ export async function fetchAyaBountyData(): Promise<AyaBountyData> {
       const worldStateResponse = await axios.get('https://oracle.browse.wf/worldState.json', {
         timeout: 10000,
         headers: {
-          'User-Agent': 'KorptairBot/1.0.0'
+          'User-Agent': 'WardenPrimeBot/1.0.0'
         }
       });
       

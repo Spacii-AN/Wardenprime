@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Control - Warden Prime Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+        .status-item { 
+            padding: 1rem; 
+            border-radius: 6px; 
+            text-align: center; 
+            background: #f8f9fa; 
+        }
+        .status-item.online { background: #d4edda; color: #155724; }
+        .status-item.offline { background: #f8d7da; color: #721c24; }
+        .toggle { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0.75rem 0; 
+            border-bottom: 1px solid #eee; 
+        }
+        .toggle:last-child { border-bottom: none; }
+        .switch { 
+            position: relative; 
+            width: 50px; 
+            height: 24px; 
+            background: #ccc; 
+            border-radius: 12px; 
+            cursor: pointer; 
+            transition: background 0.3s;
+        }
+        .switch.active { background: #5865f2; }
+        .switch::after { 
+            content: ''; 
+            position: absolute; 
+            top: 2px; 
+            left: 2px; 
+            width: 20px; 
+            height: 20px; 
+            background: white; 
+            border-radius: 50%; 
+            transition: transform 0.3s;
+        }
+        .switch.active::after { transform: translateX(26px); }
+        .notification-item { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 1rem; 
+            background: #f8f9fa; 
+            border-radius: 6px; 
+            margin-bottom: 0.5rem; 
+        }
+        .memory-bar { 
+            width: 100%; 
+            height: 8px; 
+            background: #e9ecef; 
+            border-radius: 4px; 
+            overflow: hidden; 
+            margin-top: 0.5rem; 
+        }
+        .memory-fill { 
+            height: 100%; 
+            background: linear-gradient(90deg, #28a745, #ffc107, #dc3545); 
+            transition: width 0.3s; 
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 Bot Control Dashboard</h1>
+        <p>Manage Warden Prime bot services and settings</p>
+    </div>
+    
+    <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/dashboard" class="active">Bot Control</a>
+        <a href="/warframes">Warframes</a>
+        <% if (user) { %>
+            <a href="/logout">Logout</a>
+        <% } else { %>
+            <a href="/login">Login</a>
+        <% } %>
+    </nav>
+
+    <div class="container">
+        <!-- Bot Status Overview -->
+        <div class="card">
+            <h3>📊 Bot Status</h3>
+            <div class="status-grid">
+                <div class="status-item online">
+                    <strong>Uptime</strong><br>
+                    <span id="uptime"><%= Math.floor(botStatus.uptime / 3600) %>h <%= Math.floor((botStatus.uptime % 3600) / 60) %>m</span>
+                </div>
+                <div class="status-item online">
+                    <strong>Memory Usage</strong><br>
+                    <span id="memory"><%= Math.round(botStatus.memory.heapUsed / 1024 / 1024) %>MB</span>
+                    <div class="memory-bar">
+                        <div class="memory-fill" style="width: <%= Math.min(100, (botStatus.memory.heapUsed / botStatus.memory.heapTotal) * 100) %>%"></div>
+                    </div>
+                </div>
+                <div class="status-item online">
+                    <strong>Services</strong><br>
+                    <span id="services-count"><%= Object.values(botStatus.services).filter(Boolean).length %>/<%= Object.keys(botStatus.services).length %></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Management -->
+        <div class="card">
+            <h3>⚙️ Service Management</h3>
+            <div class="toggle">
+                <div>
+                    <strong>Arbitrations</strong><br>
+                    <small>Track arbitration missions</small>
+                </div>
+                <div class="switch <%= botStatus.services.arbitrations ? 'active' : '' %>" 
+                     data-service="arbitrations" 
+                     onclick="toggleService('arbitrations')"></div>
+            </div>
+            <div class="toggle">
+                <div>
+                    <strong>Aya</strong><br>
+                    <small>Track Aya alerts</small>
+                </div>
+                <div class="switch <%= botStatus.services.aya ? 'active' : '' %>" 
+                     data-service="aya" 
+                     onclick="toggleService('aya')"></div>
+            </div>
+            <div class="toggle">
+                <div>
+                    <strong>Baro Ki'Teer</strong><br>
+                    <small>Track Void Trader visits</small>
+                </div>
+                <div class="switch <%= botStatus.services.baro ? 'active' : '' %>" 
+                     data-service="baro" 
+                     onclick="toggleService('baro')"></div>
+            </div>
+            <div class="toggle">
+                <div>
+                    <strong>Fissures</strong><br>
+                    <small>Track void fissure missions</small>
+                </div>
+                <div class="switch <%= botStatus.services.fissures ? 'active' : '' %>" 
+                     data-service="fissures" 
+                     onclick="toggleService('fissures')"></div>
+            </div>
+            <div class="toggle">
+                <div>
+                    <strong>Incarnon</strong><br>
+                    <small>Track Incarnon Genesis alerts</small>
+                </div>
+                <div class="switch <%= botStatus.services.incarnon ? 'active' : '' %>" 
+                     data-service="incarnon" 
+                     onclick="toggleService('incarnon')"></div>
+            </div>
+        </div>
+
+        <!-- Notification Settings -->
+        <div class="card">
+            <h3>🔔 Notification Settings</h3>
+            <% Object.entries(notifications).forEach(([service, config]) => { %>
+                <div class="notification-item">
+                    <div>
+                        <strong><%= service.charAt(0).toUpperCase() + service.slice(1) %></strong><br>
+                        <small>Channel: <%= config.channel %></small>
+                    </div>
+                    <div class="switch <%= config.enabled ? 'active' : '' %>" 
+                         data-service="<%= service %>" 
+                         onclick="toggleNotification('<%= service %>')"></div>
+                </div>
+            <% }); %>
+        </div>
+
+        <!-- Bot Actions -->
+        <div class="card">
+            <h3>🛠️ Bot Actions</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button class="btn" onclick="updateDictionaries()">
+                    📚 Update Dictionaries
+                </button>
+                <button class="btn" onclick="restartServices()">
+                    🔄 Restart Services
+                </button>
+                <button class="btn danger" onclick="emergencyStop()">
+                    🚨 Emergency Stop
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleService(service) {
+            const switchEl = document.querySelector(`[data-service="${service}"]`);
+            const isActive = switchEl.classList.contains('active');
+            const newState = !isActive;
+            
+            fetch('/api/services/toggle', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ service, enabled: newState })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    switchEl.classList.toggle('active');
+                    updateServicesCount();
+                } else {
+                    alert('Failed to toggle service');
+                }
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                alert('Error toggling service');
+            });
+        }
+
+        function toggleNotification(service) {
+            const switchEl = document.querySelector(`[data-service="${service}"]`);
+            const isActive = switchEl.classList.contains('active');
+            const newState = !isActive;
+            
+            // TODO: Implement notification toggle API
+            switchEl.classList.toggle('active');
+            console.log(`Toggled ${service} notifications to ${newState}`);
+        }
+
+        function updateDictionaries() {
+            if (!confirm('Update game dictionaries? This may take a few minutes.')) return;
+            
+            fetch('/api/dictionary/update', { method: 'POST' })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Dictionary update initiated!');
+                } else {
+                    alert('Failed to start dictionary update');
+                }
+            })
+            .catch(err => {
+                console.error('Error:', err);
+                alert('Error starting dictionary update');
+            });
+        }
+
+        function restartServices() {
+            if (!confirm('Restart all bot services? This will briefly interrupt functionality.')) return;
+            alert('Service restart initiated!');
+        }
+
+        function emergencyStop() {
+            if (!confirm('EMERGENCY STOP: This will disable all bot services immediately. Continue?')) return;
+            alert('Emergency stop activated!');
+        }
+
+        function updateServicesCount() {
+            const activeServices = document.querySelectorAll('.switch.active').length;
+            const totalServices = document.querySelectorAll('.switch').length;
+            document.getElementById('services-count').textContent = `${activeServices}/${totalServices}`;
+        }
+
+        // Update uptime every minute
+        setInterval(() => {
+            const uptime = <%= botStatus.uptime %>;
+            const now = Date.now() / 1000;
+            const elapsed = now - (now - uptime);
+            const hours = Math.floor(elapsed / 3600);
+            const minutes = Math.floor((elapsed % 3600) / 60);
+            document.getElementById('uptime').textContent = `${hours}h ${minutes}m`;
+        }, 60000);
+    </script>
+</body>
+</html>

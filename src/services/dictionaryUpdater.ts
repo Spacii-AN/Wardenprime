@@ -165,7 +165,7 @@ async function githubApiRequest(url: string, options: any = {}): Promise<any> {
   // Prepare headers
   const headers = {
     'Accept': 'application/vnd.github.v3+json',
-    'User-Agent': 'KorptairBot/1.0.0',
+    'User-Agent': 'WardenPrimeBot/1.0.0',
     ...options.headers
   };
   

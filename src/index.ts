@@ -849,3 +849,16 @@ async function main() {
 import './services/weaponLookupService';
 
 main();
+
+// Start bot API server for dashboard communication
+import { startBotAPI } from './api/botAPI';
+
+// Start the bot API server on a different port
+if (config.DASHBOARD_ENABLED) {
+  startBotAPI(client, 3081);
+  logger.info('Bot API server started on port 3081');
+}
+
+// Optionally start dashboard server
+import { startDashboard } from '../dashboard/src/server';
+startDashboard();

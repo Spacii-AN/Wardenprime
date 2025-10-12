@@ -829,6 +829,36 @@ class PostgresDatabase {
   }
 
   /**
+   * Warframe catalog CRUD
+   */
+  public async upsertWarframe(item: { id?: string, name: string, crafting_cost?: number, resources?: any, updated_by?: string }): Promise<any> {
+    const idRow = await this.query<{ uuid: string }>('SELECT uuid_generate_v4() as uuid');
+    const id = item.id || idRow[0].uuid;
+    const rows = await this.query<any>(
+      `INSERT INTO warframe_catalog (id, name, crafting_cost, resources, updated_by)
+       VALUES ($1, $2, $3, $4, $5)
+       ON CONFLICT (id) DO UPDATE SET
+         name = EXCLUDED.name,
+         crafting_cost = EXCLUDED.crafting_cost,
+         resources = EXCLUDED.resources,
+         updated_by = EXCLUDED.updated_by,
+         updated_at = NOW()
+       RETURNING *`,
+      [id, item.name, item.crafting_cost ?? null, item.resources ?? {}, item.updated_by ?? null]
+    );
+    return rows[0];
+  }
+
+  public async getWarframes(): Promise<any[]> {
+    return this.query<any>('SELECT * FROM warframe_catalog ORDER BY name');
+  }
+
+  public async getWarframeById(id: string): Promise<any | null> {
+    const rows = await this.query<any>('SELECT * FROM warframe_catalog WHERE id = $1', [id]);
+    return rows[0] || null;
+  }
+
+  /**
    * Close the database connection
    */
   public async close(): Promise<void> {

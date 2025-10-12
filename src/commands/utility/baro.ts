@@ -170,7 +170,7 @@ const command: Command = {
       const response = await axios.get('https://oracle.browse.wf/worldState.json', {
         timeout: 10000, // 10s timeout
         headers: {
-          'User-Agent': 'KorptairBot/1.0.0' // Custom user agent
+          'User-Agent': 'WardenPrimeBot/1.0.0' // Custom user agent
         }
       });
       const worldState = response.data;

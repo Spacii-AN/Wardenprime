@@ -238,7 +238,7 @@ async function checkAndNotify(client: Client): Promise<void> {
     const response = await axios.get<ApiResponse>('https://oracle.browse.wf/worldState.json', {
       timeout: 10000,
       headers: {
-        'User-Agent': 'KorptairBot/1.0.0'
+        'User-Agent': 'WardenPrimeBot/1.0.0'
       }
     });
 
@@ -1250,7 +1250,7 @@ export async function fetchFissures(): Promise<Record<string, ActiveMission[]> |
     const response = await axios.get<ApiResponse>('https://oracle.browse.wf/worldState.json', {
       timeout: 10000,
       headers: {
-        'User-Agent': 'KorptairBot/1.0.0'
+        'User-Agent': 'WardenPrimeBot/1.0.0'
       }
     });
 

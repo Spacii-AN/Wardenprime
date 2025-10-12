@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'korptair-bot',
+      name: 'warden-prime-bot',
       script: './dist/index.js',
       watch: false,
       env: {

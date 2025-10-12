@@ -42,13 +42,25 @@ interface Config {
   PG_USER: string;
   PG_PASSWORD: string;
   PG_SSL_MODE: string;
+
+  // Dashboard configuration
+  DASHBOARD_ENABLED?: boolean;
+  DASHBOARD_PORT?: number;
+  DASHBOARD_PUBLIC_URL?: string;
+  DASHBOARD_SESSION_SECRET?: string;
+  OAUTH_CALLBACK_URL?: string;
 }
 
-// Validate required environment variables
-const requiredEnvVars = ['BOT_TOKEN', 'CLIENT_ID'];
-for (const envVar of requiredEnvVars) {
-  if (!process.env[envVar]) {
-    throw new Error(`Missing required environment variable: ${envVar}`);
+// Validate required environment variables for bot runtime, but allow dashboard-only runs
+const isDashboardProcess = (process.env.DASHBOARD_ENABLED === 'true') ||
+  (process.argv && process.argv[1] && process.argv[1].includes('dashboard'));
+
+if (!isDashboardProcess) {
+  const requiredEnvVars = ['BOT_TOKEN', 'CLIENT_ID'];
+  for (const envVar of requiredEnvVars) {
+    if (!process.env[envVar]) {
+      throw new Error(`Missing required environment variable: ${envVar}`);
+    }
   }
 }
 
@@ -56,6 +68,14 @@ for (const envVar of requiredEnvVars) {
 function getEnvVar<T>(key: string, defaultValue: T): T {
   const value = process.env[key];
   return value !== undefined ? (value as unknown as T) : defaultValue;
+}
+
+// Get boolean env var with common truthy strings
+function getEnvBool(key: string, defaultValue: boolean): boolean {
+  const value = process.env[key];
+  if (value === undefined) return defaultValue;
+  const v = value.toLowerCase();
+  return v === 'true' || v === '1' || v === 'yes' || v === 'on';
 }
 
 // Create config object
@@ -95,7 +115,14 @@ export const config: Config = {
   PG_DATABASE: getEnvVar('PG_DATABASE', 'defaultdb'),
   PG_USER: getEnvVar('PG_USER', 'doadmin'),
   PG_PASSWORD: getEnvVar('PG_PASSWORD', 'password'),
-  PG_SSL_MODE: getEnvVar('PG_SSL_MODE', 'require')
+  PG_SSL_MODE: getEnvVar('PG_SSL_MODE', 'require'),
+
+  // Dashboard
+  DASHBOARD_ENABLED: getEnvBool('DASHBOARD_ENABLED', false),
+  DASHBOARD_PORT: parseInt(getEnvVar('DASHBOARD_PORT', '3080')),
+  DASHBOARD_PUBLIC_URL: getEnvVar('DASHBOARD_PUBLIC_URL', ''),
+  DASHBOARD_SESSION_SECRET: getEnvVar('DASHBOARD_SESSION_SECRET', ''),
+  OAUTH_CALLBACK_URL: getEnvVar('OAUTH_CALLBACK_URL', '')
 };
 
 // Define intents required for the bot

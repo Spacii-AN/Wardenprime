@@ -329,6 +329,26 @@ export async function initDatabase(): Promise<void> {
       } catch (error) {
         logger.error('Error creating role reactions tables:', error);
       }
+
+      // Warframe catalog table
+      try {
+        await pgdb.createTableIfNotExists(
+          'warframe_catalog',
+          `
+          id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+          name VARCHAR(255) NOT NULL,
+          crafting_cost INTEGER,
+          resources JSONB NOT NULL DEFAULT '{}'::JSONB,
+          updated_by VARCHAR(255),
+          created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+          updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+          `
+        );
+        await pgdb.query(`CREATE INDEX IF NOT EXISTS idx_warframe_catalog_name ON warframe_catalog(name)`);
+        logger.info('Ensured warframe_catalog exists');
+      } catch (error) {
+        logger.error('Error creating warframe_catalog table:', error);
+      }
       
       // Create Warframe notification tables
       try {

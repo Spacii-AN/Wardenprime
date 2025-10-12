@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Warframes</title>
+    <style> body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; margin: 24px; background: #0f1115; color: #e5e7eb; } a { color: #60a5fa; } table { width:100%; border-collapse: collapse; } th, td { padding: 8px; border-bottom: 1px solid #374151; } .btn { display:inline-block; padding:8px 12px; background:#2563eb; color:white; border-radius:8px; text-decoration:none; } </style>
+  </head>
+  <body>
+    <h1>Warframes</h1>
+    <p><a class="btn" href="/warframes/new">Add Warframe</a></p>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Credits</th><th>Resources</th><th></th></tr>
+      </thead>
+      <tbody>
+        <% if (!items || !items.length) { %>
+          <tr><td colspan="4">No warframes yet.</td></tr>
+        <% } else { %>
+          <% items.forEach(item => { %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.crafting_cost %></td>
+              <td><pre><%= JSON.stringify(item.resources || {}, null, 2) %></pre></td>
+              <td><a href="/warframes/<%= item.id %>">Edit</a></td>
+            </tr>
+          <% }) %>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+  </html>
+
+

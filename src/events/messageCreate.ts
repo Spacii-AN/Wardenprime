@@ -571,7 +571,7 @@ async function handlePlusMessage(client: Client, message: Message): Promise<bool
           logger.warn(`No bot messages found in thread ${thread.id}`);
         }
       } catch (embedError) {
-        logger.error(`Error updating embed: ${embedError instanceof Error ? error.message : String(error)}`);
+        logger.error(`Error updating embed: ${embedError instanceof Error ? embedError.message : String(embedError)}`);
       }
       
       // Second priority: Update the database if available

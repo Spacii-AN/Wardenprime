@@ -647,8 +647,8 @@ Set up notifications for specific Warframe Void Fissure mission types in the cur
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/korptair.git
-cd korptair
+git clone https://github.com/yourusername/warden-prime.git
+cd warden-prime
 
 # Install dependencies
 npm install
@@ -669,7 +669,7 @@ npm run pm2:start
 # View logs
 npm run pm2:logs
 # or
-pm2 logs korptair-bot
+pm2 logs warden-prime-bot
 
 # Monitor the application
 npm run pm2:monit

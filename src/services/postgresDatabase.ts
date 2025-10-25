@@ -318,6 +318,19 @@ export type PostgresClient = {
   getJoinFormConfig(guildId: string): Promise<any>;
   updateJoinFormConfig(guildId: string, config: any): Promise<any>;
   getJoinFormSubmissions(guildId: string, status?: string): Promise<any[]>;
+
+  // Embed Settings methods
+  getEmbedSetting(guildId: string, settingName: string): Promise<string | null>;
+  getAllEmbedSettings(guildId: string): Promise<{ [key: string]: string }>;
+  setEmbedSetting(guildId: string, settingName: string, settingValue: string, settingType?: string, description?: string): Promise<boolean>;
+  resetEmbedSetting(guildId: string, settingName: string): Promise<boolean>;
+  getEmbedColors(guildId: string): Promise<{
+    primary: string;
+    success: string;
+    error: string;
+    warning: string;
+    info: string;
+  }>;
 };
 
 /**
@@ -3155,6 +3168,125 @@ class PostgresDatabase {
     } catch (error) {
       logger.error('Error getting join form submissions:', error);
       return [];
+    }
+  }
+
+  /**
+   * Get embed setting for a guild with fallback to global defaults
+   */
+  public async getEmbedSetting(guildId: string, settingName: string): Promise<string | null> {
+    try {
+      const result = await this.query<{ setting_value: string }>(
+        'SELECT get_embed_setting($1, $2) as setting_value',
+        [guildId, settingName]
+      );
+      return result[0]?.setting_value || null;
+    } catch (error) {
+      logger.error(`Error getting embed setting ${settingName} for guild ${guildId}:`, error);
+      return null;
+    }
+  }
+
+  /**
+   * Get all embed settings for a guild (with global fallbacks)
+   */
+  public async getAllEmbedSettings(guildId: string): Promise<{ [key: string]: string }> {
+    try {
+      const result = await this.query<{ setting_name: string; setting_value: string; setting_type: string }>(
+        'SELECT * FROM get_all_embed_settings($1)',
+        [guildId]
+      );
+      
+      const settings: { [key: string]: string } = {};
+      result.forEach(row => {
+        settings[row.setting_name] = row.setting_value;
+      });
+      
+      return settings;
+    } catch (error) {
+      logger.error(`Error getting all embed settings for guild ${guildId}:`, error);
+      return {};
+    }
+  }
+
+  /**
+   * Set embed setting for a guild
+   */
+  public async setEmbedSetting(
+    guildId: string, 
+    settingName: string, 
+    settingValue: string, 
+    settingType: string = 'string',
+    description?: string
+  ): Promise<boolean> {
+    try {
+      await this.query(
+        `INSERT INTO embed_settings (guild_id, setting_name, setting_value, setting_type, description, updated_at)
+         VALUES ($1, $2, $3, $4, $5, NOW())
+         ON CONFLICT (guild_id, setting_name) 
+         DO UPDATE SET 
+           setting_value = EXCLUDED.setting_value,
+           setting_type = EXCLUDED.setting_type,
+           description = EXCLUDED.description,
+           updated_at = NOW()`,
+        [guildId, settingName, settingValue, settingType, description]
+      );
+      
+      logger.info(`Updated embed setting ${settingName} for guild ${guildId}`);
+      return true;
+    } catch (error) {
+      logger.error(`Error setting embed setting ${settingName} for guild ${guildId}:`, error);
+      return false;
+    }
+  }
+
+  /**
+   * Reset embed setting to global default
+   */
+  public async resetEmbedSetting(guildId: string, settingName: string): Promise<boolean> {
+    try {
+      await this.query(
+        'DELETE FROM embed_settings WHERE guild_id = $1 AND setting_name = $2',
+        [guildId, settingName]
+      );
+      
+      logger.info(`Reset embed setting ${settingName} for guild ${guildId} to global default`);
+      return true;
+    } catch (error) {
+      logger.error(`Error resetting embed setting ${settingName} for guild ${guildId}:`, error);
+      return false;
+    }
+  }
+
+  /**
+   * Get embed colors for a guild (with fallbacks)
+   */
+  public async getEmbedColors(guildId: string): Promise<{
+    primary: string;
+    success: string;
+    error: string;
+    warning: string;
+    info: string;
+  }> {
+    try {
+      const settings = await this.getAllEmbedSettings(guildId);
+      
+      return {
+        primary: settings.primary_color || '#5865F2',
+        success: settings.success_color || '#57F287',
+        error: settings.error_color || '#ED4245',
+        warning: settings.warning_color || '#FEE75C',
+        info: settings.info_color || '#5865F2'
+      };
+    } catch (error) {
+      logger.error(`Error getting embed colors for guild ${guildId}:`, error);
+      return {
+        primary: '#5865F2',
+        success: '#57F287',
+        error: '#ED4245',
+        warning: '#FEE75C',
+        info: '#5865F2'
+      };
     }
   }
 }

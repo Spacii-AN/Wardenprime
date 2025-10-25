@@ -235,6 +235,103 @@ export function createBotAPI(client: Client) {
     }
   });
 
+  // Embed Settings Endpoints
+  app.get('/api/bot/embeds/settings/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      const settings = await pgdb.getAllEmbedSettings(guildId);
+      res.json({ success: true, data: settings });
+    } catch (error) {
+      logger.error('Error getting embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to get embed settings' });
+    }
+  });
+
+  app.post('/api/bot/embeds/settings/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      const settings = req.body;
+      
+      // Update each setting
+      const results = [];
+      for (const [key, value] of Object.entries(settings)) {
+        if (typeof value === 'string') {
+          const result = await pgdb.setEmbedSetting(guildId, key, value as string);
+          results.push({ key, success: result });
+        }
+      }
+      
+      res.json({ success: true, data: results });
+    } catch (error) {
+      logger.error('Error updating embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to update embed settings' });
+    }
+  });
+
+  app.post('/api/bot/embeds/settings/:guildId/reset', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      
+      // Reset all settings to global defaults
+      const settingsToReset = [
+        'primary_color', 'success_color', 'error_color', 'warning_color', 'info_color',
+        'default_footer', 'default_author_name', 'default_author_icon', 'default_author_url',
+        'show_timestamp', 'show_author'
+      ];
+      
+      const results = [];
+      for (const setting of settingsToReset) {
+        const result = await pgdb.resetEmbedSetting(guildId, setting);
+        results.push({ setting, success: result });
+      }
+      
+      res.json({ success: true, data: results });
+    } catch (error) {
+      logger.error('Error resetting embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to reset embed settings' });
+    }
+  });
+
+  app.post('/api/bot/embeds/test/:guildId', validateAPIKey, async (req: express.Request, res: express.Response) => {
+    try {
+      const { guildId } = req.params;
+      
+      // Find a channel to send the test embed to
+      const guild = client.guilds.cache.get(guildId);
+      if (!guild) {
+        return res.status(404).json({ success: false, error: 'Guild not found' });
+      }
+      
+      const channel = guild.channels.cache.find(ch => ch.isTextBased() && ch.permissionsFor(guild.members.me!)?.has('SendMessages'));
+      if (!channel) {
+        return res.status(404).json({ success: false, error: 'No suitable channel found for test embed' });
+      }
+      
+      // Import the embed builder
+      const { createEmbed } = await import('../utils/embedBuilder');
+      
+      // Create a test embed with current settings
+      const testEmbed = await createEmbed({
+        type: 'primary',
+        title: '🎨 Embed Settings Test',
+        description: 'This is a test embed to show how your current settings look!',
+        fields: [
+          { name: '✅ Success Color', value: 'This would be green', inline: true },
+          { name: '❌ Error Color', value: 'This would be red', inline: true },
+          { name: '⚠️ Warning Color', value: 'This would be yellow', inline: true }
+        ],
+        guildId: guildId
+      });
+      
+      await channel.send({ embeds: [testEmbed] });
+      
+      res.json({ success: true, data: { message: 'Test embed sent successfully' } });
+    } catch (error) {
+      logger.error('Error sending test embed:', error);
+      res.status(500).json({ success: false, error: 'Failed to send test embed' });
+    }
+  });
+
   return app;
 }
 

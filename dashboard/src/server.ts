@@ -80,6 +80,30 @@ class BotAPIClient {
       body: JSON.stringify(data),
     });
   }
+
+  // Embed Settings methods
+  async getEmbedSettings(guildId: string): Promise<any> {
+    return this.request(`/api/bot/embeds/settings/${guildId}`);
+  }
+
+  async updateEmbedSettings(guildId: string, settings: any): Promise<any> {
+    return this.request(`/api/bot/embeds/settings/${guildId}`, {
+      method: 'POST',
+      body: JSON.stringify(settings),
+    });
+  }
+
+  async resetEmbedSettings(guildId: string): Promise<any> {
+    return this.request(`/api/bot/embeds/settings/${guildId}/reset`, {
+      method: 'POST',
+    });
+  }
+
+  async testEmbed(guildId: string): Promise<any> {
+    return this.request(`/api/bot/embeds/test/${guildId}`, {
+      method: 'POST',
+    });
+  }
 }
 
 // Initialize bot API client
@@ -280,6 +304,71 @@ export function startDashboard() {
     } catch (error) {
       logger.error('Error loading join form page:', error);
       res.render('error', { user: req.user, error: 'Failed to load join form page' });
+    }
+  });
+
+  // Embed Settings Routes
+  app.get('/embeds', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      res.render('embeds/settings', { user: req.user });
+    } catch (error) {
+      logger.error('Error loading embed settings page:', error);
+      res.render('error', { user: req.user, error: 'Failed to load embed settings page' });
+    }
+  });
+
+  // Get embed settings API
+  app.get('/api/embeds/settings', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      // For now, we'll use a default guild ID or get it from the user's guilds
+      // In a real implementation, you'd want to get the current guild context
+      const guildId = req.query.guildId || 'global';
+      
+      const response = await botAPI.getEmbedSettings(guildId);
+      res.json(response.data || {});
+    } catch (error) {
+      logger.error('Error getting embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to get embed settings' });
+    }
+  });
+
+  // Update embed settings API
+  app.post('/api/embeds/settings', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const guildId = req.body.guildId || 'global';
+      const settings = req.body;
+      
+      const response = await botAPI.updateEmbedSettings(guildId, settings);
+      res.json(response);
+    } catch (error) {
+      logger.error('Error updating embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to update embed settings' });
+    }
+  });
+
+  // Reset embed settings API
+  app.post('/api/embeds/settings/reset', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const guildId = req.body.guildId || 'global';
+      
+      const response = await botAPI.resetEmbedSettings(guildId);
+      res.json(response);
+    } catch (error) {
+      logger.error('Error resetting embed settings:', error);
+      res.status(500).json({ success: false, error: 'Failed to reset embed settings' });
+    }
+  });
+
+  // Test embed API
+  app.post('/api/embeds/test', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const guildId = req.body.guildId || 'global';
+      
+      const response = await botAPI.testEmbed(guildId);
+      res.json(response);
+    } catch (error) {
+      logger.error('Error testing embed:', error);
+      res.status(500).json({ success: false, error: 'Failed to test embed' });
     }
   });
 

@@ -23,7 +23,14 @@
     "pm2:logs": "pm2 logs warden-prime-bot",
     "pm2:monit": "pm2 monit",
     "dev:dashboard": "ts-node dashboard/src/server.ts",
-    "migrate:permissions": "ts-node src/services/migrations/runPermissionMigration.ts"
+    "migrate:permissions": "ts-node src/services/migrations/runPermissionMigration.ts",
+    "migrate:embeds": "ts-node src/scripts/run-embed-settings-migration.ts",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f",
+    "docker:restart": "docker-compose restart",
+    "docker:dev": "docker-compose up -d postgres && npm run dev"
   },
   "keywords": [
     "discord",

@@ -17,7 +17,7 @@ interface Config {
   BOT_PREFIX: string;
   BOT_OWNER_ID?: string;
   
-  // Embed customization
+  // Embed customization (now handled via database)
   EMBED_COLOR: number;
   EMBED_FOOTER: string;
   
@@ -91,9 +91,9 @@ export const config: Config = {
   BOT_PREFIX: getEnvVar('BOT_PREFIX', '!'),
   BOT_OWNER_ID: process.env.BOT_OWNER_ID,
   
-  // Embed customization - with defaults
-  EMBED_COLOR: parseInt(getEnvVar('EMBED_COLOR', '5865F2'), 16), // Discord Blurple
-  EMBED_FOOTER: getEnvVar('EMBED_FOOTER', 'Powered by Discord.js'),
+  // Embed customization - with defaults (now primarily handled via database)
+  EMBED_COLOR: parseInt(getEnvVar('EMBED_COLOR', '5865F2'), 16), // Discord Blurple (fallback)
+  EMBED_FOOTER: getEnvVar('EMBED_FOOTER', 'Powered by WardenPrime'), // Fallback
   
   // Feature flags - with defaults
   ENABLE_COOLDOWNS: getEnvVar('ENABLE_COOLDOWNS', 'true') === 'true',

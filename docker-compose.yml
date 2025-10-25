@@ -1,0 +1,135 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: wardenprime-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${PG_DATABASE:-wardenprime}
+      POSTGRES_USER: ${PG_USER:-wardenprime}
+      POSTGRES_PASSWORD: ${PG_PASSWORD:-wardenprime_password}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    ports:
+      - "${PG_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./guild_permission_roles.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks:
+      - wardenprime-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-wardenprime} -d ${PG_DATABASE:-wardenprime}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # Discord Bot
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wardenprime-bot
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    command: >
+      sh -c "
+        echo 'Running embed settings migration...' &&
+        npm run migrate:embeds &&
+        echo 'Starting bot...' &&
+        npm start
+      "
+    environment:
+      # Bot Configuration
+      BOT_TOKEN: ${BOT_TOKEN}
+      CLIENT_ID: ${CLIENT_ID}
+      TEST_GUILD_ID: ${TEST_GUILD_ID:-}
+      NODE_ENV: ${NODE_ENV:-production}
+      
+      # Bot Customization
+      BOT_NAME: ${BOT_NAME:-WardenPrime}
+      BOT_PREFIX: ${BOT_PREFIX:-!}
+      BOT_OWNER_ID: ${BOT_OWNER_ID:-}
+      
+      # Embed Customization
+      EMBED_COLOR: ${EMBED_COLOR:-5865F2}
+      EMBED_FOOTER: ${EMBED_FOOTER:-Powered by WardenPrime}
+      
+      # Feature Flags
+      ENABLE_COOLDOWNS: ${ENABLE_COOLDOWNS:-true}
+      ENABLE_MENTIONS: ${ENABLE_MENTIONS:-true}
+      ENABLE_LOGGING: ${ENABLE_LOGGING:-true}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      SKIP_COMMAND_REGISTRATION: ${SKIP_COMMAND_REGISTRATION:-false}
+      
+      # Command Deployment
+      COMMAND_DEPLOYMENT_MODE: ${COMMAND_DEPLOYMENT_MODE:-auto}
+      DEPLOYMENT_GUILD_IDS: ${DEPLOYMENT_GUILD_IDS:-}
+      
+      # Database Configuration
+      DATABASE_TYPE: postgres
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DATABASE: ${PG_DATABASE:-wardenprime}
+      PG_USER: ${PG_USER:-wardenprime}
+      PG_PASSWORD: ${PG_PASSWORD:-wardenprime_password}
+      PG_SSL_MODE: ${PG_SSL_MODE:-disable}
+      
+      # Dashboard Configuration (optional)
+      DASHBOARD_ENABLED: ${DASHBOARD_ENABLED:-false}
+      DASHBOARD_PORT: ${DASHBOARD_PORT:-3080}
+      DASHBOARD_PUBLIC_URL: ${DASHBOARD_PUBLIC_URL:-}
+      DASHBOARD_SESSION_SECRET: ${DASHBOARD_SESSION_SECRET:-}
+      OAUTH_CALLBACK_URL: ${OAUTH_CALLBACK_URL:-}
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data
+    networks:
+      - wardenprime-network
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'node.*dist/index.js' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # Dashboard (optional - only if DASHBOARD_ENABLED=true)
+  dashboard:
+    build:
+      context: ./dashboard
+      dockerfile: Dockerfile
+    container_name: wardenprime-dashboard
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - bot
+    environment:
+      NODE_ENV: ${NODE_ENV:-production}
+      DASHBOARD_PORT: ${DASHBOARD_PORT:-3080}
+      DASHBOARD_PUBLIC_URL: ${DASHBOARD_PUBLIC_URL:-}
+      DASHBOARD_SESSION_SECRET: ${DASHBOARD_SESSION_SECRET:-}
+      OAUTH_CALLBACK_URL: ${OAUTH_CALLBACK_URL:-}
+      # Database connection for dashboard
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DATABASE: ${PG_DATABASE:-wardenprime}
+      PG_USER: ${PG_USER:-wardenprime}
+      PG_PASSWORD: ${PG_PASSWORD:-wardenprime_password}
+      PG_SSL_MODE: ${PG_SSL_MODE:-disable}
+    ports:
+      - "${DASHBOARD_PORT:-3080}:3080"
+    networks:
+      - wardenprime-network
+    profiles:
+      - dashboard
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  wardenprime-network:
+    driver: bridge

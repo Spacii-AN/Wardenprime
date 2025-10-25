@@ -36,6 +36,7 @@
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
         "excludeFromCodex": true,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/1999Quest/1999PartyOfALifetimeKey",
@@ -65,6 +66,7 @@
         "icon": "/Lotus/Interface/Quests/1999QuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/1999Quest/1999MallIntroKey",
@@ -216,6 +218,7 @@
         "icon": "/Lotus/Interface/Quests/ApostasyPrologueStartQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/ApostasyQuest/ApostasyKey",
@@ -241,6 +244,7 @@
         "icon": "/Lotus/Interface/Quests/ArchwingQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [
@@ -294,7 +298,7 @@
                     "title": "/Lotus/Language/Quests/ArchwingQuestSegmentInboxTitle",
                     "body": "/Lotus/Language/Quests/ArchwingQuestSegmentInboxBody",
                     "attachments": [
-                        "/Lotus/Types/Items/ShipFeatureItems/EidolonArchwingFoundryUpgradeFeatureItem"
+                        "/Lotus/Types/Restoratives/OpenArchwingSummon"
                     ],
                     "countedAttachments": [],
                     "icon": "/Lotus/Interface/Icons/Npcs/Ordis.png",
@@ -316,7 +320,8 @@
         "missionReward": {
             "droptable": "/Lotus/Types/Game/MissionDecks/MissionRewardsInfested"
         },
-        "rewards": []
+        "rewards": [],
+        "cacheRewardManifest": "/Lotus/Types/Game/MissionDecks/ArchwingCacheCoordsReward"
     },
     "/Lotus/Types/Keys/ArchwingQuest/MissionTwo": {
         "name": "/Lotus/Language/G1Quests/AWQMissionObjB",
@@ -364,6 +369,7 @@
         "icon": "/Lotus/Interface/Quests/BardQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [
@@ -474,6 +480,7 @@
         "icon": "/Lotus/Interface/Quests/ChimeraKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": true,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/ChimeraQuest/ChimeraKey",
@@ -503,6 +510,7 @@
         "icon": "/Lotus/Interface/Quests/ChromaQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -560,7 +568,16 @@
                 "itemsToGiveWhenTriggered": []
             },
             {
-                "itemsToGiveWhenTriggered": []
+                "itemsToGiveWhenTriggered": [],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Syndicates/LibraryTitle",
+                    "title": "/Lotus/Language/G1Quests/DailySimarisTaskIntroSubject",
+                    "body": "/Lotus/Language/G1Quests/DailySimarisTaskIntroBody",
+                    "attachments": [],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Special/Simaris.png",
+                    "transmission": "/Lotus/Sounds/Dialog/Sanctuary/SanctuaryDailies/DSancInboxSmrs"
+                }
             }
         ],
         "rewards": [
@@ -605,6 +622,7 @@
         "icon": "/Lotus/Interface/Quests/Duviri/DuviriParadoxMain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/DuviriQuest/DuviriQuestTownEscapeKey",
@@ -737,6 +755,7 @@
         "icon": "/Lotus/Interface/Quests/EntratiQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/EntratiLab/EntratiQuestStage0NecraliskKey",
@@ -892,6 +911,7 @@
         "icon": "/Lotus/Interface/Quests/FairyQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -1032,6 +1052,7 @@
         "icon": "/Lotus/Interface/Quests/GetClemQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/GetClemQuest/GetClemQuestKeyA",
@@ -1102,6 +1123,7 @@
         "icon": "/Lotus/Interface/Quests/SayasVigilQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/GlassQuest/GlassQuestP1Key",
@@ -1146,16 +1168,7 @@
                 }
             },
             {
-                "itemsToGiveWhenTriggered": [],
-                "messageToSendWhenTriggered": {
-                    "sender": "/Lotus/Language/Npcs/TheBusiness",
-                    "title": "/Lotus/Language/SolarisQuest/SayasVigilFortunaTitle",
-                    "body": "/Lotus/Language/SolarisQuest/SayasVigilFortunaDesc",
-                    "attachments": [],
-                    "countedAttachments": [],
-                    "icon": "/Lotus/Interface/Icons/Npcs/Solaris/TheBusiness.png",
-                    "transmission": "/Lotus/Sounds/Dialog/FortunaIntroQuest/Business/DPreQuest0001TheBusiness"
-                }
+                "itemsToGiveWhenTriggered": []
             },
             {
                 "key": "/Lotus/Types/Keys/GlassQuest/GlassQuestM4Key",
@@ -1166,8 +1179,7 @@
                     "body": "/Lotus/Language/GlassQuest/QuillsVisitInboxBody",
                     "attachments": [],
                     "countedAttachments": [],
-                    "icon": "/Lotus/Interface/Icons/Npcs/MysteryPortraitA_d.png",
-                    "transmission": "/Lotus/Sounds/Dialog/GlassQuest/DGQFinishIdle0960Lotus"
+                    "icon": "/Lotus/Interface/Icons/Npcs/MysteryPortraitA_d.png"
                 }
             },
             {
@@ -1231,6 +1243,7 @@
         "icon": "/Lotus/Interface/Quests/Precept44Quest.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -1538,6 +1551,7 @@
         "icon": "/Lotus/Interface/Quests/AssassinateInfestedAladVKey.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -1622,6 +1636,7 @@
         "icon": "/Lotus/Interface/Quests/InfestedIntroQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -1703,6 +1718,7 @@
         "icon": "/Lotus/Interface/Quests/HeartOfDeimosKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -1779,6 +1795,7 @@
         "icon": "/Lotus/Interface/Quests/JadeShadowsQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/JadeShadows/JadeShadowsQuestStage1HelpHer",
@@ -1941,6 +1958,7 @@
         "icon": "/Lotus/Interface/Quests/HowlOfKubrowQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -2146,7 +2164,16 @@
             {
                 "itemsToGiveWhenTriggered": [
                     "/Lotus/StoreItems/Types/Items/ShipFeatureItems/ArsenalFeatureItem"
-                ]
+                ],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Bosses/Ordis",
+                    "title": "/Lotus/Language/G1Quests/MirageQuestInboxATitle",
+                    "body": "/Lotus/Language/G1Quests/MirageQuestInboxAMessage",
+                    "attachments": [],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Ordis.png",
+                    "highPriority": true
+                }
             },
             {
                 "key": "/Lotus/Types/Keys/MirageQuest/MissionOne",
@@ -2156,7 +2183,16 @@
                 "itemsToGiveWhenTriggered": []
             },
             {
-                "itemsToGiveWhenTriggered": []
+                "itemsToGiveWhenTriggered": [],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Bosses/Ordis",
+                    "title": "/Lotus/Language/G1Quests/MirageQuestInboxBTitle",
+                    "body": "/Lotus/Language/G1Quests/MirageQuestInboxBMessage",
+                    "attachments": [],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Ordis.png",
+                    "highPriority": true
+                }
             },
             {
                 "key": "/Lotus/Types/Keys/MirageQuest/MissionTwo",
@@ -2166,7 +2202,16 @@
                 "itemsToGiveWhenTriggered": []
             },
             {
-                "itemsToGiveWhenTriggered": []
+                "itemsToGiveWhenTriggered": [],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Bosses/Ordis",
+                    "title": "/Lotus/Language/G1Quests/MirageQuestInboxCTitle",
+                    "body": "/Lotus/Language/G1Quests/MirageQuestInboxCMessage",
+                    "attachments": [],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Ordis.png",
+                    "highPriority": true
+                }
             },
             {
                 "key": "/Lotus/Types/Keys/MirageQuest/MissionThree",
@@ -2176,7 +2221,16 @@
                 "itemsToGiveWhenTriggered": []
             },
             {
-                "itemsToGiveWhenTriggered": []
+                "itemsToGiveWhenTriggered": [],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Bosses/Ordis",
+                    "title": "/Lotus/Language/G1Quests/MirageQuestInboxDTitle",
+                    "body": "/Lotus/Language/G1Quests/MirageQuestInboxDMessage",
+                    "attachments": [],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Ordis.png",
+                    "highPriority": true
+                }
             }
         ]
     },
@@ -2212,6 +2266,96 @@
                 "itemType": "/Lotus/StoreItems/Types/Recipes/WarframeRecipes/HarlequinChassisBlueprint"
             }
         ]
+    },
+    "/Lotus/Types/Keys/ModQuest/ModQuestKeyChain": {
+        "name": "/Lotus/Language/ModQuest/ModQuestTitle",
+        "description": "/Lotus/Language/ModQuest/ModQuestDesc",
+        "icon": "/Lotus/Interface/Quests/ModQuestKeyChain.png",
+        "parentName": "/Lotus/Types/Game/KeyChainItem",
+        "codexSecret": false,
+        "chainStages": [
+            {
+                "itemsToGiveWhenTriggered": []
+            },
+            {
+                "key": "/Lotus/Types/Keys/ModQuest/ModQuestStage2Key",
+                "itemsToGiveWhenTriggered": []
+            },
+            {
+                "key": "/Lotus/Types/Keys/ModQuest/ModQuestStage3Key",
+                "itemsToGiveWhenTriggered": [
+                    "/Lotus/StoreItems/Weapons/Tenno/LongGuns/TnModQuestRifle/TnModQuestRifleWeapon",
+                    "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponElectricityDamageMod",
+                    "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponFreezeDamageMod",
+                    "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarHealthMaxMod"
+                ]
+            },
+            {
+                "itemsToGiveWhenTriggered": []
+            },
+            {
+                "key": "/Lotus/Types/Keys/ModQuest/ModQuestStage5Key",
+                "itemsToGiveWhenTriggered": []
+            },
+            {
+                "itemsToGiveWhenTriggered": [],
+                "messageToSendWhenTriggered": {
+                    "sender": "/Lotus/Language/Bosses/Teshin",
+                    "title": "/Lotus/Language/ModQuest/ModQuestPostQuestMessageTitle",
+                    "body": "/Lotus/Language/ModQuest/ModQuestPostQuestMessageBody",
+                    "attachments": [
+                        "/Lotus/Upgrades/Mods/Melee/WeaponMeleeDamageMod",
+                        "/Lotus/Upgrades/Mods/Melee/WeaponFireRateMod",
+                        "/Lotus/Upgrades/Mods/Rifle/WeaponDamageAmountMod",
+                        "/Lotus/Upgrades/Mods/Pistol/WeaponDamageAmountMod",
+                        "/Lotus/Upgrades/Mods/Pistol/WeaponFireDamageMod",
+                        "/Lotus/Upgrades/Mods/Warframe/AvatarAbilityDurationMod",
+                        "/Lotus/Upgrades/Mods/Warframe/AvatarPickupBonusMod",
+                        "/Lotus/Upgrades/Mods/Warframe/AvatarShieldMaxMod",
+                        "/Lotus/Upgrades/Mods/FusionBundles/CircuitSilverNormalFusionBundle",
+                        "/Lotus/Types/StoreItems/CreditBundles/Zariman/TableACreditsUncommon"
+                    ],
+                    "countedAttachments": [],
+                    "icon": "/Lotus/Interface/Icons/Npcs/Teshin.png",
+                    "transmission": "/Lotus/Sounds/Dialog/ModQuest/DConclusionInbox0730Teshin",
+                    "highPriority": true
+                }
+            }
+        ]
+    },
+    "/Lotus/Types/Keys/ModQuest/ModQuestStage2Key": {
+        "name": "/Lotus/Language/ModQuest/ModQuestStage2",
+        "description": "/Lotus/Language/ModQuest/ModQuestStage2",
+        "parentName": "/Lotus/Types/Game/KeyItems/VoidKeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/ModQuest/ModQuestStage3Key": {
+        "name": "/Lotus/Language/ModQuest/ModQuestStage3",
+        "description": "/Lotus/Language/ModQuest/ModQuestStage3",
+        "parentName": "/Lotus/Types/Game/KeyItems/VoidKeyItem",
+        "codexSecret": true,
+        "missionReward": {
+            "countedStoreItems": [
+                {
+                    "StoreItem": "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponElectricityDamageMod",
+                    "ItemCount": 2
+                }
+            ]
+        },
+        "rewards": [
+            {
+                "rewardType": "RT_STORE_ITEM",
+                "itemType": "/Lotus/StoreItems/Types/Items/ShipFeatureItems/ModsFeatureItem"
+            }
+        ]
+    },
+    "/Lotus/Types/Keys/ModQuest/ModQuestStage5Key": {
+        "name": "/Lotus/Language/ModQuest/ModQuestStage5",
+        "description": "/Lotus/Language/ModQuest/ModQuestStage5",
+        "parentName": "/Lotus/Types/Game/KeyItems/VoidKeyItem",
+        "codexSecret": true,
+        "rewards": []
     },
     "/Lotus/Types/Keys/MummyQuest/MummyQuestKeyChain": {
         "name": "/Lotus/Language/G1Quests/MummyQuestName",
@@ -2352,13 +2496,15 @@
         "icon": "/Lotus/Interface/Quests/AwakeningQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": true,
-        "excludeFromCodex": true
+        "excludeFromCodex": true,
+        "replayable": true
     },
     "/Lotus/Types/Keys/NewWarIntroQuest/NewWarIntroKeyChain": {
         "name": "/Lotus/Language/NewWarIntro/NewWarIntroKeyChainName",
         "icon": "/Lotus/Interface/Quests/NewWarIntroQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": true,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/NewWarIntroQuest/NewWarIntroKey",
@@ -2390,6 +2536,7 @@
         "icon": "/Lotus/Interface/Quests/TheNewWarQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": true,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/NewWarQuest/TNWActOneBrothers",
@@ -2633,6 +2780,7 @@
         "icon": "/Lotus/Interface/Quests/OrokinMoonQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/OrokinMoonQuest/OrokinMoonQuestKeyA",
@@ -2732,6 +2880,7 @@
         "icon": "/Lotus/Interface/Quests/PriestQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -2883,6 +3032,7 @@
         "icon": "/Lotus/Interface/Quests/DeadlockProtocolQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -3018,6 +3168,7 @@
         "icon": "/Lotus/Interface/Quests/RailjackBuildQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [
@@ -3341,6 +3492,7 @@
         "icon": "/Lotus/Interface/Quests/SacrificeQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -3486,6 +3638,7 @@
         "icon": "/Lotus/Interface/Quests/SentientQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "key": "/Lotus/Types/Keys/SentientQuest/SentientQuestMissionOne",
@@ -3588,6 +3741,7 @@
         "icon": "/Lotus/Interface/Quests/SolarisQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -3650,6 +3804,7 @@
         "icon": "/Lotus/Interface/Quests/SpyQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -3837,6 +3992,12 @@
                     "highPriority": true
                 }
             }
+        ],
+        "rewards": [
+            {
+                "rewardType": "RT_STORE_ITEM",
+                "itemType": "/Lotus/StoreItems/Types/Keys/ModQuest/ModQuestKeyChain"
+            }
         ]
     },
     "/Lotus/Types/Keys/VorsPrize/MissionOne": {
@@ -3849,18 +4010,6 @@
                 "itemType": "/Lotus/StoreItems/Types/Items/ShipFeatureItems/SocialMenuFeatureItem"
             },
             {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Melee/WeaponMeleeDamageMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponDamageAmountMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Pistol/WeaponDamageAmountMod"
-            },
-            {
                 "rewardType": "RT_CREDITS",
                 "amount": 2500
             }
@@ -3871,30 +4020,6 @@
         "parentName": "/Lotus/Types/Keys/TestKeyA",
         "codexSecret": true,
         "rewards": [
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Types/Items/ShipFeatureItems/ModsFeatureItem"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarHealthMaxMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarShieldMaxMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarAbilityRangeMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarAbilityStrengthMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarAbilityDurationMod"
-            },
             {
                 "rewardType": "RT_CREDITS",
                 "amount": 2500
@@ -3909,26 +4034,6 @@
             {
                 "rewardType": "RT_STORE_ITEM",
                 "itemType": "/Lotus/StoreItems/Types/Items/ShipFeatureItems/FoundryFeatureItem"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Melee/WeaponFireRateMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponFactionDamageCorpus"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Rifle/WeaponFactionDamageGrineer"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Pistol/WeaponFireDamageMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Pistol/WeaponElectricityDamageMod"
             },
             {
                 "rewardType": "RT_CREDITS",
@@ -3959,18 +4064,6 @@
         },
         "rewards": [
             {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarPickupBonusMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarPowerMaxMod"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/Warframe/AvatarEnemyRadarMod"
-            },
-            {
                 "rewardType": "RT_CREDITS",
                 "amount": 2500
             }
@@ -3984,54 +4077,6 @@
             {
                 "rewardType": "RT_STORE_ITEM",
                 "itemType": "/Lotus/StoreItems/Types/Items/ShipFeatureItems/MercuryNavigationFeatureItem"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
-            },
-            {
-                "rewardType": "RT_STORE_ITEM",
-                "itemType": "/Lotus/StoreItems/Upgrades/Mods/FusionBundles/CommonFusionBundle"
             },
             {
                 "rewardType": "RT_CREDITS",
@@ -4056,6 +4101,7 @@
         "icon": "/Lotus/Interface/Quests/TheWarWithinQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": []
@@ -4290,6 +4336,7 @@
         "icon": "/Lotus/Interface/Quests/TempestariiQuestKeychain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -4383,6 +4430,7 @@
         "icon": "/Lotus/Interface/Quests/YareliQuestKeyChain.png",
         "parentName": "/Lotus/Types/Game/KeyChainItem",
         "codexSecret": false,
+        "replayable": true,
         "chainStages": [
             {
                 "itemsToGiveWhenTriggered": [],
@@ -4576,6 +4624,30 @@
             "droptable": "/Lotus/Types/Game/MissionDecks/BossMissionRewards/CowgirlRewards"
         }
     },
+    "/Lotus/Types/Keys/1999Missions/VaniaCaptureFallTestKey": {
+        "name": "VANIA SURVIVAL TEST KEY",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/1999Missions/VaniaCaptureSpringTestKey": {
+        "name": "VANIA SURVIVAL TEST KEY",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/1999Missions/VaniaCaptureSummerTestKey": {
+        "name": "VANIA SURVIVAL TEST KEY",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/1999Missions/VaniaCaptureWinterTestKey": {
+        "name": "VANIA SURVIVAL TEST KEY",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
     "/Lotus/Types/Keys/1999PlayableDemo/1999PlayableDemoMallKey": {
         "name": "/Lotus/Language/1999Demo/1999DemoTitle",
         "parentName": "/Lotus/Types/Game/KeyItem",
@@ -4719,6 +4791,15 @@
         },
         "rewards": []
     },
+    "/Lotus/Types/Keys/DisruptionOutpostTestKey": {
+        "name": "DISRUPTION OUTPOST TEST KEY",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "missionReward": {
+            "droptable": "/Lotus/Types/Game/MissionDecks/DisruptionMissionRewards/DisruptionRewards"
+        },
+        "rewards": []
+    },
     "/Lotus/Types/Keys/DisruptionSettlementTestKey": {
         "name": "DISRUPTION SETTLEMENT TEST KEY",
         "parentName": "/Lotus/Types/Game/KeyItem",
@@ -4778,6 +4859,18 @@
     "/Lotus/Types/Keys/DuviriLandscapeStoryOnly": {
         "name": "DUVIRI LANDSCAPE NO QUEST",
         "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/DuviriMITW/DuviriMITWEventKey": {
+        "name": "/Lotus/Language/Isleweaver/Isleweaver",
+        "parentName": "/Lotus/Types/Keys/DuviriMITW/DuviriMITWKey",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/DuviriMITW/DuviriMITWKey": {
+        "name": "/Lotus/Language/Isleweaver/Isleweaver",
+        "parentName": "/Lotus/Types/Keys/DuviriQuest/DuviriQuestBaseKey",
         "codexSecret": true,
         "rewards": []
     },
@@ -5162,25 +5255,29 @@
         "name": "/Lotus/Language/Events/TacAlertHalloweenLantern",
         "parentName": "/Lotus/Types/Game/KeyItem",
         "codexSecret": true,
-        "rewards": []
+        "rewards": [],
+        "cacheRewardManifest": "/Lotus/Types/Game/MissionDecks/CacheRewardsHalloween"
     },
     "/Lotus/Types/Keys/LanternEndlessEventKeyB": {
         "name": "/Lotus/Language/Events/TacAlertHalloweenLantern",
         "parentName": "/Lotus/Types/Game/KeyItem",
         "codexSecret": true,
-        "rewards": []
+        "rewards": [],
+        "cacheRewardManifest": "/Lotus/Types/Game/MissionDecks/CacheRewardsHalloween"
     },
     "/Lotus/Types/Keys/LanternEndlessEventKeyC": {
         "name": "/Lotus/Language/Events/TacAlertHalloweenLantern",
         "parentName": "/Lotus/Types/Game/KeyItem",
         "codexSecret": true,
-        "rewards": []
+        "rewards": [],
+        "cacheRewardManifest": "/Lotus/Types/Game/MissionDecks/CacheRewardsHalloween"
     },
     "/Lotus/Types/Keys/LanternEndlessEventKeyD": {
         "name": "/Lotus/Language/Events/TacAlertHalloweenLanternEndless",
         "parentName": "/Lotus/Types/Game/KeyItem",
         "codexSecret": true,
-        "rewards": []
+        "rewards": [],
+        "cacheRewardManifest": "/Lotus/Types/Game/MissionDecks/CacheRewardsHalloweenEndurance"
     },
     "/Lotus/Types/Keys/LastWishDefenseKey": {
         "parentName": "/Lotus/Types/Game/KeyItem",
@@ -5249,17 +5346,6 @@
         "excludeFromCodex": true,
         "missionReward": {
             "droptable": "/Lotus/Types/Game/MissionDecks/EventMissionRewards/MechSurvivalRewardsTierC"
-        },
-        "rewards": []
-    },
-    "/Lotus/Types/Keys/MechSurvivalMissionTest": {
-        "name": "/Lotus/Language/Events/MechSurvivalName",
-        "description": "/Lotus/Language/Events/MechSurvivalDesc",
-        "parentName": "/Lotus/Types/Keys/TestKeyA",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "missionReward": {
-            "droptable": "/Lotus/Types/Game/MissionDecks/EventMissionRewards/MechSurvivalRewardsTierA"
         },
         "rewards": []
     },
@@ -5572,6 +5658,27 @@
         "missionReward": {
             "droptable": "/Lotus/Types/Game/MissionDecks/GlassMakerBossFight"
         },
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/NokkoColony/ThePrinceVision1Key": {
+        "name": "/Lotus/Language/NokkoColony/Vision1Label",
+        "description": "/Lotus/Language/NokkoColony/Vision1Desc",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/NokkoColony/ThePrinceVision2Key": {
+        "name": "/Lotus/Language/NokkoColony/Vision2Label",
+        "description": "/Lotus/Language/NokkoColony/Vision2Desc",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
+    "/Lotus/Types/Keys/NokkoColony/ThePrinceVision3Key": {
+        "name": "/Lotus/Language/NokkoColony/Vision3Label",
+        "description": "/Lotus/Language/NokkoColony/Vision3Desc",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
         "rewards": []
     },
     "/Lotus/Types/Keys/OrokinCaptureKeyA": {
@@ -5938,13 +6045,6 @@
     },
     "/Lotus/Types/Keys/RaidKeys/BaseRaidKey": {
         "parentName": "/Lotus/Types/Game/KeyItem",
-        "codexSecret": true,
-        "rewards": []
-    },
-    "/Lotus/Types/Keys/RaidKeys/Raid01Stage01KeyItem": {
-        "name": "/Lotus/Language/Items/GrineerTrialsName",
-        "description": "/Lotus/Language/Items/GrineerTrialsDesc",
-        "parentName": "/Lotus/Types/Keys/RaidKeys/BaseRaidKey",
         "codexSecret": true,
         "rewards": []
     },
@@ -6951,12 +7051,6 @@
         "codexSecret": true,
         "rewards": []
     },
-    "/Lotus/Types/Keys/TestKeyEidolon": {
-        "name": "/Lotus/Language/Locations/EidolonPlains",
-        "parentName": "/Lotus/Types/Game/KeyItem",
-        "codexSecret": true,
-        "rewards": []
-    },
     "/Lotus/Types/Keys/TestKeyErisBoss": {
         "name": "/Lotus/Language/Items/GolemAssassinateKey",
         "description": "/Lotus/Language/ItemDescription/GolemAssassinateKeyDesc",
@@ -7595,6 +7689,12 @@
         },
         "rewards": []
     },
+    "/Lotus/Types/Keys/TestKeys/TestKeyTauWarAllTiles": {
+        "name": "[HC] Tau All Tiles",
+        "parentName": "/Lotus/Types/Game/KeyItem",
+        "codexSecret": true,
+        "rewards": []
+    },
     "/Lotus/Types/Keys/TestKeySentientDevourerKahlTennoStart": {
         "name": "Seintient Devourer",
         "parentName": "/Lotus/Types/Keys/TestKeyA",
@@ -7779,12 +7879,6 @@
         "missionReward": {
             "droptable": "/Lotus/Types/Game/MissionDecks/BossMissionRewards/HydroidRewards"
         },
-        "rewards": []
-    },
-    "/Lotus/Types/Keys/WareframeKey": {
-        "name": "Space Ninja Warrior",
-        "parentName": "/Lotus/Types/Game/KeyItem",
-        "codexSecret": true,
         "rewards": []
     },
     "/Lotus/Types/Keys/WarWithinQuest/WarWithinQuestKeyTeshinCaptureC": {

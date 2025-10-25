@@ -860,5 +860,5 @@ if (config.DASHBOARD_ENABLED) {
 }
 
 // Optionally start dashboard server
-import { startDashboard } from '../dashboard/src/server';
-startDashboard();
+// import { startDashboard } from '../dashboard/src/server';
+// startDashboard();

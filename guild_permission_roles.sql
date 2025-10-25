@@ -4,6 +4,16 @@
 -- First, ensure the public schema exists
 CREATE SCHEMA IF NOT EXISTS public;
 
+-- Create the guilds table first (if it doesn't exist)
+CREATE TABLE IF NOT EXISTS public.guilds (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    icon VARCHAR(255),
+    owner_id VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
 -- Create the guild_permission_roles table
 CREATE TABLE IF NOT EXISTS public.guild_permission_roles (
     id SERIAL PRIMARY KEY,

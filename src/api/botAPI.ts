@@ -323,7 +323,11 @@ export function createBotAPI(client: Client) {
         guildId: guildId
       });
       
-      await channel.send({ embeds: [testEmbed] });
+      if (channel.isTextBased()) {
+        await channel.send({ embeds: [testEmbed] });
+      } else {
+        throw new Error('Channel is not a text channel');
+      }
       
       res.json({ success: true, data: { message: 'Test embed sent successfully' } });
     } catch (error) {

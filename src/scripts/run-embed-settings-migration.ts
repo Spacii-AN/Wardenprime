@@ -51,7 +51,7 @@ async function runEmbedSettingsMigration() {
     
     // Test the migration by checking if the table exists and has data
     const testResult = await pgdb.query('SELECT COUNT(*) as count FROM embed_settings WHERE guild_id = $1', ['global']);
-    const globalSettingsCount = testResult[0]?.count || 0;
+    const globalSettingsCount = (testResult[0] as any)?.count || 0;
     
     logger.info(`✅ Migration verified: ${globalSettingsCount} global settings created`);
     

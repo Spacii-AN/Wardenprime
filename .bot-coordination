@@ -1,0 +1,16 @@
+# Bot Coordination File
+# This file helps coordinate bot usage between developers
+
+CURRENT_USER=spacii
+LAST_ACTIVE=Sun Oct 26 04:01:45 AM AEDT 2025
+STATUS=available
+
+# To check if bot is available:
+# grep "STATUS=available" .bot-coordination
+
+# To claim bot access:
+# echo "CURRENT_USER=your_name" > .bot-coordination
+# echo "STATUS=in_use" >> .bot-coordination
+
+# To release bot access:
+# echo "STATUS=available" > .bot-coordination

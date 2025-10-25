@@ -1,124 +1,4 @@
 {
-    "/Lotus/Types/Game/ModularWeaponCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/OperatorAmpCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/OperatorCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeAbilitiesCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeArmorCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeCompanionCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeEnergyCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeHealthCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeMovementCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeResistanceCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeShieldsCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeSpecialCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeWeapDmgCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
-    "/Lotus/Types/Game/WarframeWeapStatsCosmeticEnhancer": {
-        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
-        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
-        "codexSecret": true,
-        "excludeFromCodex": true,
-        "rarity": "COMMON",
-        "fusionLimit": 3
-    },
     "/Lotus/Upgrades/CosmeticEnhancers/Defensive/ArmourOnDamage": {
         "name": "/Lotus/Language/Items/ArmourOnDamageName",
         "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionAA.png",
@@ -224,9 +104,9 @@
         "name": "/Lotus/Language/Arcanes/InvulnerabilityOnDeathOnMercyKillName",
         "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionDR.png",
         "codexSecret": true,
-        "rarity": "RARE",
+        "rarity": "LEGENDARY",
         "fusionLimit": 5,
-        "distillPointValue": 21
+        "distillPointValue": 84
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Defensive/MagneticProcResist": {
         "name": "/Lotus/Language/Items/MagneticProcResistName",
@@ -294,8 +174,9 @@
         "name": "/Lotus/Language/Arcanes/AbilityHeatProcsGiveCritChanceName",
         "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionDS.png",
         "codexSecret": true,
-        "rarity": "RARE",
-        "fusionLimit": 5
+        "rarity": "LEGENDARY",
+        "fusionLimit": 5,
+        "distillPointValue": 84
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Offensive/AbilityPowerOnFreeze": {
         "name": "/Lotus/Language/Arcanes/AbilityPowerOnFreezeSolidName",
@@ -335,7 +216,8 @@
         "codexSecret": true,
         "excludeFromCodex": true,
         "rarity": "RARE",
-        "fusionLimit": 5
+        "fusionLimit": 5,
+        "isFrivolous": true
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Offensive/AmmoEfficiencyOnPistolHeadshot": {
         "name": "/Lotus/Language/Items/PistolHeadshotKillAmmoEfficiency",
@@ -589,7 +471,8 @@
         "codexSecret": true,
         "excludeFromCodex": true,
         "rarity": "COMMON",
-        "fusionLimit": 5
+        "fusionLimit": 5,
+        "isFrivolous": true
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Offensive/MeleeDmgOnRifleKill": {
         "name": "/Lotus/Language/Items/MeleeDmgOnRifleKill",
@@ -654,6 +537,13 @@
         "rarity": "LEGENDARY",
         "fusionLimit": 5,
         "distillPointValue": 84
+    },
+    "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PermaComboOnFinisherSub": {
+        "name": "/Lotus/Language/Items/GenericCosmeticEnhancerName",
+        "icon": "/Lotus/Interface/Icons/Store/CosmeticEnhancer.png",
+        "codexSecret": true,
+        "rarity": "COMMON",
+        "fusionLimit": 5
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Offensive/PowerStrengthOnKill": {
         "name": "/Lotus/Language/Arcanes/PowerStrengthOnKill",
@@ -1099,8 +989,9 @@
         "name": "/Lotus/Language/Arcanes/AbilityRadiationProcsCreateUniversalOrbsOnKillName",
         "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionDT.png",
         "codexSecret": true,
-        "rarity": "RARE",
-        "fusionLimit": 5
+        "rarity": "LEGENDARY",
+        "fusionLimit": 5,
+        "distillPointValue": 84
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Utility/AbilityStatusProcsGiveAbilityStrengthAndEfficiency": {
         "name": "/Lotus/Language/1999/AbilityStatusProcsGiveAbilityStrengthAndEfficiencyName",
@@ -1220,6 +1111,46 @@
         "rarity": "RARE",
         "fusionLimit": 5,
         "distillPointValue": 22
+    },
+    "/Lotus/Upgrades/CosmeticEnhancers/Utility/NoCostCastChanceAbility1Listener": {
+        "name": "/Lotus/Language/Upgrades/NoCostCastChanceOnCast",
+        "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionCF.png",
+        "codexSecret": true,
+        "excludeFromCodex": true,
+        "rarity": "RARE",
+        "fusionLimit": 5,
+        "distillPointValue": 24,
+        "isFrivolous": true
+    },
+    "/Lotus/Upgrades/CosmeticEnhancers/Utility/NoCostCastChanceAbility2Listener": {
+        "name": "/Lotus/Language/Upgrades/NoCostCastChanceOnCast",
+        "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionCF.png",
+        "codexSecret": true,
+        "excludeFromCodex": true,
+        "rarity": "RARE",
+        "fusionLimit": 5,
+        "distillPointValue": 24,
+        "isFrivolous": true
+    },
+    "/Lotus/Upgrades/CosmeticEnhancers/Utility/NoCostCastChanceAbility3Listener": {
+        "name": "/Lotus/Language/Upgrades/NoCostCastChanceOnCast",
+        "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionCF.png",
+        "codexSecret": true,
+        "excludeFromCodex": true,
+        "rarity": "RARE",
+        "fusionLimit": 5,
+        "distillPointValue": 24,
+        "isFrivolous": true
+    },
+    "/Lotus/Upgrades/CosmeticEnhancers/Utility/NoCostCastChanceAbility4Listener": {
+        "name": "/Lotus/Language/Upgrades/NoCostCastChanceOnCast",
+        "icon": "/Lotus/Interface/Icons/CosmeticEnhancers/Arcanes/Projections/ArcaneProjectionCF.png",
+        "codexSecret": true,
+        "excludeFromCodex": true,
+        "rarity": "RARE",
+        "fusionLimit": 5,
+        "distillPointValue": 24,
+        "isFrivolous": true
     },
     "/Lotus/Upgrades/CosmeticEnhancers/Utility/NoCostCastChanceOnCast": {
         "name": "/Lotus/Language/Upgrades/NoCostCastChanceOnCast",

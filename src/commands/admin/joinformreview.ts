@@ -89,10 +89,10 @@ async function handleListSubmissions(interaction: any) {
             .setTimestamp();
 
         for (const form of pendingForms) {
-            const formData = JSON.parse(form.form_data || '{}');
+            const formData = JSON.parse((form as any).form_data || '{}');
             embed.addFields({
-                name: `User: <@${form.user_id}>`,
-                value: `**IGN:** ${formData.ign_input || 'N/A'}\n**Preferred Name:** ${formData.preferred_name_input || 'N/A'}\n**Platform:** ${formData.platform_input || 'N/A'}\n**Submitted:** <t:${Math.floor(new Date(form.submitted_at).getTime() / 1000)}:R>`,
+                name: `User: <@${(form as any).user_id}>`,
+                value: `**IGN:** ${formData.ign_input || 'N/A'}\n**Preferred Name:** ${formData.preferred_name_input || 'N/A'}\n**Platform:** ${formData.platform_input || 'N/A'}\n**Submitted:** <t:${Math.floor(new Date((form as any).submitted_at).getTime() / 1000)}:R>`,
                 inline: true
             });
         }

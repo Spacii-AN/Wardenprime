@@ -15,15 +15,14 @@ RUN apk add --no-cache \
     musl-dev \
     giflib-dev \
     pixman-dev \
-    pangomm-dev \
     libjpeg-turbo-dev \
     freetype-dev
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production && npm cache clean --force
+# Install dependencies (including dev dependencies for build)
+RUN npm ci && npm cache clean --force
 
 # Copy source code
 COPY . .
@@ -38,8 +37,9 @@ RUN mkdir -p logs data
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S wardenprime -u 1001
 
-# Change ownership of the app directory
-RUN chown -R wardenprime:nodejs /app
+# Change ownership of the app directory and ensure logs/data are writable
+RUN chown -R wardenprime:nodejs /app && \
+    chmod -R 755 /app/logs /app/data
 
 # Switch to non-root user
 USER wardenprime

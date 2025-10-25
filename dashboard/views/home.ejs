@@ -1,73 +1,204 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Warden Prime Dashboard</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <header class="row">
-      <strong>Warden Prime Dashboard</strong>
-      <div class="spacer"></div>
-      <% if (user) { %>
-        <span class="muted">Logged in as <%= user.username %>#<%= user.discriminator %></span>
-        <a class="btn" href="/logout">Logout</a>
-      <% } else { %>
-        <a class="btn" href="/login">Login with Discord</a>
-      <% } %>
-    </header>
-    <main>
-      <h2>World State</h2>
-      <% if (!worldState) { %>
-        <div class="card">World state unavailable.</div>
-      <% } else { %>
-        <div class="grid">
-          <div class="card">
-            <h3>Void Fissures</h3>
-            <p class="muted">Active missions: <%= (worldState.ActiveMissions || []).filter(m => m.Modifier && m.Modifier.startsWith('VoidT')).length %></p>
-          </div>
-          <div class="card">
-            <h3>Arbitrations</h3>
-            <p class="muted">Available: <%= (worldState.Arbitration || null) ? 'Yes' : 'No' %></p>
-          </div>
-          <div class="card">
-            <h3>Baro Ki'Teer</h3>
-            <p class="muted">Traders: <%= (worldState.VoidTraders || []).length %></p>
-          </div>
-          <div class="card">
-            <h3>Aya Bounties</h3>
-            <p class="muted">Cetus missions: <%= (worldState.SyndicateMissions || []).length %></p>
-          </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardenPrime Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>WardenPrime Dashboard
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servers">
+                            <i class="fas fa-server me-1"></i>Servers
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <% if (user) { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-user me-1"></i><%= user.username %>#<%= user.discriminator %>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="/logout">
+                                    <i class="fas fa-sign-out-alt me-1"></i>Logout
+                                </a></li>
+                            </ul>
+                        </li>
+                    <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <i class="fas fa-sign-in-alt me-1"></i>Login with Discord
+                            </a>
+                        </li>
+                    <% } %>
+                </ul>
+            </div>
         </div>
-      <% } %>
+    </nav>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-globe me-2"></i>World State</h1>
+                    <div class="text-muted">
+                        <i class="fas fa-clock me-1"></i>Last updated: <%= new Date().toLocaleString() %>
+                    </div>
+                </div>
 
-      <h2 style="margin-top:24px;">Admin</h2>
-      <% if (!user) { %>
-        <div class="card">Login to access admin features.</div>
-      <% } else { %>
-        <div class="grid">
-          <div class="card">
-            <h3>🎨 Embed Settings</h3>
-            <p class="muted">Customize bot embed colors and appearance</p>
-            <a class="btn" href="/embeds">Configure</a>
-          </div>
-          <div class="card">
-            <h3>🤖 Bot Control</h3>
-            <p class="muted">Manage bot services, notifications, and settings.</p>
-            <a class="btn" href="/dashboard">Control Panel</a>
-          </div>
-          <div class="card">
-            <h3>⚔️ Warframes</h3>
-            <p class="muted">Manage craft costs and resources.</p>
-            <a class="btn" href="/warframes">Manage</a>
-          </div>
+                <% if (!worldState) { %>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-exclamation-triangle me-2"></i>World state unavailable.
+                    </div>
+                <% } else { %>
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">Void Fissures</h5>
+                                            <p class="card-text"><%= (worldState.ActiveMissions || []).filter(m => m.Modifier && m.Modifier.startsWith('VoidT')).length %> Active</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-broadcast-tower fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">Arbitrations</h5>
+                                            <p class="card-text"><%= (worldState.Arbitration || null) ? 'Available' : 'None' %></p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-trophy fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">Baro Ki'Teer</h5>
+                                            <p class="card-text"><%= (worldState.VoidTraders || []).length %> Traders</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-coins fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">Aya Bounties</h5>
+                                            <p class="card-text"><%= (worldState.SyndicateMissions || []).length %> Missions</p>
+                                        </div>
+                                        <div class="align-self-center">
+                                            <i class="fas fa-map fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+
+                <% if (user) { %>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h2><i class="fas fa-cogs me-2"></i>Admin Panel</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="fas fa-robot me-2"></i>Bot Control</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">Manage bot services, notifications, and settings.</p>
+                                    <a class="btn btn-primary" href="/dashboard">
+                                        <i class="fas fa-tachometer-alt me-1"></i>Control Panel
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5><i class="fas fa-sword me-2"></i>Warframes</h5>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text">Manage craft costs and resources.</p>
+                                    <a class="btn btn-primary" href="/warframes">
+                                        <i class="fas fa-cog me-1"></i>Manage
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card text-center" style="padding: 48px;">
+                                <div class="card-body">
+                                    <i class="fas fa-shield-alt fa-4x text-primary mb-4"></i>
+                                    <h3 class="card-title">Welcome to WardenPrime Dashboard</h3>
+                                    <p class="card-text text-muted mb-4">Login with Discord to access admin features and manage your bot.</p>
+                                    <a class="btn btn-primary btn-lg" href="/login">
+                                        <i class="fas fa-sign-in-alt me-2"></i>Login with Discord
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
         </div>
-      <% } %>
-    </main>
-    <footer>
-      <span class="muted">© <%= new Date().getFullYear() %> Warden Prime</span>
+    </div>
+
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="text-muted">© <%= new Date().getFullYear() %> WardenPrime</span>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
   </html>
 

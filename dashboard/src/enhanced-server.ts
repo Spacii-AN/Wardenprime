@@ -178,54 +178,158 @@ class EnhancedBotAPIClient {
     });
   }
 
-  async deleteRoleCommand(guildId: string, commandId: string): Promise<any> {
-    return this.request(`/api/bot/guild/${guildId}/role-commands/${commandId}`, {
-      method: 'DELETE',
-    });
-  }
-
+  // Giveaway management
   async getGiveaways(guildId: string): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/giveaways`);
   }
 
-  async createGiveaway(guildId: string, giveaway: any): Promise<any> {
+  async createGiveaway(guildId: string, giveawayData: any): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/giveaways`, {
       method: 'POST',
-      body: JSON.stringify(giveaway),
+      body: JSON.stringify(giveawayData)
     });
   }
 
   async endGiveaway(guildId: string, giveawayId: string): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/giveaways/${giveawayId}/end`, {
-      method: 'POST',
+      method: 'POST'
     });
   }
 
+  async rerollGiveaway(guildId: string, giveawayId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/giveaways/${giveawayId}/reroll`, {
+      method: 'POST'
+    });
+  }
+
+  // Fissure notifications
   async getFissureNotifications(guildId: string): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/fissure-notifications`);
   }
 
-  async createFissureNotification(guildId: string, notification: any): Promise<any> {
+  async createFissureNotification(guildId: string, notificationData: any): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/fissure-notifications`, {
       method: 'POST',
-      body: JSON.stringify(notification),
+      body: JSON.stringify(notificationData)
     });
   }
 
+  async deleteFissureNotification(guildId: string, notificationId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/fissure-notifications/${notificationId}`, {
+      method: 'DELETE'
+    });
+  }
+
+  // LFG Management
+  async getLFGSessions(guildId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/lfg-sessions`);
+  }
+
+  async createLFGSession(guildId: string, sessionData: any): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/lfg-sessions`, {
+      method: 'POST',
+      body: JSON.stringify(sessionData)
+    });
+  }
+
+  async closeLFGSession(guildId: string, sessionId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/lfg-sessions/${sessionId}/close`, {
+      method: 'POST'
+    });
+  }
+
+  // Arbitration monitoring
+  async getArbitrationStatus(): Promise<any> {
+    return this.request('/api/bot/arbitration/status');
+  }
+
+  async getArbitrationHistory(guildId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/arbitration-history`);
+  }
+
+  // Service management
+  async getServiceStatus(): Promise<any> {
+    return this.request('/api/bot/services/status');
+  }
+
+  async restartService(serviceName: string): Promise<any> {
+    return this.request(`/api/bot/services/${serviceName}/restart`, {
+      method: 'POST'
+    });
+  }
+
+  // Command management
+  async getCommands(): Promise<any> {
+    return this.request('/api/bot/commands');
+  }
+
+  async deployCommands(): Promise<any> {
+    return this.request('/api/bot/commands/deploy', {
+      method: 'POST'
+    });
+  }
+
+  // Analytics
   async getAnalytics(guildId: string): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/analytics`);
   }
 
+  async getGlobalAnalytics(): Promise<any> {
+    return this.request('/api/bot/analytics/global');
+  }
+
+  // Logs
   async getLogs(guildId: string, type?: string, limit?: number): Promise<any> {
     const params = new URLSearchParams();
     if (type) params.append('type', type);
     if (limit) params.append('limit', limit.toString());
-    
     return this.request(`/api/bot/guild/${guildId}/logs?${params.toString()}`);
   }
 
+  async getGlobalLogs(type?: string, limit?: number): Promise<any> {
+    const params = new URLSearchParams();
+    if (type) params.append('type', type);
+    if (limit) params.append('limit', limit.toString());
+    return this.request(`/api/bot/logs?${params.toString()}`);
+  }
+
+  // Moderation
   async getModerationActions(guildId: string): Promise<any> {
     return this.request(`/api/bot/guild/${guildId}/moderation`);
+  }
+
+  async banUser(guildId: string, userId: string, reason: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/ban`, {
+      method: 'POST',
+      body: JSON.stringify({ userId, reason })
+    });
+  }
+
+  async kickUser(guildId: string, userId: string, reason: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/kick`, {
+      method: 'POST',
+      body: JSON.stringify({ userId, reason })
+    });
+  }
+
+  async muteUser(guildId: string, userId: string, duration: string, reason: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/mute`, {
+      method: 'POST',
+      body: JSON.stringify({ userId, duration, reason })
+    });
+  }
+
+  async warnUser(guildId: string, userId: string, reason: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/warn`, {
+      method: 'POST',
+      body: JSON.stringify({ userId, reason })
+    });
+  }
+
+  async deleteRoleCommand(guildId: string, commandId: string): Promise<any> {
+    return this.request(`/api/bot/guild/${guildId}/role-commands/${commandId}`, {
+      method: 'DELETE',
+    });
   }
 
   async performModerationAction(guildId: string, action: any): Promise<any> {
@@ -428,6 +532,51 @@ export function startEnhancedDashboard() {
     }
   });
 
+  // Bot Management
+  app.get('/servers/:guildId/bot-management', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const { guildId } = req.params;
+      
+      res.render('servers/bot-management', { 
+        user: req.user,
+        guildId
+      });
+    } catch (error) {
+      logger.error('Error loading bot management:', error);
+      res.status(500).send('Error loading bot management page');
+    }
+  });
+
+  // Giveaway Management
+  app.get('/servers/:guildId/giveaway-management', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const { guildId } = req.params;
+      
+      res.render('servers/giveaway-management', { 
+        user: req.user,
+        guildId
+      });
+    } catch (error) {
+      logger.error('Error loading giveaway management:', error);
+      res.status(500).send('Error loading giveaway management page');
+    }
+  });
+
+  // Fissure Management
+  app.get('/servers/:guildId/fissure-management', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
+    try {
+      const { guildId } = req.params;
+      
+      res.render('servers/fissure-management', { 
+        user: req.user,
+        guildId
+      });
+    } catch (error) {
+      logger.error('Error loading fissure management:', error);
+      res.status(500).send('Error loading fissure management page');
+    }
+  });
+
   // Role Commands route
   app.get('/servers/:guildId/role-commands', ensureLoggedIn, ensureModOrAdmin, async (req: any, res) => {
     try {
@@ -466,21 +615,33 @@ export function startEnhancedDashboard() {
     try {
       const { guildId } = req.params;
       
-      // Get comprehensive server data
-      const [guildSettings, welcomeMessages, roleCommands, giveaways, fissureNotifications, analytics] = await Promise.all([
-        botAPI.getGuildSettings(guildId).catch(() => ({ success: false, data: {} })),
-        botAPI.getWelcomeMessages(guildId).catch(() => ({ success: false, data: {} })),
-        botAPI.getRoleCommands(guildId).catch(() => ({ success: false, data: [] })),
-        botAPI.getGiveaways(guildId).catch(() => ({ success: false, data: [] })),
-        botAPI.getFissureNotifications(guildId).catch(() => ({ success: false, data: [] })),
-        botAPI.getAnalytics(guildId).catch(() => ({ success: false, data: {} }))
-      ]);
+      // Try to get comprehensive server data, but provide fallbacks
+      let guildSettings = { success: false, data: {} };
+      let welcomeMessages = { success: false, data: { enabled: false } };
+      let roleCommands = { success: false, data: [] };
+      let giveaways = { success: false, data: [] };
+      let fissureNotifications = { success: false, data: [] };
+      let analytics = { success: false, data: {} };
+
+      try {
+        [guildSettings, welcomeMessages, roleCommands, giveaways, fissureNotifications, analytics] = await Promise.all([
+          botAPI.getGuildSettings(guildId).catch(() => ({ success: false, data: {} })),
+          botAPI.getWelcomeMessages(guildId).catch(() => ({ success: false, data: { enabled: false } })),
+          botAPI.getRoleCommands(guildId).catch(() => ({ success: false, data: [] })),
+          botAPI.getGiveaways(guildId).catch(() => ({ success: false, data: [] })),
+          botAPI.getFissureNotifications(guildId).catch(() => ({ success: false, data: [] })),
+          botAPI.getAnalytics(guildId).catch(() => ({ success: false, data: {} }))
+        ]);
+      } catch (apiError) {
+        logger.warn('Bot API not available for server dashboard, using fallback data:', apiError);
+        // Use fallback data defined above
+      }
 
       res.render('servers/dashboard', { 
         user: req.user,
         guildId,
         guildSettings: guildSettings.data || {},
-        welcomeMessages: welcomeMessages.data || {},
+        welcomeMessages: welcomeMessages.data || { enabled: false },
         roleCommands: roleCommands.data || [],
         giveaways: giveaways.data || [],
         fissureNotifications: fissureNotifications.data || [],
@@ -977,3 +1138,4 @@ export function startEnhancedDashboard() {
 if (require.main === module) {
   startEnhancedDashboard();
 }
+

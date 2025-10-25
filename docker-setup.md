@@ -13,19 +13,20 @@ This guide will help you set up WardenPrime with Docker and PostgreSQL.
 
 **Linux/macOS:**
 ```bash
-# Make script executable and run
-chmod +x docker-start.sh
-./docker-start.sh
+# Start everything (auto-setup if needed)
+./start-dev.sh
+
+# Stop everything
+./stop-dev.sh
 ```
 
-**Windows (Command Prompt):**
+**Windows:**
 ```cmd
-docker-start.bat
-```
+# Start everything (auto-setup if needed)
+start-dev.bat
 
-**Windows (PowerShell):**
-```powershell
-.\docker-start.ps1
+# Stop everything
+stop-dev.bat
 ```
 
 ### Option 2: Manual Setup

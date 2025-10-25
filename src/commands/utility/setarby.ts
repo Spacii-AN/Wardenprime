@@ -61,10 +61,21 @@ const command: Command = {
     .setDMPermission(false) as SlashCommandBuilder,
 
   async execute(interaction: ChatInputCommandInteraction): Promise<void> {
-    await interaction.deferReply().catch(error => {
+    let isDeferred = false;
+    
+    try {
+      await interaction.deferReply();
+      isDeferred = true;
+    } catch (error) {
       logger.error('Error deferring reply in setarby command:', error);
-      return; // Continue execution even if defer fails
-    });
+      try {
+        await interaction.reply('An error occurred while processing your request. Please try again.');
+        return;
+      } catch (replyError) {
+        logger.error('Failed to send error reply:', replyError);
+        return;
+      }
+    }
     
     try {
       const channel = interaction.options.getChannel('channel', true);
@@ -77,7 +88,9 @@ const command: Command = {
       const guildId = interaction.guildId;
       
       if (!guildId) {
-        await interaction.editReply('This command can only be used in a server.');
+        if (isDeferred) {
+          await interaction.editReply('This command can only be used in a server.');
+        }
         return;
       }
       
@@ -111,10 +124,12 @@ const command: Command = {
       } catch (fetchError) {
         logger.error('Error fetching arbitration data:', fetchError);
         // Continue with command but inform the user
-        await interaction.editReply({
-          content: 'Successfully configured arbitration notifications, but could not fetch current arbitration data. Notifications will work for future arbitrations.',
-          embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
-        });
+        if (isDeferred) {
+          await interaction.editReply({
+            content: 'Successfully configured arbitration notifications, but could not fetch current arbitration data. Notifications will work for future arbitrations.',
+            embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
+          });
+        }
         return;
       }
       
@@ -127,10 +142,12 @@ const command: Command = {
       );
       
       if (currentIndex === -1) {
-        await interaction.editReply({
-          content: 'Successfully configured arbitration notifications, but could not determine the current arbitration. Notifications will work for future arbitrations.',
-          embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
-        });
+        if (isDeferred) {
+          await interaction.editReply({
+            content: 'Successfully configured arbitration notifications, but could not determine the current arbitration. Notifications will work for future arbitrations.',
+            embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
+          });
+        }
         return;
       }
       
@@ -258,26 +275,32 @@ const command: Command = {
         logger.info(`Sent initial arbitration message to channel ${channel.name} (${channel.id})`);
         
         // Let the user know it worked
-        await interaction.editReply({
-          embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
-        });
+        if (isDeferred) {
+          await interaction.editReply({
+            embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
+          });
+        }
         
       } catch (processError) {
         logger.error('Error processing arbitration data:', processError);
         // Let the user know configuration worked but display failed
-        await interaction.editReply({
-          content: 'Successfully configured arbitration notifications, but encountered an error displaying current arbitrations. Notifications will work for future arbitrations.',
-          embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
-        });
+        if (isDeferred) {
+          await interaction.editReply({
+            content: 'Successfully configured arbitration notifications, but encountered an error displaying current arbitrations. Notifications will work for future arbitrations.',
+            embeds: [createConfigSuccessEmbed(channel, sTierRole, aTierRole, bTierRole, cTierRole, dTierRole, fTierRole)]
+          });
+        }
       }
     } catch (error) {
       logger.error('Error in setarby command:', error);
       
       try {
         // Attempt to reply with error
-        await interaction.editReply('An error occurred while setting up Arbitration notifications. Please try again later.').catch(() => {
-          logger.error('Failed to send error message in setarby command');
-        });
+        if (isDeferred) {
+          await interaction.editReply('An error occurred while setting up Arbitration notifications. Please try again later.').catch(() => {
+            logger.error('Failed to send error message in setarby command');
+          });
+        }
       } catch (replyError) {
         logger.error('Failed to reply with error in setarby command:', replyError);
       }

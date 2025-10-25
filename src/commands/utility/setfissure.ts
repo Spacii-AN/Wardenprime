@@ -4,7 +4,8 @@ import {
   ChannelType,
   PermissionFlagsBits,
   Role,
-  Client
+  Client,
+  AutocompleteInteraction
 } from 'discord.js';
 import { Command } from '../../types/discord';
 import { pgdb } from '../../services/postgresDatabase';
@@ -40,6 +41,7 @@ const MISSION_TYPES = [
   'Interception',
   'Excavation',
   'Disruption',
+  'Alchemy',
   'Void Cascade',
   'Void Flood',
   'Void Armageddon'
@@ -68,10 +70,16 @@ const command: Command = {
           { name: 'Interception', value: 'Interception' },
           { name: 'Excavation', value: 'Excavation' },
           { name: 'Disruption', value: 'Disruption' },
+          { name: 'Alchemy', value: 'Alchemy' },
           { name: 'Void Cascade', value: 'Void Cascade' },
           { name: 'Void Flood', value: 'Void Flood' },
           { name: 'Void Armageddon', value: 'Void Armageddon' }
         ))
+    .addStringOption(option =>
+      option.setName('node')
+        .setDescription('Specific node to monitor (autocomplete available)')
+        .setRequired(true)
+        .setAutocomplete(true))
     .addRoleOption(option =>
       option.setName('ping_role')
         .setDescription('Role to ping when matching fissures are found')
@@ -88,6 +96,7 @@ const command: Command = {
     
     try {
       const missionType = interaction.options.getString('mission_type', true) as MissionType;
+      const nodeName = interaction.options.getString('node', true);
       const pingRole = interaction.options.getRole('ping_role');
       const steelPath = interaction.options.getBoolean('steel_path') || false;
       const guildId = interaction.guildId;
@@ -103,13 +112,14 @@ const command: Command = {
         return;
       }
       
-      // Check if a configuration already exists for this guild, mission type, and Steel Path setting
+      // Check if a configuration already exists for this guild, mission type, node, and Steel Path setting
       const existingConfigs = await pgdb.getFissureNotifications();
       const existingMissionConfig = existingConfigs.filter(
         config => config.guild_id === guildId && 
                  config.mission_type === standardizedType && 
                  config.channel_id === channelId && 
-                 config.steel_path === steelPath
+                 config.steel_path === steelPath &&
+                 config.node_name === nodeName
       );
       
       if (existingMissionConfig.length > 0) {
@@ -129,7 +139,8 @@ const command: Command = {
           channelId,
           standardizedType,
           steelPath,
-          pingRole?.id || null
+          pingRole?.id || null,
+          nodeName
         );
         
         logger.info(`Set fissure notification for guild ${guildId}, mission type ${missionType}, Steel Path: ${steelPath}`);
@@ -419,6 +430,62 @@ const command: Command = {
     } catch (error) {
       logger.error('Error in setfissure command:', error);
       await interaction.editReply('An error occurred while setting up fissure notifications. Please try again later.');
+    }
+  },
+
+  async autocomplete(interaction: AutocompleteInteraction): Promise<void> {
+    try {
+      const focusedValue = interaction.options.getFocused();
+      const missionType = interaction.options.getString('mission_type');
+      
+      if (!missionType) {
+        await interaction.respond([]);
+        return;
+      }
+      
+      // Load regions data to get nodes for the specific mission type
+      const regionsPath = path.join(process.cwd(), 'dict', 'ExportRegions.json');
+      const regionsData = JSON.parse(await fs.promises.readFile(regionsPath, 'utf8')) as Record<string, any>;
+      
+      const dictPath = path.join(process.cwd(), 'dict', 'dict.en.json');
+      const langDict = JSON.parse(await fs.promises.readFile(dictPath, 'utf8')) as Record<string, string>;
+      
+      // Find all nodes that match the mission type
+      const matchingNodes: Array<{ name: string; value: string }> = [];
+      
+      for (const [nodeId, nodeInfo] of Object.entries(regionsData)) {
+        if (nodeInfo.missionName) {
+          const translatedName = langDict[nodeInfo.missionName] || nodeInfo.missionName;
+          const missionTypeParts = translatedName.split('_');
+          if (missionTypeParts.length > 0) {
+            let currentMissionType = missionTypeParts[missionTypeParts.length - 1].replace('MissionName_', '');
+            
+            // Handle special Zariman mission types
+            if (currentMissionType === 'VoidCascade') currentMissionType = 'Void Cascade';
+            if (currentMissionType === 'Corruption') currentMissionType = 'Void Flood';
+            if (currentMissionType === 'Armageddon') currentMissionType = 'Void Armageddon';
+            
+            if (currentMissionType.toLowerCase() === missionType.toLowerCase()) {
+              const nodeName = nodeInfo.name ? (langDict[nodeInfo.name] || nodeInfo.name) : nodeId;
+              matchingNodes.push({
+                name: nodeName,
+                value: nodeName
+              });
+            }
+          }
+        }
+      }
+      
+      // Filter based on focused value
+      const filteredNodes = matchingNodes
+        .filter(node => node.name.toLowerCase().includes(focusedValue.toLowerCase()))
+        .slice(0, 25); // Discord limit
+      
+      await interaction.respond(filteredNodes);
+      
+    } catch (error) {
+      logger.error('Error in setfissure autocomplete:', error);
+      await interaction.respond([]);
     }
   }
 };

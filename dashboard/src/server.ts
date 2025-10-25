@@ -4,9 +4,35 @@ import passport from 'passport';
 import { Strategy as DiscordStrategy } from 'passport-discord';
 import path from 'path';
 import axios from 'axios';
-import { config } from '../../src/config/config';
-import { logger } from '../../src/utils/logger';
-import { getGuildPermissionRoles, PermissionRole } from '../../src/services/permissionService';
+
+// Simple logger for dashboard
+class Logger {
+  info(message: string, ...args: any[]) {
+    console.log(`[INFO] ${message}`, ...args);
+  }
+  
+  warn(message: string, ...args: any[]) {
+    console.warn(`[WARN] ${message}`, ...args);
+  }
+  
+  error(message: string, ...args: any[]) {
+    console.error(`[ERROR] ${message}`, ...args);
+  }
+}
+
+const logger = new Logger();
+
+// Configuration from environment variables
+const config = {
+  DASHBOARD_ENABLED: process.env.DASHBOARD_ENABLED !== 'false',
+  DASHBOARD_PORT: parseInt(process.env.DASHBOARD_PORT || '3080'),
+  DASHBOARD_SESSION_SECRET: process.env.DASHBOARD_SESSION_SECRET || process.env.SESSION_SECRET,
+  DASHBOARD_PUBLIC_URL: process.env.DASHBOARD_PUBLIC_URL,
+  OAUTH_CALLBACK_URL: process.env.OAUTH_CALLBACK_URL,
+  CLIENT_ID: process.env.CLIENT_ID,
+  BOT_API_URL: process.env.BOT_API_URL || 'http://localhost:3081',
+  BOT_API_KEY: process.env.BOT_API_KEY || 'dev-api-key'
+};
 
 // Bot API client
 class BotAPIClient {
@@ -107,7 +133,7 @@ class BotAPIClient {
 }
 
 // Initialize bot API client
-const botAPI = new BotAPIClient('http://localhost:3081', config.DASHBOARD_SESSION_SECRET!);
+const botAPI = new BotAPIClient(config.BOT_API_URL, config.BOT_API_KEY);
 
 type DiscordProfile = any;
 
@@ -142,11 +168,11 @@ export function startDashboard() {
   if (oauthEnabled) {
     const scopes = ['identify', 'guilds'];
     passport.use(new DiscordStrategy({
-      clientID: config.CLIENT_ID,
+      clientID: config.CLIENT_ID!,
       clientSecret: process.env.DISCORD_CLIENT_SECRET as string,
       callbackURL: config.OAUTH_CALLBACK_URL || `${config.DASHBOARD_PUBLIC_URL}/auth/callback`,
       scope: scopes,
-    }, (accessToken: string, refreshToken: string, profile: DiscordProfile, done) => {
+    }, (accessToken: string, refreshToken: string, profile: DiscordProfile, done: any) => {
       return done(null, { id: profile.id, username: profile.username, discriminator: profile.discriminator, guilds: profile.guilds });
     }));
 
@@ -171,15 +197,6 @@ export function startDashboard() {
 
   async function ensureModOrAdmin(req: any, res: any, next: any) {
     try {
-      // If database is not Postgres, skip DB-backed authz for preview
-      if (config.DATABASE_TYPE !== 'postgres') return next();
-      const user = req.user as any;
-      const guildId = req.query.guildId || req.params.guildId;
-      if (!guildId) {
-        return res.status(400).send('Missing guildId');
-      }
-      const perms = await getGuildPermissionRoles(String(guildId));
-      // Basic allow: if user is in admin/mod roles by ID (requires client-side check in real app)
       // For now, allow all logged-in users; tighten later with member-role check via bot
       return next();
     } catch (e) {
@@ -380,5 +397,3 @@ export function startDashboard() {
 if (require.main === module) {
   startDashboard();
 }
-
-

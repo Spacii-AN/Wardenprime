@@ -8,7 +8,7 @@ services:
     container_name: wardenprime-postgres-dev
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${PG_DATABASE:-wardenprime_dev}
+      POSTGRES_DB: ${PG_DATABASE:-wardenprime}
       POSTGRES_USER: ${PG_USER:-wardenprime}
       POSTGRES_PASSWORD: ${PG_PASSWORD:-wardenprime_password}
     ports:
@@ -19,13 +19,13 @@ services:
     networks:
       - wardenprime-dev-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-wardenprime} -d ${PG_DATABASE:-wardenprime_dev}"]
+      test: ["CMD-SHELL", "pg_isready -U ${PG_USER:-wardenprime} -d ${PG_DATABASE:-wardenprime}"]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 30s
 
-  # Dashboard Web Server
+  # Enhanced Dashboard Web Server
   dashboard:
     build:
       context: ./dashboard
@@ -36,10 +36,25 @@ services:
       - "3080:3080"
     environment:
       NODE_ENV: development
-      PORT: 3080
-      SESSION_SECRET: ${DASHBOARD_SESSION_SECRET:-dev-secret-key}
+      DASHBOARD_ENABLED: true
+      DASHBOARD_PORT: 3080
+      DASHBOARD_SESSION_SECRET: ${DASHBOARD_SESSION_SECRET:-dev-secret-key}
+      DASHBOARD_PUBLIC_URL: http://localhost:3080
+      # Discord OAuth (optional - can be disabled for development)
+      CLIENT_ID: ${CLIENT_ID:-}
+      DISCORD_CLIENT_SECRET: ${DISCORD_CLIENT_SECRET:-}
+      OAUTH_CALLBACK_URL: http://localhost:3080/auth/callback
+      OAUTH_DISABLED: ${OAUTH_DISABLED:-true}
+      # Bot API connection
       BOT_API_URL: http://host.docker.internal:3081
       BOT_API_KEY: ${BOT_API_KEY:-dev-api-key}
+      # Database connection for dashboard
+      PG_HOST: postgres
+      PG_PORT: 5432
+      PG_DATABASE: ${PG_DATABASE:-wardenprime}
+      PG_USER: ${PG_USER:-wardenprime}
+      PG_PASSWORD: ${PG_PASSWORD:-wardenprime_password}
+      PG_SSL_MODE: disable
     networks:
       - wardenprime-dev-network
     depends_on:

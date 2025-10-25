@@ -103,8 +103,8 @@ if %errorlevel% neq 0 (
 )
 echo ✅ Project built successfully
 
-REM Start Docker services (database and dashboard)
-echo ℹ️  Starting Docker services (database and dashboard)...
+REM Start Docker services (database and enhanced dashboard)
+echo ℹ️  Starting Docker services (database and enhanced dashboard)...
 docker-compose -f docker-compose.dev-hybrid.yml up -d
 if %errorlevel% neq 0 (
     echo ❌ Failed to start Docker services
@@ -132,17 +132,17 @@ if defined PG_PORT (
 if defined PG_DATABASE (
     echo Using PG_DATABASE from .env: %PG_DATABASE%
 ) else (
-    set PG_DATABASE=wardenprime_dev_spacii
+    set PG_DATABASE=wardenprime
 )
 if defined PG_USER (
     echo Using PG_USER from .env: %PG_USER%
 ) else (
-    set PG_USER=spacii
+    set PG_USER=wardenprime
 )
 if defined PG_PASSWORD (
     echo Using PG_PASSWORD from .env
 ) else (
-    set PG_PASSWORD=w3ldKewfUuZvLIr
+    set PG_PASSWORD=wardenprime_password
 )
 
 REM Run embed settings migration (optional - can be skipped if it fails)
@@ -162,7 +162,7 @@ echo.
 echo 🔗 Access Points:
 echo   Bot:         Running locally (no port)
 echo   Database:    localhost:5432
-echo   Dashboard:   http://localhost:3080
+echo   Dashboard:   http://localhost:3080 (Enhanced Admin Dashboard)
 echo   Bot API:     http://localhost:3081 (if enabled)
 echo.
 echo 📋 Useful Commands:

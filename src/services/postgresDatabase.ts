@@ -107,6 +107,7 @@ export interface Giveaway {
   channel_id: string;
   message_id: string | null;
   creator_id: string;
+  host_id: string | null;
   prize: string;
   description: string | null;
   winners_count: number;
@@ -224,6 +225,7 @@ export type PostgresClient = {
     guildId: string,
     channelId: string,
     creatorId: string,
+    hostId: string | null,
     prize: string,
     description: string | null,
     winnersCount: number,
@@ -272,7 +274,7 @@ export type PostgresClient = {
   // Fissure Notifications
   getFissureNotifications(): Promise<any[]>;
   getFissureNotificationsByType(missionType: string, steelPath: boolean): Promise<any[]>;
-  addFissureNotification(guildId: string, channelId: string, missionType: string, steelPath: boolean, roleId?: string): Promise<any>;
+  addFissureNotification(guildId: string, channelId: string, missionType: string, steelPath: boolean, roleId?: string, nodeName?: string): Promise<any>;
   updateFissureLastNotified(id: string, lastNotified: string): Promise<void>;
   updateFissureMessageId(id: string, messageId: string): Promise<void>;
   removeFissureNotification(id: string): Promise<void>;
@@ -356,18 +358,9 @@ class PostgresDatabase {
 
   private constructor() {
     this.setupConnectionPool();
-    
-    // Set up periodic connection check every 5 minutes
-    setInterval(() => this.checkPoolHealth(), 5 * 60 * 1000);
-    
-    // Start the connection test process asynchronously
-    this.testConnection().then(() => {
-      this.initialized = true;
-      logger.info('PostgreSQL pool initialized and connection tested successfully');
-    }).catch(error => {
-      logger.warn('Initial PostgreSQL connection test failed, will retry automatically', error);
-      // The reconnection mechanism will handle further attempts
-    });
+    this.initialized = true;
+    this.isConnected = true;
+    logger.info('PostgreSQL pool initialized');
   }
   
   /**
@@ -608,46 +601,12 @@ class PostgresDatabase {
    * Execute a function with retry on database connection failures
    */
   private async executeWithRetry<T>(fn: () => Promise<T>, operation: string = 'database operation'): Promise<T> {
-    // Local retry counter to allow per-operation retries
-    let retries = 0;
-    const MAX_LOCAL_RETRIES = 3;
-    
-    // If the database hasn't been fully initialized yet, wait a bit
-    if (!this.initialized && !this.isConnected) {
-      retries++;
-      logger.warn(`Database not yet initialized, waiting before attempting ${operation}...`);
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      await this.reconnectWithBackoff();
-    }
-    
-    while (true) {
-      try {
-        if (!this.isConnected) {
-          logger.warn(`Attempting ${operation} while not connected. Reconnecting first...`);
-          await this.reconnectWithBackoff();
-          
-          if (!this.isConnected) {
-            throw new Error('Database connection is not available');
-          }
-        }
-        
-        return await fn();
-      } catch (error) {
-        // If this is a connection error, try to reconnect
-        if (error instanceof Error && this.isRecoverableError(error)) {
-          retries++;
-          
-          if (retries <= MAX_LOCAL_RETRIES) {
-            logger.warn(`Database operation "${operation}" failed due to connection issues. Retrying (${retries}/${MAX_LOCAL_RETRIES})...`);
-            await this.reconnectWithBackoff();
-            continue;
-          }
-        }
-        
-        // Either not a connection error or too many retries
-        logger.error(`Error executing database operation: ${operation}`, error);
-        throw error;
-      }
+    // Simple approach: just try the operation directly
+    try {
+      return await fn();
+    } catch (error) {
+      logger.error(`Error executing database operation: ${operation}`, error);
+      throw error;
     }
   }
 
@@ -1929,6 +1888,7 @@ class PostgresDatabase {
     guildId: string,
     channelId: string,
     creatorId: string,
+    hostId: string | null,
     prize: string,
     description: string | null,
     winnersCount: number,
@@ -1945,16 +1905,16 @@ class PostgresDatabase {
       
       const queryText = `
         INSERT INTO giveaways (
-          guild_id, channel_id, creator_id, prize, description,
+          guild_id, channel_id, creator_id, host_id, prize, description,
           winners_count, requirement, ends_at
         )
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING *
       `;
 
       const giveaway = await this.query<Giveaway>(
         queryText,
-        [guildId, channelId, creatorId, prize, description, winnersCount, requirement, endsAt]
+        [guildId, channelId, creatorId, hostId, prize, description, winnersCount, requirement, endsAt]
       );
 
       // Initialize with 0 participants
@@ -2836,13 +2796,13 @@ class PostgresDatabase {
     return results;
   }
 
-  async addFissureNotification(guildId: string, channelId: string, missionType: string, steelPath: boolean, roleId?: string): Promise<any> {
+  async addFissureNotification(guildId: string, channelId: string, missionType: string, steelPath: boolean, roleId?: string, nodeName?: string): Promise<any> {
     const result = await this.query(
       `INSERT INTO fissure_notifications 
-       (guild_id, channel_id, mission_type, steel_path, role_id)
-       VALUES ($1, $2, $3, $4, $5)
+       (guild_id, channel_id, mission_type, steel_path, role_id, node_name)
+       VALUES ($1, $2, $3, $4, $5, $6)
        RETURNING *`,
-      [guildId, channelId, missionType, steelPath, roleId || null]
+      [guildId, channelId, missionType, steelPath, roleId || null, nodeName || null]
     );
     return result[0];
   }

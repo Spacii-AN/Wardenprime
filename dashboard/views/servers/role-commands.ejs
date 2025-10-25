@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Commands - WardenPrime Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>WardenPrime Admin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servers">
+                            <i class="fas fa-server me-1"></i>Servers
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><%= user.username %>#<%= user.discriminator %>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">
+                                <i class="fas fa-sign-out-alt me-1"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-terminal me-2"></i>Custom Commands</h1>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCommandModal">
+                        <i class="fas fa-plus me-1"></i>Create Command
+                    </button>
+                </div>
+
+                <!-- Commands List -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-list me-2"></i>Active Commands</h5>
+                            </div>
+                            <div class="card-body">
+                                <div id="commandsList">
+                                    <div class="text-center text-muted py-4">
+                                        <i class="fas fa-terminal fa-3x mb-3"></i>
+                                        <p>No custom commands created yet</p>
+                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCommandModal">
+                                            <i class="fas fa-plus me-1"></i>Create Your First Command
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Command Modal -->
+    <div class="modal fade" id="createCommandModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="fas fa-plus me-2"></i>Create Custom Command</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createCommandForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="commandName" class="form-label">Command Name</label>
+                                    <input type="text" class="form-control" id="commandName" placeholder="mycommand" required>
+                                    <div class="form-text">Users will type !mycommand to use this</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="commandType" class="form-label">Command Type</label>
+                                    <select class="form-select" id="commandType" required>
+                                        <option value="">Select type...</option>
+                                        <option value="role">Role Assignment</option>
+                                        <option value="message">Custom Message</option>
+                                        <option value="embed">Custom Embed</option>
+                                        <option value="reaction">Reaction Role</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Role Assignment Options -->
+                        <div id="roleOptions" class="command-options" style="display: none;">
+                            <div class="mb-3">
+                                <label for="targetRole" class="form-label">Target Role</label>
+                                <select class="form-select" id="targetRole">
+                                    <option value="">Select a role...</option>
+                                    <% if (guild && guild.roles) { %>
+                                        <% guild.roles.forEach(role => { %>
+                                            <option value="<%= role.id %>"><%= role.name %></option>
+                                        <% }); %>
+                                    <% } %>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="roleAction" class="form-label">Action</label>
+                                <select class="form-select" id="roleAction">
+                                    <option value="toggle">Toggle Role (Add/Remove)</option>
+                                    <option value="add">Add Role Only</option>
+                                    <option value="remove">Remove Role Only</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Message Options -->
+                        <div id="messageOptions" class="command-options" style="display: none;">
+                            <div class="mb-3">
+                                <label for="messageText" class="form-label">Message Text</label>
+                                <textarea class="form-control" id="messageText" rows="3" placeholder="Enter the message to send..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Embed Options -->
+                        <div id="embedOptions" class="command-options" style="display: none;">
+                            <div class="mb-3">
+                                <label for="embedTitle" class="form-label">Embed Title</label>
+                                <input type="text" class="form-control" id="embedTitle" placeholder="Enter embed title...">
+                            </div>
+                            <div class="mb-3">
+                                <label for="embedDescription" class="form-label">Embed Description</label>
+                                <textarea class="form-control" id="embedDescription" rows="3" placeholder="Enter embed description..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="embedColor" class="form-label">Embed Color</label>
+                                <input type="color" class="form-control form-control-color" id="embedColor" value="#5865f2">
+                            </div>
+                        </div>
+
+                        <!-- Reaction Role Options -->
+                        <div id="reactionOptions" class="command-options" style="display: none;">
+                            <div class="mb-3">
+                                <label for="reactionMessage" class="form-label">Reaction Message</label>
+                                <textarea class="form-control" id="reactionMessage" rows="3" placeholder="Enter the message for reactions..."></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reactionRoles" class="form-label">Reaction Roles</label>
+                                <div id="reactionRolesList">
+                                    <div class="input-group mb-2">
+                                        <input type="text" class="form-control" placeholder="Emoji" name="reactionEmoji">
+                                        <select class="form-select" name="reactionRole">
+                                            <option value="">Select role...</option>
+                                            <% if (guild && guild.roles) { %>
+                                                <% guild.roles.forEach(role => { %>
+                                                    <option value="<%= role.id %>"><%= role.name %></option>
+                                                <% }); %>
+                                            <% } %>
+                                        </select>
+                                        <button type="button" class="btn btn-outline-danger" onclick="removeReactionRole(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-sm btn-outline-primary" onclick="addReactionRole()">
+                                    <i class="fas fa-plus me-1"></i>Add Reaction Role
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="commandDescription" class="form-label">Description</label>
+                            <input type="text" class="form-control" id="commandDescription" placeholder="Brief description of what this command does">
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="commandEnabled" checked>
+                                <label class="form-check-label" for="commandEnabled">
+                                    Enable this command
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="createCommand()">
+                        <i class="fas fa-save me-1"></i>Create Command
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Show/hide options based on command type
+        document.getElementById('commandType').addEventListener('change', function() {
+            const type = this.value;
+            document.querySelectorAll('.command-options').forEach(option => {
+                option.style.display = 'none';
+            });
+            
+            if (type === 'role') {
+                document.getElementById('roleOptions').style.display = 'block';
+            } else if (type === 'message') {
+                document.getElementById('messageOptions').style.display = 'block';
+            } else if (type === 'embed') {
+                document.getElementById('embedOptions').style.display = 'block';
+            } else if (type === 'reaction') {
+                document.getElementById('reactionOptions').style.display = 'block';
+            }
+        });
+
+        function addReactionRole() {
+            const container = document.getElementById('reactionRolesList');
+            const div = document.createElement('div');
+            div.className = 'input-group mb-2';
+            div.innerHTML = `
+                <input type="text" class="form-control" placeholder="Emoji" name="reactionEmoji">
+                <select class="form-select" name="reactionRole">
+                    <option value="">Select role...</option>
+                    <% if (guild && guild.roles) { %>
+                        <% guild.roles.forEach(role => { %>
+                            <option value="<%= role.id %>"><%= role.name %></option>
+                        <% }); %>
+                    <% } %>
+                </select>
+                <button type="button" class="btn btn-outline-danger" onclick="removeReactionRole(this)">
+                    <i class="fas fa-trash"></i>
+                </button>
+            `;
+            container.appendChild(div);
+        }
+
+        function removeReactionRole(button) {
+            button.closest('.input-group').remove();
+        }
+
+        function createCommand() {
+            const form = document.getElementById('createCommandForm');
+            const formData = new FormData(form);
+            
+            const commandData = {
+                name: document.getElementById('commandName').value,
+                type: document.getElementById('commandType').value,
+                description: document.getElementById('commandDescription').value,
+                enabled: document.getElementById('commandEnabled').checked
+            };
+
+            // Add type-specific data
+            if (commandData.type === 'role') {
+                commandData.roleId = document.getElementById('targetRole').value;
+                commandData.roleAction = document.getElementById('roleAction').value;
+            } else if (commandData.type === 'message') {
+                commandData.message = document.getElementById('messageText').value;
+            } else if (commandData.type === 'embed') {
+                commandData.embed = {
+                    title: document.getElementById('embedTitle').value,
+                    description: document.getElementById('embedDescription').value,
+                    color: document.getElementById('embedColor').value
+                };
+            } else if (commandData.type === 'reaction') {
+                commandData.reactionMessage = document.getElementById('reactionMessage').value;
+                commandData.reactionRoles = [];
+                document.querySelectorAll('#reactionRolesList .input-group').forEach(group => {
+                    const emoji = group.querySelector('input[name="reactionEmoji"]').value;
+                    const role = group.querySelector('select[name="reactionRole"]').value;
+                    if (emoji && role) {
+                        commandData.reactionRoles.push({ emoji, roleId: role });
+                    }
+                });
+            }
+
+            // Send to server
+            fetch('/api/commands', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(commandData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Command created successfully!');
+                    location.reload();
+                } else {
+                    alert('Error creating command: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error creating command: ' + error.message);
+            });
+        }
+
+        function loadCommands() {
+            fetch('/api/commands')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('commandsList');
+                if (data.commands && data.commands.length > 0) {
+                    container.innerHTML = data.commands.map(cmd => `
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <h6 class="card-title">!${cmd.name}</h6>
+                                        <p class="card-text text-muted">${cmd.description || 'No description'}</p>
+                                        <span class="badge bg-${cmd.type === 'role' ? 'primary' : cmd.type === 'message' ? 'info' : cmd.type === 'embed' ? 'success' : 'warning'}">${cmd.type}</span>
+                                        <span class="badge bg-${cmd.enabled ? 'success' : 'secondary'}">${cmd.enabled ? 'Enabled' : 'Disabled'}</span>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button class="btn btn-sm btn-outline-primary" onclick="editCommand('${cmd.id}')">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteCommand('${cmd.id}')">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    container.innerHTML = `
+                        <div class="text-center text-muted py-4">
+                            <i class="fas fa-terminal fa-3x mb-3"></i>
+                            <p>No custom commands created yet</p>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createCommandModal">
+                                <i class="fas fa-plus me-1"></i>Create Your First Command
+                            </button>
+                        </div>
+                    `;
+                }
+            });
+        }
+
+        function editCommand(commandId) {
+            // TODO: Implement edit functionality
+            alert('Edit functionality coming soon!');
+        }
+
+        function deleteCommand(commandId) {
+            if (confirm('Are you sure you want to delete this command?')) {
+                fetch(`/api/commands/${commandId}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        loadCommands();
+                    } else {
+                        alert('Error deleting command: ' + data.error);
+                    }
+                });
+            }
+        }
+
+        // Load commands on page load
+        document.addEventListener('DOMContentLoaded', loadCommands);
+    </script>
+</body>
+</html>

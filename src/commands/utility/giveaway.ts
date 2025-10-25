@@ -32,6 +32,12 @@ const command: Command = {
       subcommand
         .setName('create')
         .setDescription('Create a new giveaway')
+        .addUserOption(option =>
+          option
+            .setName('host')
+            .setDescription('The user who will host the giveaway (optional)')
+            .setRequired(false)
+        )
     )
     .addSubcommand(subcommand =>
       subcommand
@@ -168,6 +174,11 @@ export function createGiveawayEmbed(giveaway: Giveaway, ended = false): EmbedBui
     { name: '👥 Entries', value: `${giveaway.participants_count || 0}`, inline: true }
   );
   
+  // Add host information if available
+  if (giveaway.host_id) {
+    embed.addFields({ name: '🎭 Host', value: `<@${giveaway.host_id}>`, inline: true });
+  }
+  
   if (ended) {
     if (giveaway.winners && giveaway.winners.length > 0) {
       const winnerMentions = giveaway.winners.map(id => `<@${id}>`).join(', ');
@@ -250,9 +261,12 @@ export function createGiveawayActionRow(giveaway: Giveaway, ended = false): Acti
  * Handles the create command to start a new giveaway
  */
 async function handleCreateCommand(interaction: ChatInputCommandInteraction) {
+  // Get the host option
+  const host = interaction.options.getUser('host');
+  
   // Create the modal for giveaway creation
   const modal = new ModalBuilder()
-    .setCustomId('giveaway_create_modal')
+    .setCustomId(`giveaway_create_modal_${host?.id || 'none'}`)
     .setTitle('Create a Giveaway');
   
   // Prize input
@@ -392,6 +406,9 @@ async function handleEndCommand(interaction: ChatInputCommandInteraction) {
         content: `🎉 Congratulations ${winnerMentions}! You won **${updatedGiveaway.prize}**!`,
         allowedMentions: { users: winners }
       });
+
+      // Send private messages to winners
+      await sendWinnerDMs(interaction.client, winners, updatedGiveaway);
     } else {
       await channel.send(`No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
     }
@@ -494,6 +511,9 @@ async function handleRerollCommand(interaction: ChatInputCommandInteraction) {
           content: `**REROLL!** 🎉 Congratulations ${winnerMentions}! You won **${updatedGiveaway.prize}**!`,
           allowedMentions: { users: newWinners }
         });
+
+        // Send private messages to new winners
+        await sendWinnerDMs(interaction.client, newWinners, updatedGiveaway);
       } else {
         await channel.send(`**REROLL!** No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
       }
@@ -728,6 +748,10 @@ export async function handleGiveawayCreateModal(interaction: ModalSubmitInteract
   try {
     await interaction.deferReply({ ephemeral: true });
     
+    // Extract host ID from custom ID
+    const hostId = interaction.customId.split('_')[3];
+    const host = hostId === 'none' ? null : hostId;
+    
     // Get modal inputs
     const prize = interaction.fields.getTextInputValue('prize');
     
@@ -789,6 +813,7 @@ export async function handleGiveawayCreateModal(interaction: ModalSubmitInteract
       interaction.guildId!,
       interaction.channelId,
       interaction.user.id,
+      host,
       prize,
       description,
       winnersCount,
@@ -1006,6 +1031,9 @@ export async function handleGiveawayRerollButton(interaction: ButtonInteraction)
           content: `**REROLL!** 🎉 Congratulations ${winnerMentions}! You won **${updatedGiveaway.prize}**!`,
           allowedMentions: { users: newWinners }
         });
+
+        // Send private messages to new winners
+        await sendWinnerDMs(interaction.client, newWinners, updatedGiveaway);
       } else {
         await channel.send(`**REROLL!** No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
       }
@@ -1028,6 +1056,98 @@ export async function handleGiveawayRerollButton(interaction: ButtonInteraction)
   }
 }
 
+/**
+ * End a giveaway programmatically (for background tasks)
+ * @param client Discord client
+ * @param giveaway Giveaway object to end
+ */
+export async function endGiveaway(client: any, giveaway: Giveaway): Promise<void> {
+  try {
+    logger.info(`Ending giveaway ${giveaway.id} programmatically`);
+    
+    // End the giveaway in database
+    const winners = await pgdb.endGiveaway(giveaway.id);
+    logger.info(`Giveaway ${giveaway.id} ended with winners: ${winners.join(', ') || 'none'}`);
+    
+    // Update the giveaway message
+    const channel = await client.channels.fetch(giveaway.channel_id) as TextChannel;
+    if (!channel) {
+      logger.warn(`Channel ${giveaway.channel_id} not found for giveaway ${giveaway.id}`);
+      return;
+    }
+    
+    const message = await channel.messages.fetch(giveaway.message_id!);
+    if (!message) {
+      logger.warn(`Message ${giveaway.message_id} not found for giveaway ${giveaway.id}`);
+      return;
+    }
+    
+    // Get updated giveaway data
+    const updatedGiveaway = await pgdb.getGiveawayById(giveaway.id);
+    if (!updatedGiveaway) {
+      logger.warn(`Updated giveaway data not found for ${giveaway.id}`);
+      return;
+    }
+    
+    // Update the message with ended giveaway
+    const endedEmbed = createGiveawayEmbed(updatedGiveaway, true);
+    const endedActionRow = createGiveawayActionRow(updatedGiveaway, true);
+    
+    await message.edit({
+      embeds: [endedEmbed],
+      components: [endedActionRow]
+    });
+    
+    logger.info(`Successfully ended giveaway ${giveaway.id}`);
+  } catch (error) {
+    logger.error(`Error ending giveaway ${giveaway.id}:`, error);
+    throw error;
+  }
+}
+
+/**
+ * Sends private messages to giveaway winners
+ */
+async function sendWinnerDMs(client: any, winnerIds: string[], giveaway: Giveaway): Promise<void> {
+  try {
+    for (const winnerId of winnerIds) {
+      try {
+        const user = await client.users.fetch(winnerId);
+        if (user) {
+          const dmEmbed = createEmbed({
+            type: 'success',
+            title: '🎉 Congratulations! You Won!',
+            description: `You won the giveaway for **${giveaway.prize}**!`,
+            fields: [
+              {
+                name: 'Prize',
+                value: giveaway.prize,
+                inline: true
+              },
+              {
+                name: 'Hosted by',
+                value: giveaway.host_id ? `<@${giveaway.host_id}>` : 'Bot',
+                inline: true
+              }
+            ],
+            footer: 'Congratulations on your win!',
+            timestamp: true
+          });
+
+          await user.send({ embeds: [dmEmbed] });
+          logger.info(`Sent winner DM to ${user.tag} (${winnerId}) for giveaway ${giveaway.id}`);
+        }
+      } catch (dmError) {
+        logger.warn(`Could not send DM to winner ${winnerId}: ${dmError instanceof Error ? dmError.message : String(dmError)}`);
+        // Continue with other winners even if one DM fails
+      }
+    }
+  } catch (error) {
+    logger.error('Error sending winner DMs:', error);
+    // Don't throw - this shouldn't break the giveaway process
+  }
+}
+
 // Export the command and handlers using module.exports
 module.exports = {
   ...command,
@@ -1035,5 +1155,6 @@ module.exports = {
   handleGiveawayEnterButton,
   handleGiveawayRerollButton,
   createGiveawayEmbed,
-  createGiveawayActionRow
+  createGiveawayActionRow,
+  endGiveaway
 }; 

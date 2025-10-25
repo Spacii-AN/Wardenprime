@@ -261,8 +261,16 @@ export const execute: Event<typeof Events.InteractionCreate>['execute'] = async 
           logger.event(`Giveaway button clicked: ${customId}`);
           try {
             // Import the handler dynamically to avoid circular dependencies
-            const { handleGiveawayButton } = require('../commands/utility/giveaway');
-            await handleGiveawayButton(interaction);
+            const { handleGiveawayEnterButton, handleGiveawayRerollButton } = require('../commands/utility/giveaway');
+            
+            if (customId.startsWith('giveaway_enter_')) {
+              await handleGiveawayEnterButton(interaction);
+            } else if (customId.startsWith('giveaway_reroll_')) {
+              await handleGiveawayRerollButton(interaction);
+            } else if (customId.startsWith('giveaway_delete_')) {
+              // Handle delete confirmation buttons
+              await handleGiveawayDeleteButton(interaction);
+            }
           } catch (error) {
             logger.error('Error handling giveaway button:', error);
             
@@ -336,7 +344,7 @@ export const execute: Event<typeof Events.InteractionCreate>['execute'] = async 
         }
       }
       // Handle modal submissions for giveaways
-      else if (interaction.isModalSubmit() && interaction.customId === 'giveaway_create_modal') {
+      else if (interaction.isModalSubmit() && interaction.customId.startsWith('giveaway_create_modal_')) {
         logger.event(`Giveaway creation modal submitted by ${interaction.user.tag}`);
         try {
           // Import the handler dynamically to avoid circular dependencies
@@ -724,5 +732,46 @@ async function handleLfgCloseButton(interaction: ButtonInteraction) {
         timestamp: true
       })]
     });
+  }
+}
+
+/**
+ * Handles giveaway delete confirmation buttons
+ */
+async function handleGiveawayDeleteButton(interaction: ButtonInteraction) {
+  try {
+    await interaction.deferUpdate();
+    
+    const customId = interaction.customId;
+    
+    if (customId === 'giveaway_delete_cancel') {
+      // User cancelled deletion
+      await interaction.editReply({
+        embeds: [createEmbed({
+          type: 'info',
+          title: 'Deletion Cancelled',
+          description: 'The giveaway was not deleted.',
+          timestamp: true
+        })],
+        components: []
+      });
+      return;
+    }
+    
+    if (customId.startsWith('giveaway_delete_confirm_')) {
+      // User confirmed deletion - this should be handled by the delete command's collector
+      // This is just a fallback
+      await interaction.editReply({
+        embeds: [createEmbed({
+          type: 'info',
+          title: 'Deletion Confirmed',
+          description: 'The giveaway deletion has been processed.',
+          timestamp: true
+        })],
+        components: []
+      });
+    }
+  } catch (error) {
+    logger.error(`Error handling giveaway delete button: ${error instanceof Error ? error.message : String(error)}`);
   }
 } 

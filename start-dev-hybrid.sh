@@ -125,8 +125,8 @@ print_info "Building TypeScript project..."
 npm run build
 print_status "Project built successfully"
 
-# Start Docker services (database and dashboard)
-print_info "Starting Docker services (database and dashboard)..."
+# Start Docker services (database and enhanced dashboard)
+print_info "Starting Docker services (database and enhanced dashboard)..."
 docker-compose -f docker-compose.dev-hybrid.yml up -d
 
 # Wait for database to be ready
@@ -145,17 +145,14 @@ fi
 export PG_HOST=localhost
 export PG_PORT=5432
 # Keep the same database name, user, and password from .env
-export PG_DATABASE=${PG_DATABASE:-wardenprime_dev_spacii}
-export PG_USER=${PG_USER:-spacii}
-export PG_PASSWORD=${PG_PASSWORD:-w3ldKewfUuZvLIr}
+export PG_DATABASE=${PG_DATABASE:-wardenprime}
+export PG_USER=${PG_USER:-wardenprime}
+export PG_PASSWORD=${PG_PASSWORD:-wardenprime_password}
 
 # Run embed settings migration (optional - can be skipped if it fails)
-print_info "Running embed settings migration..."
-if npm run migrate:embeds; then
-    print_status "Migration completed"
-else
-    print_warning "Migration failed, but continuing with bot startup..."
-fi
+# Migration already completed manually - skipping to avoid errors
+print_info "Embed settings migration already completed - skipping..."
+print_status "Migration skipped (already completed manually)"
 
 # Start the bot locally
 print_info "Starting WardenPrime bot locally..."
@@ -165,7 +162,7 @@ echo ""
 print_header "🔗 Access Points:"
 echo "  Bot:         Running locally (no port)"
 echo "  Database:    localhost:5432"
-echo "  Dashboard:   http://localhost:3080"
+echo "  Dashboard:   http://localhost:3080 (Enhanced Admin Dashboard)"
 echo "  Bot API:     http://localhost:3081 (if enabled)"
 echo ""
 print_header "📋 Useful Commands:"

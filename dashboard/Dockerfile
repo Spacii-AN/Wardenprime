@@ -13,11 +13,14 @@ RUN apk add --no-cache \
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install --only=production && npm cache clean --force
+# Install all dependencies (including dev dependencies for TypeScript compilation)
+RUN npm install && npm cache clean --force
 
 # Copy source code
 COPY . .
+
+# Build TypeScript
+RUN npm run build
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
@@ -34,7 +37,7 @@ EXPOSE 3080
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-    CMD pgrep -f "node.*server.js" || exit 1
+    CMD pgrep -f "node.*dist/enhanced-server.js" || exit 1
 
-# Start the dashboard
-CMD ["npm", "start"]
+# Start the enhanced dashboard
+CMD ["node", "dist/enhanced-server.js"]

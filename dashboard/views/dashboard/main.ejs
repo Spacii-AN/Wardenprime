@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WardenPrime Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>WardenPrime Admin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servers">
+                            <i class="fas fa-server me-1"></i>Servers
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><%= user.username %>#<%= user.discriminator %>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">
+                                <i class="fas fa-sign-out-alt me-1"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-tachometer-alt me-2"></i>Admin Dashboard</h1>
+                    <div class="btn-group">
+                        <a href="/servers" class="btn btn-primary">
+                            <i class="fas fa-server me-1"></i>Manage Servers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bot Status Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card <%= offlineMode ? 'bg-warning' : 'bg-success' %> text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Bot Status</h5>
+                                        <p class="card-text"><%= offlineMode ? 'Offline (Preview Mode)' : 'Online' %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-robot fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Guilds</h5>
+                                        <p class="card-text"><%= user.guilds ? user.guilds.length : 0 %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-server fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Active Services</h5>
+                                        <p class="card-text">All Running</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-cogs fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Uptime</h5>
+                                        <p class="card-text">99.9%</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-clock fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-bolt me-2"></i>Quick Actions</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <a href="/servers" class="btn btn-outline-primary w-100">
+                                            <i class="fas fa-server me-2"></i>Manage Servers
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button class="btn btn-outline-success w-100" onclick="updateDictionaries()">
+                                            <i class="fas fa-sync me-2"></i>Update Dictionaries
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button class="btn btn-outline-info w-100" onclick="toggleService('fissure', true)">
+                                            <i class="fas fa-broadcast-tower me-2"></i>Fissure Service
+                                        </button>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <button class="btn btn-outline-warning w-100" onclick="toggleService('arbitration', true)">
+                                            <i class="fas fa-trophy me-2"></i>Arbitration Service
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-chart-line me-2"></i>System Status</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="d-flex justify-content-between">
+                                            <span>Database:</span>
+                                            <span class="badge bg-success">Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex justify-content-between">
+                                            <span>API:</span>
+                                            <span class="badge bg-success">Online</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex justify-content-between">
+                                            <span>Discord:</span>
+                                            <span class="badge bg-success">Connected</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex justify-content-between">
+                                            <span>Services:</span>
+                                            <span class="badge bg-success">Running</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-history me-2"></i>Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Time</th>
+                                                <th>Action</th>
+                                                <th>Server</th>
+                                                <th>User</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2 minutes ago</td>
+                                                <td>Giveaway Created</td>
+                                                <td>Test Server</td>
+                                                <td>@user</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5 minutes ago</td>
+                                                <td>Fissure Notification</td>
+                                                <td>Test Server</td>
+                                                <td>@admin</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10 minutes ago</td>
+                                                <td>Role Command Updated</td>
+                                                <td>Test Server</td>
+                                                <td>@moderator</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function updateDictionaries() {
+            try {
+                const response = await fetch('/api/dictionary/update', { method: 'POST' });
+                const result = await response.json();
+                if (result.success) {
+                    alert('Dictionaries updated successfully!');
+                } else {
+                    alert('Failed to update dictionaries');
+                }
+            } catch (error) {
+                alert('Error updating dictionaries');
+            }
+        }
+
+        async function toggleService(service, enabled) {
+            try {
+                const response = await fetch('/api/services/toggle', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ service, enabled })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    alert(`Service ${service} ${enabled ? 'enabled' : 'disabled'} successfully!`);
+                } else {
+                    alert(`Failed to toggle service ${service}`);
+                }
+            } catch (error) {
+                alert(`Error toggling service ${service}`);
+            }
+        }
+    </script>
+</body>
+</html>

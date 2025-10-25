@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - WardenPrime Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>WardenPrime Admin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servers">
+                            <i class="fas fa-server me-1"></i>Servers
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><%= user.username %>#<%= user.discriminator %>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">
+                                <i class="fas fa-sign-out-alt me-1"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-chart-line me-2"></i>Server Analytics</h1>
+                    <div class="btn-group">
+                        <a href="/servers/<%= guildId %>" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Server
+                        </a>
+                        <button class="btn btn-outline-secondary" onclick="refreshAnalytics()">
+                            <i class="fas fa-sync me-1"></i>Refresh
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Overview Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Total Commands</h5>
+                                        <p class="card-text"><%= analytics.totalCommands || 0 %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-terminal fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Active Users</h5>
+                                        <p class="card-text"><%= analytics.activeUsers || 0 %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-users fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Giveaways</h5>
+                                        <p class="card-text"><%= analytics.totalGiveaways || 0 %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-gift fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Notifications</h5>
+                                        <p class="card-text"><%= analytics.totalNotifications || 0 %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-bell fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-chart-bar me-2"></i>Command Usage (Last 7 Days)</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="commandChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-chart-pie me-2"></i>Most Used Commands</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="popularCommandsChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Activity Charts -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-clock me-2"></i>Activity by Hour</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="activityChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-calendar me-2"></i>Activity by Day</h5>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="dailyActivityChart" height="300"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Statistics -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-list me-2"></i>Top Commands</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>Command</th>
+                                                <th>Uses</th>
+                                                <th>Last Used</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><code>/fissure</code></td>
+                                                <td><span class="badge bg-primary">45</span></td>
+                                                <td>2 hours ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>/giveaway</code></td>
+                                                <td><span class="badge bg-primary">23</span></td>
+                                                <td>1 day ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>/ping</code></td>
+                                                <td><span class="badge bg-primary">18</span></td>
+                                                <td>3 hours ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>/arby</code></td>
+                                                <td><span class="badge bg-primary">12</span></td>
+                                                <td>5 hours ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td><code>/lfg</code></td>
+                                                <td><span class="badge bg-primary">8</span></td>
+                                                <td>2 days ago</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-users me-2"></i>Top Users</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th>User</th>
+                                                <th>Commands</th>
+                                                <th>Last Active</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>@AdminUser</td>
+                                                <td><span class="badge bg-success">67</span></td>
+                                                <td>1 hour ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Moderator1</td>
+                                                <td><span class="badge bg-success">34</span></td>
+                                                <td>3 hours ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Member1</td>
+                                                <td><span class="badge bg-success">23</span></td>
+                                                <td>1 day ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Member2</td>
+                                                <td><span class="badge bg-success">18</span></td>
+                                                <td>2 days ago</td>
+                                            </tr>
+                                            <tr>
+                                                <td>@Member3</td>
+                                                <td><span class="badge bg-success">12</span></td>
+                                                <td>3 days ago</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Usage -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-cogs me-2"></i>Feature Usage Statistics</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-3 text-center">
+                                        <div class="mb-3">
+                                            <i class="fas fa-gift fa-2x text-primary mb-2"></i>
+                                            <h6>Giveaways</h6>
+                                            <h4 class="text-primary"><%= analytics.giveawaysCreated || 0 %></h4>
+                                            <small class="text-muted">Created</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <div class="mb-3">
+                                            <i class="fas fa-broadcast-tower fa-2x text-success mb-2"></i>
+                                            <h6>Fissure Notifications</h6>
+                                            <h4 class="text-success"><%= analytics.fissureNotifications || 0 %></h4>
+                                            <small class="text-muted">Active</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <div class="mb-3">
+                                            <i class="fas fa-users-cog fa-2x text-warning mb-2"></i>
+                                            <h6>Role Commands</h6>
+                                            <h4 class="text-warning"><%= analytics.roleCommands || 0 %></h4>
+                                            <small class="text-muted">Active</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center">
+                                        <div class="mb-3">
+                                            <i class="fas fa-door-open fa-2x text-info mb-2"></i>
+                                            <h6>Welcome Messages</h6>
+                                            <h4 class="text-info"><%= analytics.welcomeMessagesSent || 0 %></h4>
+                                            <small class="text-muted">Sent</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize charts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeCharts();
+        });
+
+        function initializeCharts() {
+            // Command Usage Chart
+            const commandCtx = document.getElementById('commandChart').getContext('2d');
+            new Chart(commandCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Commands Used',
+                        data: [12, 19, 3, 5, 2, 3, 8],
+                        borderColor: 'rgb(75, 192, 192)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Popular Commands Chart
+            const popularCtx = document.getElementById('popularCommandsChart').getContext('2d');
+            new Chart(popularCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Fissure', 'Giveaway', 'Ping', 'Arby', 'LFG'],
+                    datasets: [{
+                        data: [45, 23, 18, 12, 8],
+                        backgroundColor: [
+                            '#FF6384',
+                            '#36A2EB',
+                            '#FFCE56',
+                            '#4BC0C0',
+                            '#9966FF'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+
+            // Activity by Hour Chart
+            const activityCtx = document.getElementById('activityChart').getContext('2d');
+            new Chart(activityCtx, {
+                type: 'bar',
+                data: {
+                    labels: Array.from({length: 24}, (_, i) => i + ':00'),
+                    datasets: [{
+                        label: 'Commands',
+                        data: Array.from({length: 24}, () => Math.floor(Math.random() * 20)),
+                        backgroundColor: 'rgba(54, 162, 235, 0.8)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Daily Activity Chart
+            const dailyCtx = document.getElementById('dailyActivityChart').getContext('2d');
+            new Chart(dailyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Daily Commands',
+                        data: [45, 32, 28, 51, 38, 22, 35],
+                        backgroundColor: 'rgba(255, 99, 132, 0.8)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function refreshAnalytics() {
+            // This would reload the analytics data
+            location.reload();
+        }
+    </script>
+</body>
+</html>

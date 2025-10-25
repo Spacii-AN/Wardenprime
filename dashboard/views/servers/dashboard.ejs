@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Dashboard - WardenPrime Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-shield-alt me-2"></i>WardenPrime Admin
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/servers">
+                            <i class="fas fa-server me-1"></i>Servers
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i><%= user.username %>#<%= user.discriminator %>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/logout">
+                                <i class="fas fa-sign-out-alt me-1"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1><i class="fas fa-server me-2"></i>Server Dashboard</h1>
+                    <div class="btn-group">
+                        <a href="/servers" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-1"></i>Back to Servers
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Server Overview Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-primary text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Welcome Messages</h5>
+                                        <p class="card-text"><%= welcomeMessages.enabled ? 'Enabled' : 'Disabled' %></p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-door-open fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-success text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Role Commands</h5>
+                                        <p class="card-text"><%= roleCommands.length %> Active</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-users-cog fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-warning text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Active Giveaways</h5>
+                                        <p class="card-text"><%= giveaways.filter(g => !g.ended).length %> Running</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-gift fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-info text-white">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Fissure Notifications</h5>
+                                        <p class="card-text"><%= fissureNotifications.length %> Active</p>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fas fa-broadcast-tower fa-2x"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management Sections -->
+                <div class="row">
+                    <!-- Welcome Messages -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-door-open me-2"></i>Welcome Messages</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Configure custom welcome messages for new members.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Status: <span class="badge bg-<%= welcomeMessages.enabled ? 'success' : 'secondary' %>">
+                                        <%= welcomeMessages.enabled ? 'Enabled' : 'Disabled' %></span></span>
+                                    <a href="/servers/<%= guildId %>/welcome" class="btn btn-primary">
+                                        <i class="fas fa-cog me-1"></i>Configure
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Role Commands -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-users-cog me-2"></i>Role Commands</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Manage role assignment commands and permissions.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><%= roleCommands.length %> Commands Active</span>
+                                    <a href="/servers/<%= guildId %>/role-commands" class="btn btn-primary">
+                                        <i class="fas fa-cog me-1"></i>Manage
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Giveaways -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-gift me-2"></i>Giveaways</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Manage active and past giveaways.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><%= giveaways.filter(g => !g.ended).length %> Active, <%= giveaways.filter(g => g.ended).length %> Ended</span>
+                                    <a href="/servers/<%= guildId %>/giveaways" class="btn btn-primary">
+                                        <i class="fas fa-cog me-1"></i>Manage
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fissure Notifications -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-broadcast-tower me-2"></i>Fissure Notifications</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Configure Warframe fissure notifications.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span><%= fissureNotifications.length %> Notifications Active</span>
+                                    <a href="/servers/<%= guildId %>/fissure-notifications" class="btn btn-primary">
+                                        <i class="fas fa-cog me-1"></i>Manage
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Embeds -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-palette me-2"></i>Custom Embeds</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Create and send custom embeds for guides, announcements, and messages.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Design and send embeds</span>
+                                    <a href="/servers/<%= guildId %>/embeds" class="btn btn-primary">
+                                        <i class="fas fa-palette me-1"></i>Create Embeds
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-chart-line me-2"></i>Analytics</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">View server statistics and bot usage analytics.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>View detailed statistics</span>
+                                    <a href="/servers/<%= guildId %>/analytics" class="btn btn-primary">
+                                        <i class="fas fa-chart-bar me-1"></i>View Analytics
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Moderation -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-shield-alt me-2"></i>Moderation Tools</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Access moderation tools and user management.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Manage users and actions</span>
+                                    <a href="/servers/<%= guildId %>/moderation" class="btn btn-primary">
+                                        <i class="fas fa-tools me-1"></i>Moderation
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logs -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-file-alt me-2"></i>Logs</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">View server logs and bot activity.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Monitor bot activity</span>
+                                    <a href="/servers/<%= guildId %>/logs" class="btn btn-primary">
+                                        <i class="fas fa-eye me-1"></i>View Logs
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Server Settings -->
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-cog me-2"></i>Server Settings</h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Configure general server settings and preferences.</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span>Configure server options</span>
+                                    <button class="btn btn-primary" onclick="openServerSettings()">
+                                        <i class="fas fa-cog me-1"></i>Settings
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5><i class="fas fa-history me-2"></i>Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>Time</th>
+                                                <th>Action</th>
+                                                <th>User</th>
+                                                <th>Details</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>2 minutes ago</td>
+                                                <td>Giveaway Created</td>
+                                                <td>@user</td>
+                                                <td>Prize: 100 Platinum</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>5 minutes ago</td>
+                                                <td>Fissure Notification</td>
+                                                <td>@admin</td>
+                                                <td>Disruption on Kappa</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>10 minutes ago</td>
+                                                <td>Role Command Updated</td>
+                                                <td>@moderator</td>
+                                                <td>Added @Member role</td>
+                                                <td><span class="badge bg-success">Success</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openServerSettings() {
+            // This would open a modal or redirect to server settings
+            alert('Server settings functionality would be implemented here');
+        }
+    </script>
+</body>
+</html>

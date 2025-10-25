@@ -21,20 +21,24 @@ if not exist ".env" (
     echo ⚠️  .env file not found!
     echo.
     echo Choose your setup option:
-    echo 1) Individual Development (recommended)
-    echo 2) Shared Development
-    echo 3) Manual setup
+    echo 1) Run setup script (recommended)
+    echo 2) Manual setup
     echo.
-    set /p choice="Enter your choice (1-3): "
+    set /p choice="Enter your choice (1-2): "
     
     if "!choice!"=="1" (
-        echo ℹ️  Running individual development setup...
-        call setup-dev.bat
+        echo ℹ️  Running Windows setup script...
+        call setup-dev-windows.bat
+        if %errorlevel% neq 0 (
+            echo ❌ Setup failed
+            pause
+            exit /b 1
+        )
     ) else if "!choice!"=="2" (
-        echo ℹ️  Running shared development setup...
-        call setup-dev-shared.bat
-    ) else if "!choice!"=="3" (
         echo ℹ️  Please create .env file manually from env.template
+        echo 1. Copy env.template to .env
+        echo 2. Edit .env with your Discord bot token and other settings
+        echo 3. Run this script again
         pause
         exit /b 1
     ) else (
@@ -102,15 +106,53 @@ echo ✅ Project built successfully
 REM Start Docker services (database and dashboard)
 echo ℹ️  Starting Docker services (database and dashboard)...
 docker-compose -f docker-compose.dev-hybrid.yml up -d
+if %errorlevel% neq 0 (
+    echo ❌ Failed to start Docker services
+    pause
+    exit /b 1
+)
 
 REM Wait for database to be ready
 echo ℹ️  Waiting for database to be ready...
 timeout /t 10 /nobreak >nul
 
-REM Run embed settings migration
+REM Set environment variables for local bot to connect to localhost database
+echo ℹ️  Setting up database connection...
+REM Use values from .env file if they exist, otherwise use defaults
+if defined PG_HOST (
+    echo Using PG_HOST from .env: %PG_HOST%
+) else (
+    set PG_HOST=localhost
+)
+if defined PG_PORT (
+    echo Using PG_PORT from .env: %PG_PORT%
+) else (
+    set PG_PORT=5432
+)
+if defined PG_DATABASE (
+    echo Using PG_DATABASE from .env: %PG_DATABASE%
+) else (
+    set PG_DATABASE=wardenprime_dev_spacii
+)
+if defined PG_USER (
+    echo Using PG_USER from .env: %PG_USER%
+) else (
+    set PG_USER=spacii
+)
+if defined PG_PASSWORD (
+    echo Using PG_PASSWORD from .env
+) else (
+    set PG_PASSWORD=w3ldKewfUuZvLIr
+)
+
+REM Run embed settings migration (optional - can be skipped if it fails)
 echo ℹ️  Running embed settings migration...
 npm run migrate:embeds
-echo ✅ Migration completed
+if %errorlevel% neq 0 (
+    echo ⚠️  Migration failed, but continuing with bot startup...
+) else (
+    echo ✅ Migration completed
+)
 
 REM Start the bot locally
 echo ℹ️  Starting WardenPrime bot locally...

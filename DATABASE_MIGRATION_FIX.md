@@ -3,7 +3,7 @@
 ## Issues Resolved
 
 ### 1. **Database Connection Configuration**
-- **Problem**: The application was using default DigitalOcean database credentials instead of local Docker database
+- **Problem**: The application was using production database credentials instead of local Docker database
 - **Solution**: Created `.env` file with correct local database credentials:
   ```
   DATABASE_TYPE=postgres

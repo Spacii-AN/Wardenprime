@@ -16,11 +16,11 @@ dotenv.config();
 
 // Create PostgreSQL connection
 const pool = new Pool({
-  host: process.env.PG_HOST || 'discordpersonal-do-user-18514065-0.k.db.ondigitalocean.com',
-  port: parseInt(process.env.PG_PORT || '25060'),
-  database: process.env.PG_DATABASE || 'defaultdb',
-  user: process.env.PG_USER || 'doadmin',
-  password: process.env.PG_PASSWORD || 'password',
+  host: process.env.PG_HOST || 'localhost',
+  port: parseInt(process.env.PG_PORT || '5432'),
+  database: process.env.PG_DATABASE || 'wardenprime',
+  user: process.env.PG_USER || 'wardenprime',
+  password: process.env.PG_PASSWORD || 'wardenprime_password',
   ssl: process.env.PG_SSL_MODE === 'require' ? { rejectUnauthorized: false } : false
 });
 

@@ -110,12 +110,12 @@ export const config: Config = {
   DATABASE_TYPE: getEnvVar('DATABASE_TYPE', 'postgres') as 'json' | 'postgres' | 'mongo' | 'other',
   
   // PostgreSQL specific configuration
-  PG_HOST: getEnvVar('PG_HOST', 'discordpersonal-do-user-18514065-0.k.db.ondigitalocean.com'),
-  PG_PORT: parseInt(getEnvVar('PG_PORT', '25060')),
-  PG_DATABASE: getEnvVar('PG_DATABASE', 'defaultdb'),
-  PG_USER: getEnvVar('PG_USER', 'doadmin'),
-  PG_PASSWORD: getEnvVar('PG_PASSWORD', 'password'),
-  PG_SSL_MODE: getEnvVar('PG_SSL_MODE', 'require'),
+  PG_HOST: getEnvVar('PG_HOST', 'localhost'),
+  PG_PORT: parseInt(getEnvVar('PG_PORT', '5432')),
+  PG_DATABASE: getEnvVar('PG_DATABASE', 'wardenprime'),
+  PG_USER: getEnvVar('PG_USER', 'wardenprime'),
+  PG_PASSWORD: getEnvVar('PG_PASSWORD', 'wardenprime_password'),
+  PG_SSL_MODE: getEnvVar('PG_SSL_MODE', 'disable'),
 
   // Dashboard
   DASHBOARD_ENABLED: getEnvBool('DASHBOARD_ENABLED', false),

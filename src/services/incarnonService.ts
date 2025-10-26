@@ -107,7 +107,7 @@ interface ApiResponse {
 // Global state
 let isServiceRunning = false;
 let lastResetTimestamp = 0;
-let checkInterval = 3600000; // Check every hour (3600000 ms)
+let checkInterval = 2 * 60 * 60 * 1000; // Check every 2 hours (was 1 hour)
 
 // Create the incarnation embed
 async function createIncarnationEmbed(): Promise<EmbedBuilder> {
@@ -324,15 +324,15 @@ async function checkAndUpdate(client: Client): Promise<void> {
     // If the next reset is soon, check more frequently
     let nextCheckDelay = checkInterval;
     
-    if (timeToNextReset > 0 && timeToNextReset < 2 * 60 * 60 * 1000) { // Less than 2 hours
-      // Check again right after the reset (30 seconds after)
-      nextCheckDelay = timeToNextReset + 30000;
+    if (timeToNextReset > 0 && timeToNextReset < 4 * 60 * 60 * 1000) { // Less than 4 hours (was 2 hours)
+      // Check again right after the reset (5 minutes after)
+      nextCheckDelay = timeToNextReset + 5 * 60 * 1000; // 5 minutes after reset (was 30 seconds)
       serviceLogger.info(`Rotation reset in ${Math.floor(timeToNextReset / 3600000)} hours, scheduling next check in ${Math.floor(nextCheckDelay / 60000)} minutes`);
     } else if (timeToNextReset <= 0 && timeToNextReset > -checkInterval) {
       // We're right at or just past the reset time
       // Do an immediate check right now, then another one shortly after
-      nextCheckDelay = 60000; // Check again in 1 minute
-      serviceLogger.info(`Reset time has just passed, checking immediately and scheduling next check in 1 minute`);
+      nextCheckDelay = 5 * 60 * 1000; // Check again in 5 minutes (was 1 minute)
+      serviceLogger.info(`Reset time has just passed, checking immediately and scheduling next check in 5 minutes`);
       // Update messages immediately
       await updateAllMessages(client, true);
     }

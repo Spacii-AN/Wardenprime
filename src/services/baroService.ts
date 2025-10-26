@@ -89,7 +89,7 @@ let isServiceRunning = false;
 let lastBaroId = '';
 let lastBaroActivation = 0;
 let lastBaroExpiry = 0;
-let checkInterval = 300000; // Check every 5 minutes (Baro doesn't change often)
+let checkInterval = 10 * 60 * 1000; // Check every 10 minutes (was 5 minutes)
 
 // Cache for dictionaries
 let regionsDict: Record<string, RegionData> | null = null;

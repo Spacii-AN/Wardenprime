@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import { GatewayIntentBits, Partials } from 'discord.js';
+import { API_TIMEOUTS } from '../constants/time';
 
 // Load environment variables
 dotenv.config();
@@ -48,6 +49,7 @@ interface Config {
   DASHBOARD_PORT?: number;
   DASHBOARD_PUBLIC_URL?: string;
   DASHBOARD_SESSION_SECRET?: string;
+  BOT_API_KEY?: string;
   OAUTH_CALLBACK_URL?: string;
 }
 
@@ -122,6 +124,7 @@ export const config: Config = {
   DASHBOARD_PORT: parseInt(getEnvVar('DASHBOARD_PORT', '3080')),
   DASHBOARD_PUBLIC_URL: getEnvVar('DASHBOARD_PUBLIC_URL', ''),
   DASHBOARD_SESSION_SECRET: getEnvVar('DASHBOARD_SESSION_SECRET', ''),
+  BOT_API_KEY: getEnvVar('BOT_API_KEY', ''),
   OAUTH_CALLBACK_URL: getEnvVar('OAUTH_CALLBACK_URL', '')
 };
 
@@ -152,7 +155,7 @@ export const clientOptions = {
   ],
   failIfNotExists: false,
   rest: {
-    timeout: 60000, // 60 seconds timeout for API requests
+    timeout: API_TIMEOUTS.DISCORD_API,
     retries: 3      // Retry API requests 3 times
   }
 }; 

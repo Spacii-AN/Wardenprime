@@ -13,20 +13,11 @@ import { logger } from '../../utils/logger';
 import { createEmbed } from '../../utils/embedBuilder';
 import axios from 'axios';
 import path from 'path';
+
+// Import shared Warframe types
+import { WarframeMission, WarframeResponse, ActiveMission } from '../../types/warframe';
 import fs from 'fs';
 import { triggerFissureCheck } from '../../services/fissureService';
-
-interface ActiveMission {
-  _id: { $oid: string };
-  Region: number;
-  Seed: number;
-  Activation: { $date: { $numberLong: string } };
-  Expiry: { $date: { $numberLong: string } };
-  Node: string;
-  MissionType: string;
-  Modifier: string;
-  Hard: boolean;
-}
 
 // Mission types commonly available as fissures
 const MISSION_TYPES = [
@@ -202,7 +193,7 @@ const command: Command = {
           const langDict = JSON.parse(await fs.promises.readFile(dictPath, 'utf8')) as Record<string, string>;
           
           // Filter void fissure missions
-          const fissureMissions = response.data.ActiveMissions.filter((mission: any) => 
+          const fissureMissions = response.data.ActiveMissions.filter((mission: WarframeMission) => 
             mission.Modifier && mission.Modifier.startsWith('VoidT')
           );
           
@@ -213,17 +204,17 @@ const command: Command = {
             logger.debug(`Sample fissure mission - Node: ${sampleMission.Node}, Type: ${sampleMission.MissionType}, Modifier: ${sampleMission.Modifier}, Hard: ${sampleMission.Hard}`);
             
             // Check if Hard property exists on missions
-            const steelPathMissions = fissureMissions.filter((m: any) => m.Hard === true);
+            const steelPathMissions = fissureMissions.filter((m: WarframeMission) => m.Hard === true);
             logger.debug(`Found ${steelPathMissions.length} Steel Path missions out of ${fissureMissions.length} total`);
           }
           
           logger.debug(`Looking for missions of type: ${missionType}, standardized as ${standardizedType}`);
           
           // Try both direct comparison and more lenient matching
-          let matchingFissures: any[] = [];
+          let matchingFissures: WarframeMission[] = [];
           
           // First try with strict lowercase comparison
-          matchingFissures = fissureMissions.filter((mission: any) => {
+          matchingFissures = fissureMissions.filter((mission: WarframeMission) => {
             // Get mission type from region data
             const nodeInfo = regionsData[mission.Node];
             let currentMissionType = mission.MissionType; // Default
@@ -255,7 +246,7 @@ const command: Command = {
           if (matchingFissures.length === 0) {
             logger.debug(`No exact matches found for ${missionType}, trying partial matching`);
             
-            matchingFissures = fissureMissions.filter((mission: any) => {
+            matchingFissures = fissureMissions.filter((mission: WarframeMission) => {
               const nodeInfo = regionsData[mission.Node];
               let currentMissionType = mission.MissionType; // Default
               

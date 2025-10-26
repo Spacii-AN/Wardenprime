@@ -5,6 +5,8 @@ import path from 'path';
 import { logger } from '../utils/logger';
 import { pgdb } from './postgresDatabase';  // PostgreSQL database
 import { createEmbed } from '../utils/embedBuilder';
+import { ActiveMission, getExpiryTimestamp } from '../types/warframe';
+import { SERVICE_INTERVALS } from '../constants/time';
 import os from 'os';
 
 // Get environment variable for logging
@@ -52,18 +54,6 @@ interface RegionInfo {
   factionName: string;
 }
 
-interface ActiveMission {
-  _id: { $oid: string };
-  Region: number;
-  Seed: number;
-  Activation: { $date: { $numberLong: string } };
-  Expiry: { $date: { $numberLong: string } };
-  Node: string;
-  MissionType: string;
-  Modifier: string;
-  Hard: boolean;
-}
-
 interface ApiResponse {
   ActiveMissions: ActiveMission[];
 }
@@ -82,7 +72,8 @@ const VOID_TIER_MAP: Record<string, string> = {
 let isServiceRunning = false;
 let isFirstRun = true;
 let lastFissureList: Record<string, ActiveMission[]> | null = null;
-let checkInterval = 30000; // Check every 30 seconds (reduced from 60000)
+
+let checkInterval = SERVICE_INTERVALS.FISSURE_CHECK;
 let recentlyNotifiedMissions = new Map<string, string>(); // Map to track recently notified missions
 let lastSuccessfulCheck = 0; // Timestamp of last successful check
 let errorCount = 0; // Track consecutive errors
@@ -707,7 +698,7 @@ function findNewFissureMissions(currentFissures: Record<string, ActiveMission[]>
       // Check if there are any missions of this type that haven't expired
       const currentMissions = currentFissures[missionType];
       const activeCount = currentMissions.filter(mission => {
-        const expiryTime = parseInt(mission.Expiry.$date.$numberLong);
+        const expiryTime = getExpiryTimestamp(mission);
         return expiryTime > Date.now();
       }).length;
       
@@ -734,8 +725,8 @@ function findNewFissureMissions(currentFissures: Record<string, ActiveMission[]>
               const lastMission = lastFissureList[missionType][idx];
               if (!lastMission) return false;
               
-              const currentExpiry = current.Expiry.$date.$numberLong;
-              const lastExpiry = lastMission.Expiry.$date.$numberLong;
+              const currentExpiry = getExpiryTimestamp(current);
+              const lastExpiry = getExpiryTimestamp(lastMission);
               return currentExpiry === lastExpiry;
             });
             
@@ -818,7 +809,7 @@ function findNewFissureMissions(currentFissures: Record<string, ActiveMission[]>
       // Collect all IDs and expiry times from matching previous mission types
       for (const prevType of matchingPrevTypes) {
         lastFissureList[prevType].forEach(m => {
-          const expiryTime = parseInt(m.Expiry.$date.$numberLong);
+          const expiryTime = getExpiryTimestamp(m);
           prevMissionsMap.set(m._id.$oid, expiryTime);
         });
       }
@@ -843,7 +834,7 @@ function findNewFissureMissions(currentFissures: Record<string, ActiveMission[]>
         // Even if the ID is in the previous list, check if it's a back-to-back mission
         // (Same ID can sometimes be reused, so check expiry times too)
         const prevExpiryTime = prevMissionsMap.get(currentId)!;
-        const currentExpiryTime = parseInt(currentMission.Expiry.$date.$numberLong);
+        const currentExpiryTime = getExpiryTimestamp(currentMission);
         
         // If the expiry time changed or it's significantly different, it's a new mission
         if (prevExpiryTime !== currentExpiryTime && Math.abs(prevExpiryTime - currentExpiryTime) > 60000) {
@@ -1097,7 +1088,7 @@ async function sendFissureNotifications(
         
         // Create a more comprehensive signature for these missions, including IDs and expiry times
         const missionIds = relevantFissures.map(m => m._id.$oid).sort().join(',');
-        const missionExpiryTimes = relevantFissures.map(m => m.Expiry.$date.$numberLong).sort().join(',');
+        const missionExpiryTimes = relevantFissures.map(m => getExpiryTimestamp(m)).sort().join(',');
         
         console.log(`Current mission IDs: ${missionIds}`);
         console.log(`Current mission expiry times: ${missionExpiryTimes}`);
@@ -1204,7 +1195,7 @@ function formatFissuresForDisplay(
     const factionName = nodeInfo?.factionName ? (langDict[nodeInfo.factionName] || nodeInfo.factionName) : 'Unknown';
     
     const relicTier = VOID_TIER_MAP[mission.Modifier] || 'Unknown';
-    const expiryDate = new Date(parseInt(mission.Expiry.$date.$numberLong));
+    const expiryDate = new Date(getExpiryTimestamp(mission));
     const expiryTimestamp = Math.floor(expiryDate.getTime() / 1000);
     
     // Get mission type

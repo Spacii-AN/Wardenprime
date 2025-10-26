@@ -16,13 +16,15 @@ import {
   GuildMember,
   EmbedBuilder,
   ColorResolvable,
-  time
+  time,
+  Client
 } from 'discord.js';
 import { Command } from '../../types/discord';
 import { pgdb, Giveaway } from '../../services/postgresDatabase';
 import { createEmbed, Colors } from '../../utils/embedBuilder';
 import { logger } from '../../utils/logger';
 import { parseTimeString, getRelativeTime, getFutureDate } from '../../utils/timeParser';
+import { GIVEAWAY_LIMITS } from '../../constants/time';
 
 const command: Command = {
   data: new SlashCommandBuilder()
@@ -796,7 +798,8 @@ export async function handleGiveawayCreateModal(interaction: ModalSubmitInteract
     
     // Check if duration is too long
     const duration = endsAt.getTime() - Date.now();
-    if (duration > 2592000000) { // More than 30 days
+
+    if (duration > GIVEAWAY_LIMITS.MAX_DURATION) {
       await interaction.editReply({
         embeds: [createEmbed({
           type: 'error',
@@ -1061,7 +1064,7 @@ export async function handleGiveawayRerollButton(interaction: ButtonInteraction)
  * @param client Discord client
  * @param giveaway Giveaway object to end
  */
-export async function endGiveaway(client: any, giveaway: Giveaway): Promise<void> {
+export async function endGiveaway(client: Client, giveaway: Giveaway): Promise<void> {
   try {
     logger.info(`Ending giveaway ${giveaway.id} programmatically`);
     
@@ -1108,7 +1111,7 @@ export async function endGiveaway(client: any, giveaway: Giveaway): Promise<void
 /**
  * Sends private messages to giveaway winners
  */
-async function sendWinnerDMs(client: any, winnerIds: string[], giveaway: Giveaway): Promise<void> {
+async function sendWinnerDMs(client: Client, winnerIds: string[], giveaway: Giveaway): Promise<void> {
   try {
     for (const winnerId of winnerIds) {
       try {

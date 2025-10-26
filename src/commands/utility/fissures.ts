@@ -1,6 +1,7 @@
 import { SlashCommandBuilder, ChatInputCommandInteraction } from 'discord.js';
 import { Command } from '../../types/discord';
 import { createEmbed } from '../../utils/embedBuilder';
+import { ActiveMission, getExpiryTimestamp } from '../../types/warframe';
 import axios from 'axios';
 import { logger } from '../../utils/logger';
 import path from 'path';
@@ -20,17 +21,7 @@ interface RegionInfo {
   factionName: string;
 }
 
-interface ActiveMission {
-  _id: { $oid: string };
-  Region: number;
-  Seed: number;
-  Activation: { $date: { $numberLong: string } };
-  Expiry: { $date: { $numberLong: string } };
-  Node: string;
-  MissionType: string;
-  Modifier: string;
-  Hard: boolean;
-}
+// ActiveMission interface is now imported from shared types
 
 interface ApiResponse {
   ActiveMissions: ActiveMission[];
@@ -132,7 +123,7 @@ const command: Command = {
           const translatedNode = nodeInfo?.name ? (langDict[nodeInfo.name] || nodeInfo.name) : mission.Node;
           const translatedMission = nodeInfo?.missionName ? (langDict[nodeInfo.missionName] || nodeInfo.missionName) : mission.MissionType;
           
-          const expiryDate = new Date(parseInt(mission.Expiry.$date.$numberLong));
+          const expiryDate = new Date(getExpiryTimestamp(mission));
           const timeLeft = Math.floor((expiryDate.getTime() - Date.now()) / 1000);
           
           normalFissures.push(`**${relicTier}** - ${translatedMission} - ${translatedNode} (<t:${Math.floor(expiryDate.getTime() / 1000)}:R>)`);
@@ -143,7 +134,7 @@ const command: Command = {
           const translatedNode = nodeInfo?.name ? (langDict[nodeInfo.name] || nodeInfo.name) : mission.Node;
           const translatedMission = nodeInfo?.missionName ? (langDict[nodeInfo.missionName] || nodeInfo.missionName) : mission.MissionType;
           
-          const expiryDate = new Date(parseInt(mission.Expiry.$date.$numberLong));
+          const expiryDate = new Date(getExpiryTimestamp(mission));
           const timeLeft = Math.floor((expiryDate.getTime() - Date.now()) / 1000);
           
           steelPathFissures.push(`**${relicTier}** - ${translatedMission} - ${translatedNode} (<t:${Math.floor(expiryDate.getTime() / 1000)}:R>)`);

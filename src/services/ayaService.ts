@@ -55,7 +55,7 @@ interface AyaBountyData {
 // Global state and constants
 let isServiceRunning = false;
 let lastExpiryTimestamp = 0;
-let checkInterval = 60000; // Check every minute
+let checkInterval = 3 * 60 * 1000; // Check every 3 minutes (was 1 minute)
 let isFirstRun = true; // Flag to track first run after startup
 const AYA_BOUNTIES = [
   "/Lotus/Types/Gameplay/Eidolon/Jobs/ReclamationBountyCap",
@@ -171,10 +171,10 @@ async function checkAndUpdate(client: Client): Promise<void> {
     // If the next reset is soon, check more frequently
     let nextCheckDelay = checkInterval;
     
-    if (timeToNextReset > 0 && timeToNextReset < 5 * 60 * 1000) { // Less than 5 minutes
-      // Check again right after the reset (10 seconds after)
-      nextCheckDelay = timeToNextReset + 10000;
-      serviceLogger.info(`Bounty reset in ${Math.floor(timeToNextReset / 60000)} minutes, scheduling next check in ${Math.floor(nextCheckDelay / 1000)} seconds`);
+    if (timeToNextReset > 0 && timeToNextReset < 10 * 60 * 1000) { // Less than 10 minutes (was 5 minutes)
+      // Check again right after the reset (2 minutes after)
+      nextCheckDelay = timeToNextReset + 2 * 60 * 1000; // 2 minutes after reset (was 10 seconds)
+      serviceLogger.info(`Bounty reset in ${Math.floor(timeToNextReset / 60000)} minutes, scheduling next check in ${Math.floor(nextCheckDelay / 60000)} minutes`);
     }
     
     // Schedule the next check

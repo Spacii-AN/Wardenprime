@@ -62,8 +62,8 @@ interface ArbitrationNotification {
 // Global state to track the current arbitration
 let currentArbitration: ArbitrationDetail | null = null;
 let lastCheckTime = 0;
-let checkInterval = 30000; // 30 seconds initial check interval
-const MAX_CHECK_INTERVAL = 60000; // 1 minute maximum interval
+let checkInterval = 7 * 24 * 60 * 60 * 1000; // 1 week initial check interval (arbitrations are scheduled)
+const MAX_CHECK_INTERVAL = 7 * 24 * 60 * 60 * 1000; // 1 week maximum interval
 let errorCount = 0;
 let isFirstRun = true; // Flag for first run after startup
 
@@ -80,9 +80,9 @@ async function checkAndNotify(client: Client): Promise<void> {
   try {
     // Don't run checks too frequently
     const now = Date.now();
-    if (now - lastCheckTime < 10000) { // At least 10 seconds between checks
+    if (now - lastCheckTime < 60 * 60 * 1000) { // At least 1 hour between checks (arbitrations are scheduled)
       logger.debug('Skipping arbitration check - ran too recently');
-      setTimeout(() => checkAndNotify(client), 10000);
+      setTimeout(() => checkAndNotify(client), 60 * 60 * 1000);
       return;
     }
     
@@ -182,8 +182,8 @@ async function checkAndNotify(client: Client): Promise<void> {
     // Reset error count and interval on success
     if (errorCount > 0) {
       errorCount = Math.max(0, errorCount - 1);
-      if (checkInterval > 30000) {
-        checkInterval = Math.max(30000, checkInterval / 2);
+      if (checkInterval > 7 * 24 * 60 * 60 * 1000) { // Only reduce if above 1 week
+        checkInterval = Math.max(7 * 24 * 60 * 60 * 1000, checkInterval / 2); // Don't go below 1 week
         logger.info(`Reducing arbitration check interval to ${checkInterval}ms after successful check`);
       }
     }
@@ -192,9 +192,9 @@ async function checkAndNotify(client: Client): Promise<void> {
     const timeUntilNext = (arbyDetails.endTimestamp - currentTime) * 1000;
     
     // If the next arbitration is soon, check more frequently
-    if (timeUntilNext < 5 * 60 * 1000) { // less than 5 minutes
+    if (timeUntilNext < 2 * 60 * 60 * 1000) { // less than 2 hours (arbitrations are scheduled)
       logger.info(`Next arbitration in ${Math.floor(timeUntilNext / 60000)} minutes, scheduling more frequent checks`);
-      setTimeout(() => checkAndNotify(client), Math.min(30000, timeUntilNext / 2));
+      setTimeout(() => checkAndNotify(client), Math.min(30 * 60 * 1000, timeUntilNext / 2)); // Minimum 30 minutes
     } else {
       scheduleNextCheck(client);
     }
@@ -207,7 +207,7 @@ async function checkAndNotify(client: Client): Promise<void> {
       const previousInterval = checkInterval;
       checkInterval = Math.min(checkInterval * 2, MAX_CHECK_INTERVAL);
       if (previousInterval !== checkInterval) {
-        logger.warn(`Increasing arbitration check interval to ${checkInterval}ms due to persistent errors`);
+        logger.warn(`Increasing arbitration check interval to ${Math.floor(checkInterval / (24 * 60 * 60 * 1000))} days due to persistent errors`);
       }
     }
     

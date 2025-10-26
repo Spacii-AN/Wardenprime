@@ -15,18 +15,7 @@ import axios from 'axios';
 import path from 'path';
 import fs from 'fs';
 import { triggerFissureCheck } from '../../services/fissureService';
-
-interface ActiveMission {
-  _id: { $oid: string };
-  Region: number;
-  Seed: number;
-  Activation: { $date: { $numberLong: string } };
-  Expiry: { $date: { $numberLong: string } };
-  Node: string;
-  MissionType: string;
-  Modifier: string;
-  Hard: boolean;
-}
+import { ActiveMission } from '../../types/warframe';
 
 // Mission types commonly available as fissures
 const MISSION_TYPES = [

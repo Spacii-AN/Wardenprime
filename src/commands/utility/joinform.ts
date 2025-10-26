@@ -1,6 +1,7 @@
 import { SlashCommandBuilder, PermissionFlagsBits, ModalBuilder, TextInputBuilder, TextInputStyle, ActionRowBuilder, EmbedBuilder } from 'discord.js';
 import { Command } from '../../types/discord.d';
 import { logger } from '../../utils/logger';
+import { getServerNickname } from '../../utils/nicknameHelper';
 
 export const data = new SlashCommandBuilder()
     .setName('joinform')
@@ -68,9 +69,12 @@ export const execute: Command['execute'] = async (interaction) => {
 
         // Send modal to user via DM
         try {
+            // Get server nickname for personalized greeting
+            const serverNickname = await getServerNickname(interaction.client, interaction.guild!.id, user.id);
+            
             const dmChannel = await user.createDM();
             await dmChannel.send({
-                content: `Hello ${user.username}! Welcome to our Warframe community! Please fill out this form to gain access to the server.`,
+                content: `Hello ${serverNickname}! Welcome to our Warframe community! Please fill out this form to gain access to the server.`,
                 embeds: [new EmbedBuilder()
                     .setTitle('🔐 Server Access Required')
                     .setDescription('To join our community, please complete the join form below.')
@@ -81,11 +85,11 @@ export const execute: Command['execute'] = async (interaction) => {
 
             // Send the modal (this will be handled by the modal submit event)
             await interaction.reply({
-                content: `Join form has been sent to ${user.username}. They will need to complete it to gain server access.`,
+                content: `Join form has been sent to ${serverNickname}. They will need to complete it to gain server access.`,
                 ephemeral: true
             });
 
-            logger.info(`Join form sent to user ${user.username} (${user.id})`);
+            logger.info(`Join form sent to user ${serverNickname} (${user.id})`);
 
         } catch (error) {
             logger.error('Failed to send join form to user:', error);

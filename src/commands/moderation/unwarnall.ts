@@ -6,6 +6,7 @@ import { config } from '../../config/config';
 import { logger } from '../../utils/logger';
 import { ensureUserExists, ensureGuildExists } from '../../utils/dbHelpers';
 import { ChatInputCommandInteraction } from 'discord.js';
+import { getServerNickname } from '../../utils/nicknameHelper';
 
 const command: Command = {
   data: new SlashCommandBuilder()
@@ -140,13 +141,18 @@ const command: Command = {
       
       // Try to notify the user via DM
       try {
+        // Get server nicknames for personalized message
+        const userNickname = await getServerNickname(interaction.client, interaction.guild.id, user.id);
+        const moderatorNickname = await getServerNickname(interaction.client, interaction.guild.id, interaction.user.id);
+        
         await user.send({
           embeds: [createEmbed({
             type: 'success',
             title: 'All Warnings Cleared',
-            description: `All your warnings have been removed in **${interaction.guild.name}**.`,
+            description: `Hello ${userNickname}, all your warnings have been removed in **${interaction.guild.name}**.`,
             fields: [
-              { name: 'Moderator', value: `${interaction.user.tag}`, inline: true },
+              { name: 'Moderator (Mention)', value: `<@${interaction.user.id}>`, inline: true },
+              { name: 'Moderator (Name)', value: moderatorNickname, inline: true },
               { name: 'Reason', value: reason, inline: false }
             ],
             timestamp: true

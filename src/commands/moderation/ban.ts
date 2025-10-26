@@ -2,6 +2,7 @@ import { SlashCommandBuilder, PermissionFlagsBits, GuildMember } from 'discord.j
 import { Command } from '../../types/discord';
 import { createEmbed } from '../../utils/embedBuilder';
 import { logger } from '../../utils/logger';
+import { getServerNickname } from '../../utils/nicknameHelper';
 
 const command: Command = {
   data: new SlashCommandBuilder()
@@ -138,19 +139,24 @@ const command: Command = {
       // Send DM to user before banning if possible
       if (targetMember) {
         try {
+          // Get server nickname for personalized message
+          const userNickname = await getServerNickname(interaction.client, interaction.guild.id, targetUser.id);
+          const moderatorNickname = await getServerNickname(interaction.client, interaction.guild.id, interaction.user.id);
+          
           const dmEmbed = createEmbed({
             type: 'danger',
             title: 'You have been banned',
-            description: `You have been banned from **${interaction.guild.name}**`,
+            description: `Hello ${userNickname}, you have been banned from **${interaction.guild.name}**`,
             fields: [
-              { name: 'Moderator', value: `${interaction.user.tag}`, inline: true },
-              { name: 'Reason', value: reason, inline: true }
+              { name: 'Moderator (Mention)', value: `<@${interaction.user.id}>`, inline: true },
+              { name: 'Moderator (Name)', value: moderatorNickname, inline: true },
+              { name: 'Reason', value: reason, inline: false }
             ],
             timestamp: true
           });
           
           await targetUser.send({ embeds: [dmEmbed] });
-          logger.debug(`Ban command: DM sent to ${targetUser.id}`);
+          logger.debug(`Ban command: DM sent to ${userNickname} (${targetUser.id})`);
         } catch (error) {
           // Silently fail if we can't DM the user
           logger.debug(`Ban command: Failed to DM ${targetUser.id}:`, error);

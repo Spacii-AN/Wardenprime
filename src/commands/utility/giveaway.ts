@@ -23,6 +23,7 @@ import { Command } from '../../types/discord';
 import { pgdb, Giveaway } from '../../services/postgresDatabase';
 import { createEmbed, Colors } from '../../utils/embedBuilder';
 import { logger } from '../../utils/logger';
+import { getServerNickname } from '../../utils/nicknameHelper';
 import { parseTimeString, getRelativeTime, getFutureDate } from '../../utils/timeParser';
 import { GIVEAWAY_LIMITS } from '../../constants/time';
 
@@ -411,8 +412,14 @@ async function handleEndCommand(interaction: ChatInputCommandInteraction) {
 
       // Send private messages to winners
       await sendWinnerDMs(interaction.client, winners, updatedGiveaway);
+      
+      // Send DM to the host about the winners
+      await sendHostDM(interaction.client, updatedGiveaway, winners);
     } else {
       await channel.send(`No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
+      
+      // Still send DM to host even if no winners
+      await sendHostDM(interaction.client, updatedGiveaway, []);
     }
     
     // Reply to the interaction
@@ -516,8 +523,14 @@ async function handleRerollCommand(interaction: ChatInputCommandInteraction) {
 
         // Send private messages to new winners
         await sendWinnerDMs(interaction.client, newWinners, updatedGiveaway);
+        
+        // Send DM to the host about the reroll winners
+        await sendHostDM(interaction.client, updatedGiveaway, newWinners);
       } else {
         await channel.send(`**REROLL!** No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
+        
+        // Still send DM to host even if no winners in reroll
+        await sendHostDM(interaction.client, updatedGiveaway, []);
       }
       
       await interaction.editReply({
@@ -1037,8 +1050,14 @@ export async function handleGiveawayRerollButton(interaction: ButtonInteraction)
 
         // Send private messages to new winners
         await sendWinnerDMs(interaction.client, newWinners, updatedGiveaway);
+        
+        // Send DM to the host about the reroll winners
+        await sendHostDM(interaction.client, updatedGiveaway, newWinners);
       } else {
         await channel.send(`**REROLL!** No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
+        
+        // Still send DM to host even if no winners in reroll
+        await sendHostDM(interaction.client, updatedGiveaway, []);
       }
       
       await interaction.editReply({
@@ -1092,6 +1111,11 @@ export async function endGiveaway(client: Client, giveaway: Giveaway): Promise<v
       return;
     }
     
+    // Ensure winners are included in the updatedGiveaway object
+    if (!updatedGiveaway.winners) {
+      updatedGiveaway.winners = winners;
+    }
+    
     // Update the message with ended giveaway
     const endedEmbed = createGiveawayEmbed(updatedGiveaway, true);
     const endedActionRow = createGiveawayActionRow(updatedGiveaway, true);
@@ -1100,6 +1124,26 @@ export async function endGiveaway(client: Client, giveaway: Giveaway): Promise<v
       embeds: [endedEmbed],
       components: [endedActionRow]
     });
+    
+    // Send a message to announce the winners
+    if (winners.length > 0) {
+      const winnerMentions = winners.map(id => `<@${id}>`).join(', ');
+      await channel.send({
+        content: `🎉 Congratulations ${winnerMentions}! You won **${updatedGiveaway.prize}**!`,
+        allowedMentions: { users: winners }
+      });
+
+      // Send private messages to winners
+      await sendWinnerDMs(client, winners, updatedGiveaway);
+      
+      // Send DM to the host about the winners
+      await sendHostDM(client, updatedGiveaway, winners);
+    } else {
+      await channel.send(`No winners could be determined for the giveaway **${updatedGiveaway.prize}**.`);
+      
+      // Still send DM to host even if no winners
+      await sendHostDM(client, updatedGiveaway, []);
+    }
     
     logger.info(`Successfully ended giveaway ${giveaway.id}`);
   } catch (error) {
@@ -1117,10 +1161,18 @@ async function sendWinnerDMs(client: Client, winnerIds: string[], giveaway: Give
       try {
         const user = await client.users.fetch(winnerId);
         if (user) {
+          // Get server nickname for personalized greeting
+          const serverNickname = await getServerNickname(client, giveaway.guild_id, winnerId);
+          
+          // Get host nickname for the field
+          const hostNickname = giveaway.host_id ? 
+            await getServerNickname(client, giveaway.guild_id, giveaway.host_id) : 
+            'Bot';
+
           const dmEmbed = createEmbed({
             type: 'success',
             title: '🎉 Congratulations! You Won!',
-            description: `You won the giveaway for **${giveaway.prize}**!`,
+            description: `Hello ${serverNickname}! You won the giveaway for **${giveaway.prize}**!`,
             fields: [
               {
                 name: 'Prize',
@@ -1131,6 +1183,11 @@ async function sendWinnerDMs(client: Client, winnerIds: string[], giveaway: Give
                 name: 'Hosted by',
                 value: giveaway.host_id ? `<@${giveaway.host_id}>` : 'Bot',
                 inline: true
+              },
+              {
+                name: 'Host Name',
+                value: hostNickname,
+                inline: true
               }
             ],
             footer: 'Congratulations on your win!',
@@ -1138,7 +1195,7 @@ async function sendWinnerDMs(client: Client, winnerIds: string[], giveaway: Give
           });
 
           await user.send({ embeds: [dmEmbed] });
-          logger.info(`Sent winner DM to ${user.tag} (${winnerId}) for giveaway ${giveaway.id}`);
+          logger.info(`Sent winner DM to ${serverNickname} (${winnerId}) for giveaway ${giveaway.id}`);
         }
       } catch (dmError) {
         logger.warn(`Could not send DM to winner ${winnerId}: ${dmError instanceof Error ? dmError.message : String(dmError)}`);
@@ -1147,6 +1204,97 @@ async function sendWinnerDMs(client: Client, winnerIds: string[], giveaway: Give
     }
   } catch (error) {
     logger.error('Error sending winner DMs:', error);
+    // Don't throw - this shouldn't break the giveaway process
+  }
+}
+
+/**
+ * Sends a private message to the giveaway host about the winners
+ */
+async function sendHostDM(client: Client, giveaway: Giveaway, winnerIds: string[]): Promise<void> {
+  try {
+    // Get the host user ID (creator_id or host_id)
+    const hostId = giveaway.host_id || giveaway.creator_id;
+    if (!hostId) {
+      logger.warn(`No host ID found for giveaway ${giveaway.id}`);
+      return;
+    }
+
+    const host = await client.users.fetch(hostId);
+    if (!host) {
+      logger.warn(`Host user ${hostId} not found for giveaway ${giveaway.id}`);
+      return;
+    }
+
+    // Get server nickname for the host
+    const hostNickname = await getServerNickname(client, giveaway.guild_id, hostId);
+
+    let description = '';
+    let fields = [];
+
+    if (winnerIds.length > 0) {
+      // Get server nicknames for all winners
+      const winnerNicknames = await Promise.all(
+        winnerIds.map(id => getServerNickname(client, giveaway.guild_id, id))
+      );
+    
+      const winnerMentions = winnerIds.map(id => `<@${id}>`).join(', ');
+      const winnerNames = winnerNicknames.join(', ');
+    
+      description = `Hello ${hostNickname}! Your giveaway for **${giveaway.prize}** has ended. Here are the winners:`;
+    
+      fields = [
+        {
+          name: 'Prize',
+          value: giveaway.prize,
+          inline: true
+        },
+        {
+          name: 'Number of Winners',
+          value: winnerIds.length.toString(),
+          inline: true
+        },image.png
+        {
+          name: 'Winners',
+          value: winnerMentions,
+          inline: false
+        },
+        {
+          name: 'Names',
+          value: winnerNames,
+          inline: true
+        }
+      ];
+    } else {
+      description = `Hello ${hostNickname}! Your giveaway for **${giveaway.prize}** has ended, but no winners could be determined.`;
+      
+      fields = [
+        {
+          name: 'Prize',
+          value: giveaway.prize,
+          inline: true
+        },
+        {
+          name: 'Winners',
+          value: 'No winners determined',
+          inline: false
+        }
+      ];
+    }
+
+    const dmEmbed = createEmbed({
+      type: winnerIds.length > 0 ? 'success' : 'warning',
+      title: '🎉 Giveaway Ended - Winners Announced!',
+      description: description,
+      fields: fields,
+      footer: 'Thank you for hosting this giveaway!',
+      timestamp: true
+    });
+
+    await host.send({ embeds: [dmEmbed] });
+    logger.info(`Sent host DM to ${hostNickname} (${hostId}) for giveaway ${giveaway.id}`);
+  } catch (dmError) {
+    logger.warn(`Could not send DM to host for giveaway ${giveaway.id}: ${dmError instanceof Error ? dmError.message : String(dmError)}`);
     // Don't throw - this shouldn't break the giveaway process
   }
 }

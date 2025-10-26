@@ -2,6 +2,7 @@ import { Events, ModalSubmitInteraction, EmbedBuilder, GuildMember } from 'disco
 import { Event } from '../types/discord.d';
 import { logger } from '../utils/logger';
 import { pgdb } from '../services/postgresDatabase';
+import { getServerNickname } from '../utils/nicknameHelper';
 
 export const name = Events.InteractionCreate;
 export const once = false;
@@ -123,7 +124,10 @@ export const execute: Event<typeof Events.InteractionCreate>['execute'] = async 
                 inline: true
             });
 
-            const preferredName = formData.preferred_name_input || formData.ign_input || interaction.user.username;
+            // Get server nickname for personalized greeting
+            const serverNickname = await getServerNickname(interaction.client, interaction.guild!.id, interaction.user.id);
+            const preferredName = formData.preferred_name_input || formData.ign_input || serverNickname;
+            
             await dmChannel.send({
                 content: `Hello ${preferredName}! Here are the details you submitted for server access:`,
                 embeds: [dmEmbed]

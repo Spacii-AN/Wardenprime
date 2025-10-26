@@ -6,6 +6,7 @@ import { config } from '../../config/config';
 import { logger } from '../../utils/logger';
 import { ensureUserExists, ensureGuildExists } from '../../utils/dbHelpers';
 import { ChatInputCommandInteraction } from 'discord.js';
+import { getServerNickname } from '../../utils/nicknameHelper';
 
 const command: Command = {
   data: new SlashCommandBuilder()
@@ -257,13 +258,18 @@ const command: Command = {
         
         // Try to DM the user about the warning
         try {
+          // Get server nicknames for personalized message
+          const userNickname = await getServerNickname(interaction.client, interaction.guild.id, targetUser.id);
+          const moderatorNickname = await getServerNickname(interaction.client, interaction.guild.id, interaction.user.id);
+          
           const dmEmbed = createEmbed({
             type: 'warning',
             title: 'You have received a warning',
-            description: `You have been warned in **${interaction.guild.name}**`,
+            description: `Hello ${userNickname}, you have been warned in **${interaction.guild.name}**`,
             fields: [
               { name: 'Reason', value: reason, inline: true },
-              { name: 'Moderator', value: `${interaction.user.tag}`, inline: true },
+              { name: 'Moderator (Mention)', value: `<@${interaction.user.id}>`, inline: true },
+              { name: 'Moderator (Name)', value: moderatorNickname, inline: true },
               { name: 'Warning Count', value: warningCountValue.toString(), inline: true },
               { name: 'Note', value: 'Three warnings will result in an automatic kick from the server.' }
             ],
@@ -271,7 +277,7 @@ const command: Command = {
           });
           
           await targetUser.send({ embeds: [dmEmbed] });
-          logger.debug(`Warn command: DM sent to ${targetUser.id}`);
+          logger.debug(`Warn command: DM sent to ${userNickname} (${targetUser.id})`);
         } catch (error) {
           // Silently fail if we can't DM the user
           logger.debug(`Warn command: Failed to DM ${targetUser.id}:`, error);

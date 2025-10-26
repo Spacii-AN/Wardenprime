@@ -1,10 +1,10 @@
-/* Dashboard Styles */
+/* Dashboard Styles - Dark Theme */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
-  color: #333;
+  background: #1e1e1e;
+  color: #ffffff;
 }
 
 .header {
@@ -55,10 +55,11 @@ body {
 }
 
 .card {
-  background: white;
+  background: #2d2d2d;
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  border: 1px solid #404040;
 }
 
 .card h3 {
@@ -89,4 +90,62 @@ body {
 
 .btn.danger:hover {
   background: #c0392b;
+}
+
+/* Dark theme specific styles */
+input, select, textarea {
+  background: #2d2d2d;
+  color: #ffffff;
+  border: 1px solid #404040;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #5865f2;
+  box-shadow: 0 0 0 2px rgba(88, 101, 242, 0.2);
+}
+
+table {
+  background: #2d2d2d;
+  border: 1px solid #404040;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #404040;
+}
+
+th {
+  background: #36393f;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+tr:hover {
+  background: #36393f;
+}
+
+/* Bootstrap dark theme overrides */
+.navbar-dark {
+  background-color: #36393f !important;
+}
+
+.bg-dark {
+  background-color: #36393f !important;
+}
+
+.text-dark {
+  color: #ffffff !important;
+}
+
+.bg-light {
+  background-color: #2d2d2d !important;
+}
+
+.text-light {
+  color: #ffffff !important;
 }

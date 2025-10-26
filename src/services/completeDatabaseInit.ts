@@ -136,6 +136,8 @@ async function completeDatabaseInit(): Promise<void> {
         join_form_enabled BOOLEAN DEFAULT FALSE,
         join_form_channel_id VARCHAR(255),
         join_form_role_id VARCHAR(255),
+        thread_auto_join_mode VARCHAR(20) DEFAULT 'all', -- 'all', 'whitelist', 'blacklist'
+        thread_channels TEXT, -- JSON array of channel IDs
         created_at TIMESTAMP NOT NULL DEFAULT NOW(),
         updated_at TIMESTAMP NOT NULL DEFAULT NOW()
       )

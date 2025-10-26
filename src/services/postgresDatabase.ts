@@ -74,6 +74,8 @@ export interface GuildSettings {
   welcome_message?: string;
   farewell_message?: string;
   lfg_channel_id?: string;
+  thread_auto_join_mode?: 'all' | 'whitelist' | 'blacklist';
+  thread_channels?: string; // JSON array of channel IDs
   created_at: Date;
   updated_at: Date;
 }
@@ -209,6 +211,14 @@ export type PostgresClient = {
   // Guild settings methods
   getGuildSettings(guildId: string): Promise<GuildSettings | null>;
   updateGuildSetting(guildId: string, setting: string, value: any): Promise<GuildSettings>;
+  
+  // Thread auto-join management methods
+  setThreadAutoJoinMode(guildId: string, mode: 'all' | 'whitelist' | 'blacklist'): Promise<void>;
+  getThreadChannels(guildId: string): Promise<string[]>;
+  setThreadChannels(guildId: string, channelIds: string[]): Promise<void>;
+  addThreadChannel(guildId: string, channelId: string): Promise<void>;
+  removeThreadChannel(guildId: string, channelId: string): Promise<void>;
+  shouldAutoJoinThread(guildId: string, parentChannelId: string): Promise<boolean>;
   
   // Welcome channel methods
   setWelcomeChannel(guildId: string, channelId: string): Promise<void>;
@@ -1646,7 +1656,8 @@ class PostgresDatabase {
     try {
       // Ensure the setting column exists
       const validColumns = ['prefix', 'mod_role_id', 'admin_role_id', 'mute_role_id', 
-                           'log_channel_id', 'welcome_channel_id', 'welcome_message', 'farewell_message', 'lfg_channel_id'];
+                           'log_channel_id', 'welcome_channel_id', 'welcome_message', 'farewell_message', 'lfg_channel_id',
+                           'thread_auto_join_mode', 'thread_channels'];
       
       if (!validColumns.includes(setting)) {
         throw new Error(`Invalid setting: ${setting}`);
@@ -1684,6 +1695,94 @@ class PostgresDatabase {
     } catch (error) {
       logger.error(`Error updating guild setting: ${error}`);
       throw error;
+    }
+  }
+
+  // Thread auto-join management methods
+  public async setThreadAutoJoinMode(guildId: string, mode: 'all' | 'whitelist' | 'blacklist'): Promise<void> {
+    try {
+      await this.updateGuildSetting(guildId, 'thread_auto_join_mode', mode);
+      logger.info(`Set thread auto-join mode to ${mode} for guild ${guildId}`);
+    } catch (error) {
+      logger.error(`Error setting thread auto-join mode: ${error}`);
+      throw error;
+    }
+  }
+
+  public async getThreadChannels(guildId: string): Promise<string[]> {
+    try {
+      const settings = await this.getGuildSettings(guildId);
+      if (!settings?.thread_channels) {
+        return [];
+      }
+      return JSON.parse(settings.thread_channels);
+    } catch (error) {
+      logger.error(`Error getting thread channels: ${error}`);
+      return [];
+    }
+  }
+
+  public async setThreadChannels(guildId: string, channelIds: string[]): Promise<void> {
+    try {
+      const channelsJson = JSON.stringify(channelIds);
+      await this.updateGuildSetting(guildId, 'thread_channels', channelsJson);
+      logger.info(`Set thread channels for guild ${guildId}: ${channelIds.join(', ')}`);
+    } catch (error) {
+      logger.error(`Error setting thread channels: ${error}`);
+      throw error;
+    }
+  }
+
+  public async addThreadChannel(guildId: string, channelId: string): Promise<void> {
+    try {
+      const currentChannels = await this.getThreadChannels(guildId);
+      if (!currentChannels.includes(channelId)) {
+        currentChannels.push(channelId);
+        await this.setThreadChannels(guildId, currentChannels);
+        logger.info(`Added channel ${channelId} to thread list for guild ${guildId}`);
+      }
+    } catch (error) {
+      logger.error(`Error adding thread channel: ${error}`);
+      throw error;
+    }
+  }
+
+  public async removeThreadChannel(guildId: string, channelId: string): Promise<void> {
+    try {
+      const currentChannels = await this.getThreadChannels(guildId);
+      const filteredChannels = currentChannels.filter(id => id !== channelId);
+      await this.setThreadChannels(guildId, filteredChannels);
+      logger.info(`Removed channel ${channelId} from thread list for guild ${guildId}`);
+    } catch (error) {
+      logger.error(`Error removing thread channel: ${error}`);
+      throw error;
+    }
+  }
+
+  public async shouldAutoJoinThread(guildId: string, parentChannelId: string): Promise<boolean> {
+    try {
+      const settings = await this.getGuildSettings(guildId);
+      if (!settings) {
+        return true; // Default to auto-join if no settings
+      }
+
+      const mode = settings.thread_auto_join_mode || 'all';
+      
+      switch (mode) {
+        case 'all':
+          return true;
+        case 'whitelist':
+          const whitelistChannels = await this.getThreadChannels(guildId);
+          return whitelistChannels.includes(parentChannelId);
+        case 'blacklist':
+          const blacklistChannels = await this.getThreadChannels(guildId);
+          return !blacklistChannels.includes(parentChannelId);
+        default:
+          return true;
+      }
+    } catch (error) {
+      logger.error(`Error checking if should auto-join thread: ${error}`);
+      return true; // Default to auto-join on error
     }
   }
 
